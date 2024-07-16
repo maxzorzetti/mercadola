@@ -741,20 +741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name: Teteuzinho
-    sentences:
-    - Como eu quero um burrito!
-    - Voce disse burrito?!?
-    - "Ah, amigo(a), se tem uma coisa que eu amo de verdade \xE9 um burrito perfeito,
-      daqueles que enchem os olhos e a barriga! Imagina s\xF3: uma tortilla de trigo
-      bem macia e levemente tostadinha, toda recheada com carne de frango grelhada
-      e cheia de temperinhos mexicanos que d\xE3o aquele sabor \xFAnico."
-    - "Claro, n\xE3o pode faltar o queijo cheddar derretido, aquele guacamole cremoso
-      que \xE9 uma explos\xE3o de sabor, e o sour cream que \xE9 o toque refrescante
-      que completa tudo. E a salsa de tomate fresquinha e picante, nem me fale!"
-    - "Finalizo com um pouco de alface crocante e coentro fresco picadinho para dar
-      aquele toque final, sabe? \xC9 o burrito dos sonhos, meu amigo! Com esse combo
-      de ingredientes, n\xE3o tem como n\xE3o se apaixonar. A\xED sim, Teteu aqui
-      fica feliz da vida!"
+    speeches: []
 --- !u!114 &734285077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1316,7 +1303,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSentenceLength: 400
-  speed: 50
   nameText: {fileID: 171034107}
   dialogueText: {fileID: 53985771}
   animator: {fileID: 2004875070}
@@ -1937,20 +1923,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name: Teteuzinho
-    sentences:
-    - Como eu quero um burrito!
-    - Voce disse burrito?!?
-    - "Ah, amigo(a), se tem uma coisa que eu amo de verdade \xE9 um burrito perfeito,
-      daqueles que enchem os olhos e a barriga! Imagina s\xF3: uma tortilla de trigo
-      bem macia e levemente tostadinha, toda recheada com carne de frango grelhada
-      e cheia de temperinhos mexicanos que d\xE3o aquele sabor \xFAnico."
-    - "Claro, n\xE3o pode faltar o queijo cheddar derretido, aquele guacamole cremoso
-      que \xE9 uma explos\xE3o de sabor, e o sour cream que \xE9 o toque refrescante
-      que completa tudo. E a salsa de tomate fresquinha e picante, nem me fale!"
-    - "Finalizo com um pouco de alface crocante e coentro fresco picadinho para dar
-      aquele toque final, sabe? \xC9 o burrito dos sonhos, meu amigo! Com esse combo
-      de ingredientes, n\xE3o tem como n\xE3o se apaixonar. A\xED sim, Teteu aqui
-      fica feliz da vida!"
+    speeches:
+    - speed: 30
+      emotion: 0
+      autoSkip: 0
+      sentence: Como eu quero um burrito!
+    - speed: 30
+      emotion: 0
+      autoSkip: 0
+      sentence: 'Voce disse burrito?!?!
+
+'
+    - speed: 200
+      emotion: 1
+      autoSkip: 1
+      sentence: "Ah, amigo, se tem uma coisa que eu amo de verdade \xE9 um burrito
+        perfeito, daqueles que enchem os olhos e a barriga! Imagina s\xF3: uma tortilla
+        de trigo bem macia e levemente tostadinha, toda recheada com carne de frango
+        grelhada e cheia de temperinhos mexicanos que d\xE3o aquele sabor \xFAnico."
+    - speed: 200
+      emotion: 1
+      autoSkip: 1
+      sentence: "Claro, n\xE3o pode faltar o queijo cheddar derretido, aquele guacamole
+        cremoso que \xE9 uma explos\xE3o de sabor, e o sour cream que \xE9 o toque
+        refrescante que completa tudo. E a salsa de tomate fresquinha e picante,
+        nem me fale!"
+    - speed: 200
+      emotion: 1
+      autoSkip: 1
+      sentence: "Finalizo com um pouco de alface crocante e coentro fresco picadinho
+        para dar aquele toque final, sabe? \xC9 o burrito dos sonhos, meu amigo!
+        Com esse combo de ingredientes, n\xE3o tem como n\xE3o se apaixonar. A\xED
+        sim, Teteu aqui fica feliz da vida!"
+    - speed: 30
+      emotion: 0
+      autoSkip: 0
+      sentence: "Opa, desculpa! Me empolgo quando o assunto \xE9 burritos."
 --- !u!1001 &2732056440089918739
 PrefabInstance:
   m_ObjectHideFlags: 0

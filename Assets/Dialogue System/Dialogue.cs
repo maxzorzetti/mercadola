@@ -1,13 +1,28 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
-[System.Serializable]
+[Serializable]
 public class Dialogue {
 
 	public string name;
 
-	[TextArea(3, 10)]
-	public string[] sentences;
+	public Speech[] speeches;
 
+	[Serializable]
+	public class Speech
+	{
+		[Range(1f, 200f)]
+		public float speed = 50;
+		public Emotion emotion = Emotion.Normal;
+		public bool autoSkip; 
+			
+		[TextArea(3, 10)]
+		public string sentence;
+	}
+	
+	[Serializable]
+	public enum Emotion
+	{
+		Normal, Hyped  
+	}
 }

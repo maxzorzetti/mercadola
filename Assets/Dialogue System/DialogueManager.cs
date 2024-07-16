@@ -1,20 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour {
 
 	public int maxSentenceLength = 400;
+
 	public Text nameText;
 	public Text dialogueText;
 	public Animator animator;
 
-	Queue<string> sentences;
+	Queue<(string sentence, Dialogue.Speech speech)> sentences;
+	
+	Task typingTask;
+	CancellationTokenSource typingCTS;
 
+	bool isTyping => typingTask != null && !typingTask.IsCompleted; 
+	string currentSentence;
+	
 	// Use this for initialization
 	void Start () {
-		sentences = new Queue<string>();
+		sentences = new Queue<(string sentence, Dialogue.Speech speech)>();
 	}
 
 	public void StartDialogue(Dialogue dialogue)
@@ -32,34 +41,41 @@ public class DialogueManager : MonoBehaviour {
 
 	public void DisplayNextSentence()
 	{
-		if (sentences.Count == 0)
+		if (sentences.Count == 0 && !isTyping)
 		{
 			EndDialogue();
 			return;
 		}
+		
+		if (isTyping) 
+		{
+			dialogueText.text = currentSentence;
+			typingCTS.Cancel();
+			return;
+		}
 
-		string sentence = sentences.Dequeue();
-		StopAllCoroutines();
-		StartCoroutine(TypeSentence(sentence));
+		var (sentence, speech) = sentences.Dequeue();
+		typingCTS = new CancellationTokenSource();
+		typingTask = TypeSentence(sentence, speech.speed, speech.emotion, speech.autoSkip, typingCTS);
 	}
 
 	void EnqueueDialogue(Dialogue dialogue) 
 	{
-		foreach (var sentence in dialogue.sentences)
+		foreach (var speech in dialogue.speeches)
 		{
 			// split it into multiple sentences if it's too long
-			if (sentence.Length < maxSentenceLength) 
+			if (speech.sentence.Length < maxSentenceLength) 
 			{
-				sentences.Enqueue(sentence);
+				sentences.Enqueue((speech.sentence, speech));
 			} 
 			else 
 			{
-				var charactersLeft = sentence.Length;
+				var charactersLeft = speech.sentence.Length;
 				var characterAnchorPosition = 0;
 				while (charactersLeft > 0) 
 				{
-					var sentenceToAdd = sentence.Substring(characterAnchorPosition, Mathf.Min(maxSentenceLength, charactersLeft));
-					sentences.Enqueue(sentenceToAdd);
+					var sentence = speech.sentence.Substring(characterAnchorPosition, Mathf.Min(maxSentenceLength, charactersLeft));
+					sentences.Enqueue((sentence, speech));
 					charactersLeft -= maxSentenceLength;
 					characterAnchorPosition += maxSentenceLength;
 				}
@@ -67,13 +83,23 @@ public class DialogueManager : MonoBehaviour {
 		}
 	}
 
-	IEnumerator TypeSentence (string sentence)
+	async Task TypeSentence(string sentence, float speed, Dialogue.Emotion emotion, bool shouldAutoSkip, CancellationTokenSource cts)
 	{
+		currentSentence = sentence;
 		dialogueText.text = "";
+		
 		foreach (var letter in sentence.ToCharArray())
 		{
+			var waitTime = 1000 / speed;
+			await Task.Delay((int)waitTime);
+			cts.Token.ThrowIfCancellationRequested();
 			dialogueText.text += letter;
-			yield return null;
+		}
+
+		if (shouldAutoSkip)
+		{
+			typingTask = null;
+			DisplayNextSentence();
 		}
 	}
 
@@ -81,5 +107,4 @@ public class DialogueManager : MonoBehaviour {
 	{
 		animator.SetBool("IsOpen", false);
 	}
-
 }
