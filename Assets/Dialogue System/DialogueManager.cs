@@ -4,13 +4,14 @@ using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class DialogueManager : MonoBehaviour {
 
 	public int maxSentenceLength = 400;
 
-	public Text nameText;
-	public Text dialogueText;
+	public TextMeshProUGUI nameText;
+	public TextMeshProUGUI dialogueText;
 	public Animator animator;
 
 	Queue<(string sentence, Dialogue.Speech speech)> sentences;
