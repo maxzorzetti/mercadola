@@ -65,3 +65,6 @@ crashlytics-build.properties
 .DS_Store
 .AppleDouble
 .LSOverride
+
+/.idea/
+/UserSettings/Layouts/
