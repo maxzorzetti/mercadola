@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour {
 
+	public int maxSentenceLength = 400;
 	public Text nameText;
 	public Text dialogueText;
-
 	public Animator animator;
 
 	Queue<string> sentences;
@@ -17,7 +17,7 @@ public class DialogueManager : MonoBehaviour {
 		sentences = new Queue<string>();
 	}
 
-	public void StartDialogue (Dialogue dialogue)
+	public void StartDialogue(Dialogue dialogue)
 	{
 		animator.SetBool("IsOpen", true);
 
@@ -25,10 +25,7 @@ public class DialogueManager : MonoBehaviour {
 
 		sentences.Clear();
 
-		foreach (string sentence in dialogue.sentences)
-		{
-			sentences.Enqueue(sentence);
-		}
+		EnqueueDialogue(dialogue);
 
 		DisplayNextSentence();
 	}
@@ -44,6 +41,30 @@ public class DialogueManager : MonoBehaviour {
 		string sentence = sentences.Dequeue();
 		StopAllCoroutines();
 		StartCoroutine(TypeSentence(sentence));
+	}
+
+	void EnqueueDialogue(Dialogue dialogue) 
+	{
+		foreach (var sentence in dialogue.sentences)
+		{
+			// split it into multiple sentences if it's too long
+			if (sentence.Length < maxSentenceLength) 
+			{
+				sentences.Enqueue(sentence);
+			} 
+			else 
+			{
+				var charactersLeft = sentence.Length;
+				var characterAnchorPosition = 0;
+				while (charactersLeft > 0) 
+				{
+					var sentenceToAdd = sentence.Substring(characterAnchorPosition, Mathf.Min(maxSentenceLength, charactersLeft));
+					sentences.Enqueue(sentenceToAdd);
+					charactersLeft -= maxSentenceLength;
+					characterAnchorPosition += maxSentenceLength;
+				}
+			}
+		}
 	}
 
 	IEnumerator TypeSentence (string sentence)
