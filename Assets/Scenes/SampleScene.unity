@@ -1316,6 +1316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSentenceLength: 400
+  speed: 50
   nameText: {fileID: 171034107}
   dialogueText: {fileID: 53985771}
   animator: {fileID: 2004875070}
