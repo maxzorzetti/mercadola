@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 2.5}
-  m_SizeDelta: {x: -40, y: -54.999996}
+  m_AnchoredPosition: {x: 0, y: 0.5}
+  m_SizeDelta: {x: -40, y: -55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &53985772
 CanvasRenderer:
@@ -232,15 +232,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: This is dummy dialogue... It's not really too interesting.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d1b964e15ea614f4e9b98e67e6da4559, type: 2}
-  m_sharedMaterial: {fileID: 2195283394919192499, guid: d1b964e15ea614f4e9b98e67e6da4559, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 45595941839dea149892f96191562101, type: 2}
+  m_sharedMaterial: {fileID: 8723736820829075846, guid: 45595941839dea149892f96191562101, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294246193
-  m_fontColor: {r: 0.19339621, g: 1, b: 0.9549637, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -257,8 +257,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -429,6 +429,7 @@ GameObject:
   - component: {fileID: 171034108}
   - component: {fileID: 171034110}
   - component: {fileID: 171034109}
+  - component: {fileID: 171034111}
   m_Layer: 5
   m_Name: Name
   m_TagString: Untagged
@@ -505,8 +506,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: NPC Name Here
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9d191de30d06f4344971e0af61eb3052, type: 2}
-  m_sharedMaterial: {fileID: 2195283394919192499, guid: 9d191de30d06f4344971e0af61eb3052, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 45595941839dea149892f96191562101, type: 2}
+  m_sharedMaterial: {fileID: 8723736820829075846, guid: 45595941839dea149892f96191562101, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -538,9 +539,9 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: -14
+  m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -572,6 +573,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &171034111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171034105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
+  m_EffectDistance: {x: 2.57, y: 1.13}
+  m_UseGraphicAlpha: 0
 --- !u!1 &244835702
 GameObject:
   m_ObjectHideFlags: 0
@@ -1131,7 +1147,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -150, y: 250}
+  m_AnchoredPosition: {x: -120, y: 240}
   m_SizeDelta: {x: 320, y: 320}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &730744999
@@ -1144,7 +1160,7 @@ Animator:
   m_GameObject: {fileID: 730744997}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 592498ac53c111f4f882e683cbe1ee93, type: 2}
+  m_Controller: {fileID: 9100000, guid: c21b803bd33a0d7439c1450b91b0eec9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1175,7 +1191,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1393007752, guid: fa84da9afffd001459f944f48ed68bea, type: 3}
+  m_Sprite: {fileID: -132807548, guid: ce24d2d8d03f7244a9fe2f3aa442f859, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1327,6 +1343,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 798915928}
   m_CullTransparentMesh: 1
+--- !u!1001 &951485451
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5877137506356213731, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.004
+      objectReference: {fileID: 0}
+    - target: {fileID: 5877137506356213731, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 5877137506356213731, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5877137506356213731, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5877137506356213731, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5877137506356213731, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5877137506356213731, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5877137506356213731, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5877137506356213731, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5877137506356213731, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8470116972755365890, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: m_Name
+      value: NPC
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
 --- !u!1 &1152856198
 GameObject:
   m_ObjectHideFlags: 0
@@ -1394,8 +1467,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: CONTINUE >>
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 45595941839dea149892f96191562101, type: 2}
+  m_sharedMaterial: {fileID: 8723736820829075846, guid: 45595941839dea149892f96191562101, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2229,7 +2302,7 @@ RectTransform:
   m_GameObject: {fileID: 2004875065}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.90167, y: 0.90167, z: 0.90167}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 730744998}
@@ -2241,7 +2314,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -120}
+  m_AnchoredPosition: {x: 0, y: -400}
   m_SizeDelta: {x: 520, y: 210}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2004875068
@@ -2668,21 +2741,21 @@ MonoBehaviour:
       sentence: Voce disse burrito?!?!
     - speed: 200
       emotion: 1
-      autoSkip: 1
+      autoSkip: 0
       sentence: "Ah, amigo, se tem uma coisa que eu amo de verdade \xE9 um burrito
         perfeito, daqueles que enchem os olhos e a barriga! Imagina s\xF3: uma tortilla
         de trigo bem macia e levemente tostadinha, toda recheada com carne de frango
         grelhada e cheia de temperinhos mexicanos que d\xE3o aquele sabor \xFAnico."
     - speed: 200
       emotion: 1
-      autoSkip: 1
+      autoSkip: 0
       sentence: "Claro, n\xE3o pode faltar o queijo cheddar derretido, aquele guacamole
         cremoso que \xE9 uma explos\xE3o de sabor, e o sour cream que \xE9 o toque
         refrescante que completa tudo. E a salsa de tomate fresquinha e picante,
         nem me fale!"
     - speed: 200
       emotion: 1
-      autoSkip: 1
+      autoSkip: 0
       sentence: "Finalizo com um pouco de alface crocante e coentro fresco picadinho
         para dar aquele toque final, sabe? \xC9 o burrito dos sonhos, meu amigo!
         Com esse combo de ingredientes, n\xE3o tem como n\xE3o se apaixonar. A\xED
@@ -2856,3 +2929,4 @@ SceneRoots:
   - {fileID: 1686567546}
   - {fileID: 1475589251}
   - {fileID: 244835705}
+  - {fileID: 951485451}
