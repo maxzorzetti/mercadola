@@ -1,9 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class DialogueManager : MonoBehaviour {
@@ -12,7 +10,8 @@ public class DialogueManager : MonoBehaviour {
 
 	public TextMeshProUGUI nameText;
 	public TextMeshProUGUI dialogueText;
-	public Animator animator;
+	public Animator dialogueBoxAnimator;
+	public Animator leftPortraitAnimator;
 
 	Queue<(string sentence, Dialogue.Speech speech)> sentences;
 	
@@ -29,7 +28,7 @@ public class DialogueManager : MonoBehaviour {
 
 	public void StartDialogue(Dialogue dialogue)
 	{
-		animator.SetBool("IsOpen", true);
+		dialogueBoxAnimator.SetBool("IsOpen", true);
 
 		nameText.text = dialogue.name;
 
@@ -50,8 +49,8 @@ public class DialogueManager : MonoBehaviour {
 		
 		if (isTyping) 
 		{
-			dialogueText.text = currentSentence;
 			typingCTS.Cancel();
+			dialogueText.text = currentSentence;
 			return;
 		}
 
@@ -88,15 +87,18 @@ public class DialogueManager : MonoBehaviour {
 	{
 		currentSentence = sentence;
 		dialogueText.text = "";
-		
+		leftPortraitAnimator.SetBool("IsTalking", true);
 		foreach (var letter in sentence.ToCharArray())
 		{
 			var waitTime = 1000 / speed;
 			await Task.Delay((int)waitTime);
-			cts.Token.ThrowIfCancellationRequested();
+			if (cts.Token.IsCancellationRequested) break;
+
 			dialogueText.text += letter;
 		}
-
+		leftPortraitAnimator.SetBool("IsTalking", false);
+		cts.Token.ThrowIfCancellationRequested();
+		
 		if (shouldAutoSkip)
 		{
 			typingTask = null;
@@ -106,6 +108,6 @@ public class DialogueManager : MonoBehaviour {
 
 	void EndDialogue()
 	{
-		animator.SetBool("IsOpen", false);
+		dialogueBoxAnimator.SetBool("IsOpen", false);
 	}
 }

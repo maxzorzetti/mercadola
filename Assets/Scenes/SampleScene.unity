@@ -1668,7 +1668,8 @@ MonoBehaviour:
   maxSentenceLength: 400
   nameText: {fileID: 171034110}
   dialogueText: {fileID: 53985776}
-  animator: {fileID: 2004875070}
+  dialogueBoxAnimator: {fileID: 2004875070}
+  leftPortraitAnimator: {fileID: 730744999}
 --- !u!4 &1505112524
 Transform:
   m_ObjectHideFlags: 0
