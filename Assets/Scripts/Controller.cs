@@ -5,6 +5,7 @@ public class Controller {
     public ControllerKey Left =  new(KeyCode.A);
     public ControllerKey Down =  new(KeyCode.S);
     public ControllerKey Right =  new(KeyCode.D);
+    public ControllerKey MainAction = new(KeyCode.Space);
 
     public bool IsPressingAnyKeys() {
         return Up.IsPressed() || Left.IsPressed() || Down.IsPressed() || Right.IsPressed();
