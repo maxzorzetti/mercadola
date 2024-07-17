@@ -21,7 +21,7 @@ public class MyScript : MonoBehaviour
     }
 
     void getUserInput() {
-        if(controller.IsPressingAnyKeys()) {
+        if(controller.IsPressingMovementKeys()) {
             if(controller.Up.IsPressed()) {
                 move(Vector3.up);
             } 

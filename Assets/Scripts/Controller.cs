@@ -7,7 +7,7 @@ public class Controller {
     public ControllerKey Right =  new(KeyCode.D);
     public ControllerKey MainAction = new(KeyCode.Space);
 
-    public bool IsPressingAnyKeys() {
+    public bool IsPressingMovementKeys() {
         return Up.IsPressed() || Left.IsPressed() || Down.IsPressed() || Right.IsPressed();
     }
 }
