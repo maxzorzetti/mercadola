@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6455785435243501191}
   - component: {fileID: 7844131376972801025}
   m_Layer: 0
-  m_Name: TeteuMini-Sheet
+  m_Name: Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 532490081943337519}
   - component: {fileID: 3980373008485266153}
   m_Layer: 0
-  m_Name: Teteuzinho
+  m_Name: NPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -183,7 +183,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 2.1, y: 2.1}
   m_EdgeRadius: 0
 --- !u!114 &3980373008485266153
 MonoBehaviour:

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6455785435243501191}
   - component: {fileID: 7844131376972801025}
   m_Layer: 0
-  m_Name: DinhousMini-Sheet
+  m_Name: Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,8 +116,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5877137506356213731}
   - component: {fileID: 9128340504164130359}
+  - component: {fileID: 5096513894457204005}
   m_Layer: 0
-  m_Name: Character
+  m_Name: Dola
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -184,3 +185,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5096513894457204005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8470116972755365890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdb69d2f004235e44b0fe00d9db4edd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterTransform: {fileID: 5877137506356213731}
+  speed: 3
