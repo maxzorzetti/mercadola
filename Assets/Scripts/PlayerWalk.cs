@@ -1,20 +1,17 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class MyScript : MonoBehaviour
 {
-    float pressDuration;
     public Transform characterTransform;
     public float speed = 3.0f;
     bool isMoving;
+    Controller controller;
 
 
     // Start is called before the first frame update
     void Start() {
         Debug.Log("Start");
+        controller = new Controller();
     }
 
     // Update is called once per frame
@@ -24,24 +21,19 @@ public class MyScript : MonoBehaviour
     }
 
     void getUserInput() {
-        if(
-            Input.GetKey(KeyCode.RightArrow) ||
-            Input.GetKey(KeyCode.LeftArrow) ||
-            Input.GetKey(KeyCode.UpArrow) ||
-            Input.GetKey(KeyCode.DownArrow)
-        ) {
-            if(Input.GetKey(KeyCode.RightArrow)) {
-                move(Vector3.right);
-            } 
-            if(Input.GetKey(KeyCode.LeftArrow)) {
-                move(Vector3.left);
-            } 
-            if(Input.GetKey(KeyCode.UpArrow)) {
+        if(controller.IsPressingAnyKeys()) {
+            if(controller.Up.IsPressed()) {
                 move(Vector3.up);
             } 
-            if(Input.GetKey(KeyCode.DownArrow)) {
+            if(controller.Left.IsPressed()) {
+                move(Vector3.left);
+            } 
+            if(controller.Down.IsPressed()) {
                 move(Vector3.down);
             }
+            if(controller.Right.IsPressed()) {
+                move(Vector3.right);
+            } 
         } else {
             isMoving = false;
         }
