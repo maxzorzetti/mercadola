@@ -278,6 +278,7 @@ GameObject:
   - component: {fileID: 6762090650093887313}
   - component: {fileID: 5910723403879278319}
   - component: {fileID: 6767371902147886822}
+  - component: {fileID: 3695152554029827998}
   m_Layer: 0
   m_Name: Bread
   m_TagString: item
@@ -373,3 +374,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3695152554029827998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8045285676408016280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21e48c7f3ab0c42ed9e138fd6382b2f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollectEvent: {fileID: 11400000, guid: e212cb745ec1b450d956d5dec865f841, type: 2}
