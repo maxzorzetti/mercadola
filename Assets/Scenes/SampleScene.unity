@@ -3153,10 +3153,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7565108287379159974, guid: f57118de296647748919506555c74f35, type: 3}
-      propertyPath: SpinTime
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8470116972755365890, guid: f57118de296647748919506555c74f35, type: 3}
       propertyPath: m_Name
       value: Dola
