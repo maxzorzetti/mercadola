@@ -50,8 +50,7 @@ public class PlayerAction : MonoBehaviour
                 triggers["npc"].Add(collider2D);
                 break;    
             case "item":
-                Destroy(collider2D.gameObject);
-                // TODO: increment score
+                collider2D.GetComponent<Collectible>().Collect();
                 break;
         }
     }
