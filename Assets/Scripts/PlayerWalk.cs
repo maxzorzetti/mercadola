@@ -1,18 +1,18 @@
 using UnityEngine;
-using UnityEngine.UIElements;
 
-public class MyScript : MonoBehaviour
+public class PlayerWalk : MonoBehaviour
 {
-    public Transform characterTransform;
     public float speed = 3.0f;
     bool isMoving;
     Controller controller;
-
+    Animator animator;
+    SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start() {
-        Debug.Log("Start");
         controller = new Controller();
+        animator = GetComponentInChildren<Animator>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -44,17 +44,17 @@ public class MyScript : MonoBehaviour
         isMoving = true;
         transform.Translate(direction * speed * Time.deltaTime);
         if(Vector3.left == direction || Vector3.right == direction) {
-            GetComponentInChildren<SpriteRenderer>().flipX = Vector3.left == direction;
+            spriteRenderer.flipX = Vector3.left == direction;
         }
     }
 
     void updateCharacterAnimation() {
         if(isMoving && !GetComponentInChildren<Animator>().GetCurrentAnimatorStateInfo(0).IsName("CharacterRun")) {
-            GetComponentInChildren<Animator>().ResetTrigger("Exit");
-            GetComponentInChildren<Animator>().SetTrigger("RunFront");
+            animator.ResetTrigger("Exit");
+            animator.SetTrigger("RunFront");
         } else if(!isMoving && GetComponentInChildren<Animator>().GetCurrentAnimatorStateInfo(0).IsName("CharacterRun")) {
-            GetComponentInChildren<Animator>().ResetTrigger("RunFront");
-            GetComponentInChildren<Animator>().SetTrigger("Exit");
+            animator.ResetTrigger("RunFront");
+            animator.SetTrigger("Exit");
         }
     }
 }
