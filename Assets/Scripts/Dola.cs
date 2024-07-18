@@ -2,8 +2,15 @@ using UnityEngine;
 
 public class Dola : MonoBehaviour
 {
-    public void Amaze()
+    public void Amaze(bool isAmazed = true)
     {
-        GetComponentInChildren<Animator>().SetTrigger("Amazed");
+        if (isAmazed)
+        {
+            GetComponentInChildren<Animator>().SetTrigger("Amazed");
+        }
+        else
+        {
+            GetComponentInChildren<Animator>().ResetTrigger("Amazed");
+        }
     }
 }
