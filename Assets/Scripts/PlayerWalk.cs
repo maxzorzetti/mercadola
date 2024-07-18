@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class MyScript : MonoBehaviour
 {
@@ -21,20 +22,20 @@ public class MyScript : MonoBehaviour
     }
 
     void getUserInput() {
-        if(controller.IsPressingMovementKeys()) {
-            if(controller.Up.IsPressed()) {
+        if(controller.IsHoldingMovementKeys()) {
+            if(controller.Up.IsHold()) {
                 move(Vector3.up);
             } 
-            if(controller.Left.IsPressed()) {
+            if(controller.Left.IsHold()) {
                 move(Vector3.left);
             } 
-            if(controller.Down.IsPressed()) {
+            if(controller.Down.IsHold()) {
                 move(Vector3.down);
             }
-            if(controller.Right.IsPressed()) {
+            if(controller.Right.IsHold()) {
                 move(Vector3.right);
             } 
-        } else {
+        } else { 
             isMoving = false;
         }
     }
@@ -48,6 +49,12 @@ public class MyScript : MonoBehaviour
     }
 
     void updateCharacterAnimation() {
-        GetComponentInChildren<Animator>().SetBool("Run", isMoving);
+        if(isMoving && !GetComponentInChildren<Animator>().GetCurrentAnimatorStateInfo(0).IsName("CharacterRun")) {
+            GetComponentInChildren<Animator>().ResetTrigger("Exit");
+            GetComponentInChildren<Animator>().SetTrigger("RunFront");
+        } else if(!isMoving && GetComponentInChildren<Animator>().GetCurrentAnimatorStateInfo(0).IsName("CharacterRun")) {
+            GetComponentInChildren<Animator>().ResetTrigger("RunFront");
+            GetComponentInChildren<Animator>().SetTrigger("Exit");
+        }
     }
 }

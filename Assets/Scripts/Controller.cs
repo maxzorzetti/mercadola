@@ -13,9 +13,15 @@ public class Controller {
     // TODO: Use Input.GetButtonDown for action
     // Input.GetButton_Down_ returns true only in the _first frame_ it is pressed
     public ControllerKey MainAction = new(KeyCode.Space);
+    public ControllerKey Investigate = new(KeyCode.Q);
+    public ControllerKey Amazed = new(KeyCode.E);
 
-    public bool IsPressingMovementKeys() {
-        return Up.IsPressed() || Left.IsPressed() || Down.IsPressed() || Right.IsPressed();
+    public bool DidPressMovementKeys() {
+        return Up.DidPress() || Left.DidPress() || Down.DidPress() || Right.DidPress();
+    }
+
+    public bool IsHoldingMovementKeys() {
+        return Up.IsHold() || Left.IsHold() || Down.IsHold() || Right.IsHold();
     }
 }
 
@@ -25,7 +31,11 @@ public class ControllerKey {
     public ControllerKey(KeyCode key) {
         Key = key;
     }
-    public bool IsPressed() {
+    public bool IsHold() {
         return Input.GetKey(Key);
+    }
+
+    public bool DidPress() {
+        return Input.GetKeyDown(Key);
     }
 }
