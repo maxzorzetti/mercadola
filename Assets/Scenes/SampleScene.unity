@@ -299,17 +299,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &150710661 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5168382238047468539, guid: cf6f84fbbe3471843b19150ef6676b37, type: 3}
-  m_PrefabInstance: {fileID: 7453076334303667264}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f169c10607a548e68119409d83c2758, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &152927199
 GameObject:
   m_ObjectHideFlags: 0
@@ -3014,6 +3003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00ddd33eae28b5148a72170d47ccd942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DialogueEvent: {fileID: 0}
   dialogue:
     name: Teteuzinho
     speeches:
@@ -3184,70 +3174,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4466935140221898212, guid: cf6f84fbbe3471843b19150ef6676b37, type: 3}
-      propertyPath: Events.Array.data[0].Event
-      value: 
-      objectReference: {fileID: 11400000, guid: 30c27c33e3a83481e8b5f0e4989dfe8a, type: 2}
-    - target: {fileID: 4466935140221898212, guid: cf6f84fbbe3471843b19150ef6676b37, type: 3}
-      propertyPath: Events.Array.data[0].Response.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466935140221898212, guid: cf6f84fbbe3471843b19150ef6676b37, type: 3}
-      propertyPath: Events.Array.data[1].Response.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466935140221898212, guid: cf6f84fbbe3471843b19150ef6676b37, type: 3}
-      propertyPath: Events.Array.data[0].Response.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466935140221898212, guid: cf6f84fbbe3471843b19150ef6676b37, type: 3}
-      propertyPath: Events.Array.data[1].Response.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466935140221898212, guid: cf6f84fbbe3471843b19150ef6676b37, type: 3}
-      propertyPath: Events.Array.data[0].Response.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 150710661}
-    - target: {fileID: 4466935140221898212, guid: cf6f84fbbe3471843b19150ef6676b37, type: 3}
-      propertyPath: Events.Array.data[1].Response.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 150710661}
-    - target: {fileID: 4466935140221898212, guid: cf6f84fbbe3471843b19150ef6676b37, type: 3}
-      propertyPath: Events.Array.data[0].Response.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466935140221898212, guid: cf6f84fbbe3471843b19150ef6676b37, type: 3}
-      propertyPath: Events.Array.data[1].Response.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466935140221898212, guid: cf6f84fbbe3471843b19150ef6676b37, type: 3}
-      propertyPath: Events.Array.data[0].Response.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Greet
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466935140221898212, guid: cf6f84fbbe3471843b19150ef6676b37, type: 3}
-      propertyPath: Events.Array.data[1].Response.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Speak
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466935140221898212, guid: cf6f84fbbe3471843b19150ef6676b37, type: 3}
-      propertyPath: Events.Array.data[0].Response.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: NPC, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466935140221898212, guid: cf6f84fbbe3471843b19150ef6676b37, type: 3}
-      propertyPath: Events.Array.data[1].Response.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: NPC, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466935140221898212, guid: cf6f84fbbe3471843b19150ef6676b37, type: 3}
-      propertyPath: Events.Array.data[1].Response.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: "Carai, borracha, voc\xEA pegou um p\xE3o!"
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466935140221898212, guid: cf6f84fbbe3471843b19150ef6676b37, type: 3}
-      propertyPath: Events.Array.data[0].Response.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466935140221898212, guid: cf6f84fbbe3471843b19150ef6676b37, type: 3}
-      propertyPath: Events.Array.data[1].Response.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 6001862360072747697, guid: cf6f84fbbe3471843b19150ef6676b37, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
