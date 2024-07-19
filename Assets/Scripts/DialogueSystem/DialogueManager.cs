@@ -14,20 +14,25 @@ public class DialogueManager : MonoBehaviour {
 	public Animator leftPortraitAnimator;
 
 	Queue<(string sentence, Dialogue.Speech speech)> sentences;
+
+	public bool IsDialogueOngoing;
+	bool isTyping => typingTask != null && !typingTask.IsCompleted; 
+	string currentSentence;
 	
 	Task typingTask;
 	CancellationTokenSource typingCTS;
-
-	bool isTyping => typingTask != null && !typingTask.IsCompleted; 
-	string currentSentence;
 	
 	// Use this for initialization
 	void Start () {
 		sentences = new Queue<(string sentence, Dialogue.Speech speech)>();
+		IsDialogueOngoing = false;
 	}
 
 	public void StartDialogue(Dialogue dialogue)
 	{
+		if (IsDialogueOngoing) return;
+		IsDialogueOngoing = true;
+		
 		dialogueBoxAnimator.SetBool("IsOpen", true);
 
 		nameText.text = dialogue.name;
@@ -109,5 +114,6 @@ public class DialogueManager : MonoBehaviour {
 	void EndDialogue()
 	{
 		dialogueBoxAnimator.SetBool("IsOpen", false);
+		Task.Delay(300).ContinueWith(_ => IsDialogueOngoing = false);
 	}
 }
