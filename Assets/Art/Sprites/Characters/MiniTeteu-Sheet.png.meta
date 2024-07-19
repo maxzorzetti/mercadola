@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,34 +110,76 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TeteuMini-Sheet_0
+      name: MiniTeteu-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 16
+        width: 36
+        height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b74e22d7495d054c87e08f08619a225
-      internalID: 852771854
+      spriteID: 4d82e379efdbbad43a49b0dffac662b8
+      internalID: -2081745102
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TeteuMini-Sheet_1
+      name: MiniTeteu-Sheet_1
       rect:
         serializedVersion: 2
-        x: 16
+        x: 36
         y: 0
-        width: 16
-        height: 16
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd798eb381ae57144870a89e15051c8b
+      internalID: 1194439409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniTeteu-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26d281abefc4abd43a5047ec42e970d9
+      internalID: 256678671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniTeteu-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 0
+        width: 36
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +187,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e5e9d9689d46464a99aa3903ed4501c
-      internalID: -228829215
+      spriteID: 6783318f85977cb479b186e4edddf638
+      internalID: -1351487237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniTeteu-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: effe645b10b4c9f49980c39c85782784
+      internalID: 82646882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniTeteu-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 0
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b34b052536086b42a3695ac32ad11c1
+      internalID: -210041500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniTeteu-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 0
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 646b0cc92b118dc47a4a938fcbfba805
+      internalID: -808968557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniTeteu-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 0
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 561584b0609489c46b9f535bbbb19d13
+      internalID: 339271122
       vertices: []
       indices: 
       edges: []
@@ -162,8 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TeteuMini-Sheet_0: 852771854
-      TeteuMini-Sheet_1: -228829215
+      MiniTeteu-Sheet_0: -2081745102
+      MiniTeteu-Sheet_1: 1194439409
+      MiniTeteu-Sheet_2: 256678671
+      MiniTeteu-Sheet_3: -1351487237
+      MiniTeteu-Sheet_4: 82646882
+      MiniTeteu-Sheet_5: -210041500
+      MiniTeteu-Sheet_6: -808968557
+      MiniTeteu-Sheet_7: 339271122
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
