@@ -28,9 +28,9 @@ public class DialogueManager : MonoBehaviour {
 		IsDialogueOngoing = false;
 	}
 
-	public void StartDialogue(Dialogue dialogue)
+	public bool StartDialogue(Dialogue dialogue)
 	{
-		if (IsDialogueOngoing) return;
+		if (IsDialogueOngoing) return false;
 		IsDialogueOngoing = true;
 		
 		dialogueBoxAnimator.SetBool("IsOpen", true);
@@ -42,6 +42,8 @@ public class DialogueManager : MonoBehaviour {
 		EnqueueDialogue(dialogue);
 
 		DisplayNextSentence();
+
+		return true;
 	}
 
 	public void DisplayNextSentence()

@@ -11,7 +11,7 @@ public class Dialogue {
 	[Serializable]
 	public class Speech
 	{
-		[Range(1f, 200f)]
+		[Range(1f, 300)]
 		public float speed = 50;
 		public Emotion emotion = Emotion.Normal;
 		public bool autoSkip; 
