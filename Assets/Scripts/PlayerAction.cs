@@ -24,7 +24,6 @@ public class PlayerAction : MonoBehaviour
     }
 
     // Action Methods
-
     void MainAction() {
         if (triggers["npc"].Count == 0) return;
         
