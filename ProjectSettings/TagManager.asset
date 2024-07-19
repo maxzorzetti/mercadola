@@ -6,6 +6,7 @@ TagManager:
   tags:
   - npc
   - item
+  - wall
   layers:
   - Default
   - TransparentFX
