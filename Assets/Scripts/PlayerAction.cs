@@ -3,41 +3,38 @@ using UnityEngine;
 
 public class PlayerAction : MonoBehaviour
 {
-    Controller controller;
     Dictionary<string, List<Collider2D>> triggers;
+    
+    public event System.Action OnInteract;
+    public event System.Action OnInvestigate;
+    public event System.Action OnAmaze;
 
     // Start is called before the first frame update
     void Start()
     {
-        controller = new Controller();
         triggers = new Dictionary<string, List<Collider2D>>
         {
             ["npc"] = new()
         };
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (controller.MainAction.DidPress()) { MainAction(); }
-        if (!controller.IsHoldingMovementKeys()) { InvestigateAction(); }
-    }
-
     // Action Methods
-    void MainAction() {
+    public void Interact() {
+        OnInteract?.Invoke();
+
         if (triggers["npc"].Count == 0) return;
         
         triggers["npc"][0].GetComponent<DialogueTrigger>().TriggerDialogue();
     }
-
-    void InvestigateAction() {
-        if(controller.Investigate.DidPress()) {
-            GetComponentInChildren<Animator>().ResetTrigger("Exit");
-            GetComponentInChildren<Animator>().SetTrigger("Investigate");
-        } else if (!controller.Investigate.IsHold()) {
-            GetComponentInChildren<Animator>().ResetTrigger("Investigate");
-            GetComponentInChildren<Animator>().SetTrigger("Exit");
-        }
+    
+    public void Investigate()
+    {
+        OnInvestigate?.Invoke();
+    }
+    
+    public void Amaze()
+    {
+        OnAmaze?.Invoke();
     }
 
     // Collider Overrides

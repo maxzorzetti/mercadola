@@ -3,24 +3,49 @@ using UnityEngine;
 public class PlayerAnimation : MonoBehaviour
 {
     Animator animator;
-    PlayerWalk playerWalk;
     SpriteRenderer sprite;
+
+    PlayerWalk playerWalk;
+    PlayerAction action;
 
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
-        playerWalk = GetComponent<PlayerWalk>();
         sprite = GetComponentInChildren<SpriteRenderer>();
-    }
+        playerWalk = GetComponent<PlayerWalk>();
+        action = GetComponent<PlayerAction>();
 
-    void Update()
-    {
-        UpdateCharacterAnimation();
+        action.OnInteract += OnInteract;
+        action.OnInvestigate += OnInvestigate;
+        action.OnAmaze += OnAmaze;
     }
     
-    void UpdateCharacterAnimation() {
-        sprite.flipX = playerWalk.movement.x < 0;
+    public void OnInteract() {
+        GetComponentInChildren<Spinner>().Spin();
+    }
+
+    public void OnInvestigate() {
+        animator.SetTrigger("Investigate");
+    }
+    
+    public void OnAmaze() {
+        animator.SetTrigger("Amazed");
+    }
+    
+    void Update()
+    {
+        UpdateMovementAnimation();
+    }
+    
+    void UpdateMovementAnimation()
+    {
+        // Only bother to flip the sprite horizontally if the player is moving horizontally
+        if (playerWalk.isMoving && playerWalk.movement.x != 0)
+        {
+            sprite.flipX = playerWalk.movement.x < 0;
+        }
         
+        // TODO: Figure out how to use Animator state machines lol
         if (playerWalk.isMoving && !GetComponentInChildren<Animator>().GetCurrentAnimatorStateInfo(0).IsName("CharacterRun")) {
             animator.ResetTrigger("Exit");
             animator.SetTrigger("RunFront");
