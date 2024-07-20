@@ -25,11 +25,17 @@ public class PlayerAnimation : MonoBehaviour
     }
 
     public void OnInvestigate() {
-        animator.SetTrigger("Investigate");
+        animator.SetBool("isMoving", false);
+        animator.SetBool("isInvestigating", true);
+        animator.SetBool("isAmazed", false);
+        animator.SetBool("isFacingBack", false);
     }
     
     public void OnAmaze() {
-        animator.SetTrigger("Amazed");
+        animator.SetBool("isMoving", false);
+        animator.SetBool("isInvestigating", false);
+        animator.SetBool("isAmazed", true);
+        animator.SetBool("isFacingBack", false);
     }
     
     void Update()
@@ -39,19 +45,18 @@ public class PlayerAnimation : MonoBehaviour
     
     void UpdateMovementAnimation()
     {
+        animator.SetBool("isMoving", playerWalk.isMoving);
+        animator.SetBool("isInvestigating", false);
+        animator.SetBool("isAmazed", false);
+
         // Only bother to flip the sprite horizontally if the player is moving horizontally
         if (playerWalk.isMoving && playerWalk.movement.x != 0)
         {
             sprite.flipX = playerWalk.movement.x < 0;
         }
-        
-        // TODO: Figure out how to use Animator state machines lol
-        if (playerWalk.isMoving && !GetComponentInChildren<Animator>().GetCurrentAnimatorStateInfo(0).IsName("CharacterRun")) {
-            animator.ResetTrigger("Exit");
-            animator.SetTrigger("RunFront");
-        } else if(!playerWalk.isMoving && GetComponentInChildren<Animator>().GetCurrentAnimatorStateInfo(0).IsName("CharacterRun")) {
-            animator.ResetTrigger("RunFront");
-            animator.SetTrigger("Exit");
+        if (playerWalk.isMoving && playerWalk.movement.y != 0)
+        {
+            animator.SetBool("isFacingBack", playerWalk.movement.y > 0);
         }
     }
 }

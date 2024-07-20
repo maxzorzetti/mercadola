@@ -15,7 +15,7 @@ public class PlayerWalk : MonoBehaviour
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
-    void LateUpdate() {
+    void Update() {
         transform.Translate(movement);
     }
     
