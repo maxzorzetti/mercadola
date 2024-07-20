@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 376835233934275067}
   - component: {fileID: 1976142869652071405}
   - component: {fileID: 5635342751556399208}
+  - component: {fileID: 3938638258332654860}
   m_Layer: 0
   m_Name: Dola
   m_TagString: Untagged
@@ -205,6 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  movement: {x: 0, y: 0}
   isMoving: 0
 --- !u!114 &5428977878461355428
 MonoBehaviour:
@@ -397,5 +399,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23d19cf5afb1b48518c57873018bf1f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3938638258332654860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8470116972755365890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24b915a1513648839bde1d0cd542bbc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
