@@ -14,7 +14,9 @@ public class PlayerAction : MonoBehaviour
     {
         triggers = new Dictionary<string, List<Collider2D>>
         {
-            ["npc"] = new()
+            ["npc"] = new(),
+            ["item"] = new(),
+            ["wall"] = new()
         };
     }
 
@@ -46,7 +48,8 @@ public class PlayerAction : MonoBehaviour
                 triggers["npc"].Add(collider2D);
                 break;    
             case "item":
-                collider2D.GetComponent<Collectible>().Collect();
+                triggers["item"].Add(collider2D);
+                collider2D.GetComponent<Collectible>()?.Collect();
                 break;
         }
     }
