@@ -61,7 +61,6 @@ public class PlayerAction : MonoBehaviour
                 break;    
             case "item":
                 triggers["item"].Add(collider2D);
-                collider2D.GetComponent<Collectible>()?.Collect();
                 break;
         }
     }
