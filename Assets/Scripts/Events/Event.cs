@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Mercadola/New Event")]
@@ -22,6 +23,21 @@ public class Event : ScriptableObject
     public void DeregisterListener(Listener listener)
     {
         listeners.Remove(listener);
+    }
+}
+
+[CustomEditor(typeof(Event))]
+public class EventEditor : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        base.OnInspectorGUI();
+        var script = (Event)target;
+
+        if (GUILayout.Button("Raise"))
+        {
+            script.Raise();
+        }
     }
 }
 
