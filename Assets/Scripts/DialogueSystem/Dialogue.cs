@@ -2,21 +2,22 @@
 using UnityEngine;
 
 [Serializable]
-public class Dialogue {
-
-	public string name;
+[CreateAssetMenu(fileName = "NewDialogue", menuName = "Mercadola/New Dialogue")]
+public class Dialogue : ScriptableObject 
+{
+	public string speaker;
 
 	public Speech[] speeches;
 
 	[Serializable]
 	public class Speech
 	{
-		[Range(1f, 300)]
-		public float speed = 50;
+		[Range(1f, 300f)]
+		public float speed = 30f;
 		public Emotion emotion = Emotion.Normal;
 		public bool autoSkip; 
 			
-		[TextArea(3, 10)]
+		[TextArea(5, 10)]
 		public string sentence;
 	}
 	

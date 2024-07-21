@@ -98,6 +98,14 @@ PrefabInstance:
       propertyPath: dialogue.speeches.Array.data[6].sentence
       value: O que seria do mundo sem um bom solo de guitarra, hein?
       objectReference: {fileID: 0}
+    - target: {fileID: 5007131058585548457, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: Name
+      value: Jota
+      objectReference: {fileID: 0}
+    - target: {fileID: 5007131058585548457, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: Greetings
+      value: C'mon kids!!
+      objectReference: {fileID: 0}
     - target: {fileID: 5877137506356213731, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.82
@@ -153,5 +161,65 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8470116972755365890, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4704526617954093045}
   m_SourcePrefab: {fileID: 100100000, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+--- !u!1 &488946144626933283 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8470116972755365890, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+  m_PrefabInstance: {fileID: 8305468321023643169}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4704526617954093045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488946144626933283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b197c70cd62467090a4e2c87e4b189f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Events:
+  - Event: {fileID: 11400000, guid: 803c7c6edea0a464aa33ff34a1f9acd8, type: 2}
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3908583809918892168}
+          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+          m_MethodName: Flip
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 3908583809918892168}
+          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+          m_MethodName: Speak
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: "Voc\xEA pontuou! C'mon kids!"
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &3908583809918892168 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5007131058585548457, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+  m_PrefabInstance: {fileID: 8305468321023643169}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488946144626933283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f169c10607a548e68119409d83c2758, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

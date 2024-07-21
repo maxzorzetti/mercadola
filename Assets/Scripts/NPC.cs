@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class NPC : MonoBehaviour
@@ -22,5 +20,12 @@ public class NPC : MonoBehaviour
     {
         var sprite = GetComponentInChildren<SpriteRenderer>();
         sprite.flipX = !sprite.flipX;
+    }
+
+    public void HandleDialogueStart(DialogueEventData data)
+    {
+        if (data.Dialogue.speaker != Name && !data.IsDialogueEnd) return;
+     
+        Greet();
     }
 }

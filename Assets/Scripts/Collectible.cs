@@ -1,9 +1,8 @@
-using System;
 using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
-    public Event CollectEvent;
+    public CollectEvent CollectEvent;
 
     [Range(0f, 2f)]
     public float CollectionTime = 0.25f;
@@ -35,7 +34,7 @@ public class Collectible : MonoBehaviour
     {
         if (isCollected) return;
         isCollected = true;
-        CollectEvent.Raise();
+        CollectEvent.Raise(new CollectEventData(this));
     }
 
     void Update()

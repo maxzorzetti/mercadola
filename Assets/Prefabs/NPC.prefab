@@ -118,10 +118,10 @@ GameObject:
   - component: {fileID: 532490081943337519}
   - component: {fileID: 2949044788649264445}
   - component: {fileID: 5007131058585548457}
-  - component: {fileID: 4555552375396499638}
   - component: {fileID: 5754089134651678421}
   - component: {fileID: 3693867227154900836}
   - component: {fileID: 3980373008485266153}
+  - component: {fileID: 6984574313365215725}
   m_Layer: 0
   m_Name: NPC
   m_TagString: npc
@@ -231,35 +231,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: NPC
   Greetings: 
---- !u!114 &4555552375396499638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8470116972755365890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a1e334671a174a31ac743fea30fe410, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Events:
-  - Event: {fileID: 11400000, guid: 30c27c33e3a83481e8b5f0e4989dfe8a, type: 2}
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5007131058585548457}
-          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-          m_MethodName: Flip
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &5754089134651678421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,39 +321,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00ddd33eae28b5148a72170d47ccd942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    name: Teteuzinho
-    speeches:
-    - speed: 30
-      emotion: 0
-      autoSkip: 0
-      sentence: Como eu quero um burrito!
-    - speed: 30
-      emotion: 0
-      autoSkip: 0
-      sentence: Voce disse burrito?!?!
-    - speed: 200
-      emotion: 1
-      autoSkip: 0
-      sentence: "Ah, amigo, se tem uma coisa que eu amo de verdade \xE9 um burrito
-        perfeito, daqueles que enchem os olhos e a barriga! Imagina s\xF3: uma tortilla
-        de trigo bem macia e levemente tostadinha, toda recheada com carne de frango
-        grelhada e cheia de temperinhos mexicanos que d\xE3o aquele sabor \xFAnico."
-    - speed: 200
-      emotion: 1
-      autoSkip: 0
-      sentence: "Claro, n\xE3o pode faltar o queijo cheddar derretido, aquele guacamole
-        cremoso que \xE9 uma explos\xE3o de sabor, e o sour cream que \xE9 o toque
-        refrescante que completa tudo. E a salsa de tomate fresquinha e picante,
-        nem me fale!"
-    - speed: 200
-      emotion: 1
-      autoSkip: 0
-      sentence: "Finalizo com um pouco de alface crocante e coentro fresco picadinho
-        para dar aquele toque final, sabe? \xC9 o burrito dos sonhos, meu amigo!
-        Com esse combo de ingredientes, n\xE3o tem como n\xE3o se apaixonar. A\xED
-        sim, Teteu aqui fica feliz da vida!"
-    - speed: 30
-      emotion: 0
-      autoSkip: 0
-      sentence: "Opa, desculpa! Me empolgo quando o assunto \xE9 burritos."
+  dialogue: {fileID: 0}
+--- !u!114 &6984574313365215725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8470116972755365890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d4bb455341440e8a53e2e6d56fd7a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Events:
+  - Event: {fileID: 11400000, guid: d8a92973881d642458882158dac3d624, type: 2}
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5007131058585548457}
+          m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+          m_MethodName: HandleDialogueStart
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

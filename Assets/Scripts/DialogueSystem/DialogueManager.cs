@@ -7,8 +7,7 @@ using TMPro;
 public class DialogueManager : MonoBehaviour {
 
 	public int maxSentenceLength = 400;
-	public Event OnDialogueStartEvent;
-	public Event OnDialogueEndEvent;
+	public DialogueEvent OnDialogueEvent;
 
 	public TextMeshProUGUI nameText;
 	public TextMeshProUGUI dialogueText;
@@ -16,9 +15,9 @@ public class DialogueManager : MonoBehaviour {
 	public Animator leftPortraitAnimator;
 
 	Queue<(string sentence, Dialogue.Speech speech)> sentences;
-
-	[HideInInspector]
-	public bool IsDialogueOngoing;
+	
+	[HideInInspector] public Dialogue CurrentDialogue;
+	public bool IsDialogueOngoing => CurrentDialogue != null;
 	bool isTyping => typingTask != null && !typingTask.IsCompleted; 
 	string currentSentence;
 	
@@ -28,14 +27,13 @@ public class DialogueManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		sentences = new Queue<(string sentence, Dialogue.Speech speech)>();
-		IsDialogueOngoing = false;
+		CurrentDialogue = null;
 	}
 
-	public bool StartDialogue(Dialogue dialogue)
+	public void StartDialogue(Dialogue dialogue)
 	{
-		if (IsDialogueOngoing) return false;
-		IsDialogueOngoing = true;
-		OnDialogueStartEvent.Raise();
+		if (IsDialogueOngoing) return;
+		CurrentDialogue = dialogue;
 		
 		dialogueBoxAnimator.SetBool("IsOpen", true);
 
@@ -47,7 +45,7 @@ public class DialogueManager : MonoBehaviour {
 
 		DisplayNextSentence();
 
-		return true;
+		OnDialogueEvent.Raise(new DialogueEventData(dialogue, isDialogueEnd: false));
 	}
 
 	public void DisplayNextSentence()
@@ -70,8 +68,10 @@ public class DialogueManager : MonoBehaviour {
 		typingTask = TypeSentence(sentence, speech.speed, speech.emotion, speech.autoSkip, typingCTS);
 	}
 
-	void EnqueueDialogue(Dialogue dialogue) 
+	void EnqueueDialogue(Dialogue dialogue)
 	{
+		CurrentDialogue = dialogue;
+		
 		foreach (var speech in dialogue.speeches)
 		{
 			// split it into multiple sentences if it's too long
@@ -125,10 +125,16 @@ public class DialogueManager : MonoBehaviour {
 	
 	void OnDialogueBoxClosed(int i)
 	{
+		FinishDialogue();
+	}
+
+	public void FinishDialogue()
+	{
 		// Adding this gambiarra check because this animation is triggered as soon as the scene loads 
 		if (!IsDialogueOngoing) return;
 		
-		IsDialogueOngoing = false;
-		OnDialogueEndEvent.Raise();
+		var dialogue = CurrentDialogue;
+		CurrentDialogue = null;
+		OnDialogueEvent.Raise(new DialogueEventData(dialogue, isDialogueEnd: true));
 	}
 }

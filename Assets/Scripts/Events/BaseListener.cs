@@ -1,41 +1,39 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 public abstract class BaseListener<T, E, U> : MonoBehaviour, 
-    EventListener<T> where E : BaseEvent<T> where U : UnityEvent<T>
+    Listener<T> where E : BaseEvent<T> where U : UnityEvent<T>
 {
-    public E Event;
-    public U Response;
+    public List<EventResponseTuple<E, U>> Events;
     
-    public void OnEventRaised(T value)
+    public void OnEventRaised(BaseEvent<T> raisedEvent, T value)
     {
-        // Events.Find(x => x.Event == raisedEvent)?.Response?.Invoke(value);
-        Response?.Invoke(value);
+        Events.Find(x => x.Event == raisedEvent)?.Response?.Invoke(value);
     }
     
     void OnEnable()
     {
-        Event.RegisterListener(this);
-        // foreach (var eventResponseTuple in Events)
-        // {
-        //     eventResponseTuple.Event.RegisterListener(this);
-        // }
+        foreach (var eventResponseTuple in Events)
+        {
+            if (eventResponseTuple.Event == null)
+            {
+                Debug.LogWarning($"GameObject '{name}' has a response set to a null event");
+                continue;
+            }
+            
+            eventResponseTuple.Event.RegisterListener(this);
+        }
     }
 
     void OnDisable()
     {
-        Event.DeregisterListener(this);
-        // foreach (var eventResponseTuple in Events)
-        // {
-        //     eventResponseTuple.Event.DeregisterListener(this);
-        // }
-    }
-    
-    [Serializable]
-    public class EventResponseTuple<E, U>
-    {
-        public E Event;
-        public U Response;
+        foreach (var eventResponseTuple in Events)
+        {
+            if (eventResponseTuple.Event == null) continue;
+            
+            eventResponseTuple.Event.DeregisterListener(this);
+        }
     }
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Scorer : MonoBehaviour
 {
-    public Event ScoreIncreaseEvent;
+    public IntegerEvent OnScoreIncreaseEvent;
     
     [Range(1, 1000)]
     public int ScorePerBread = 100;
@@ -13,18 +13,24 @@ public class Scorer : MonoBehaviour
     void Start()
     {
         score = 0;
-        if (ScoreIncreaseEvent == null)
+        if (OnScoreIncreaseEvent == null)
         {
-            Debug.LogWarning($"Object {name} is missing an OnCollectEvent!");
+            Debug.LogWarning($"Scorer '{name}' is missing an event");
         }
     }
     
     public void IncreaseScore(int amount)
     {
         score += amount;
-        ScoreIncreaseEvent.Raise();
         Debug.Log($"Score is now {score}!");
+        OnScoreIncreaseEvent.Raise(amount);
     }
     
-    public void HandleOnCollectedEvent() => IncreaseScore(ScorePerBread);
+    public void HandleOnCollectEvent(CollectEventData data)
+    {
+        if (data.Collectible.name.Contains("Bread"))
+        {
+            IncreaseScore(ScorePerBread);    
+        }
+    }
 }
