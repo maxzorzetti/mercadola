@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 5007131058585548457}
   - component: {fileID: 4555552375396499638}
   - component: {fileID: 5754089134651678421}
+  - component: {fileID: 3693867227154900836}
   - component: {fileID: 3980373008485266153}
   m_Layer: 0
   m_Name: NPC
@@ -286,6 +287,57 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3693867227154900836}
+        m_TargetAssemblyTypeName: Spinner, Assembly-CSharp
+        m_MethodName: Spin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3693867227154900836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8470116972755365890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c8bcbe98d264919bc7c1b9cf41b84de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpinTime: 0.25
+  SpinOnStart: 0
+  AutoSpin: 0
+  SpinEasing:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &3980373008485266153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,7 +350,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00ddd33eae28b5148a72170d47ccd942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DialogueEvent: {fileID: 0}
   dialogue:
     name: Teteuzinho
     speeches:
