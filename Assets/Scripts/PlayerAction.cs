@@ -66,6 +66,10 @@ public class PlayerAction : MonoBehaviour
     }
         
     void OnTriggerExit2D(Collider2D collider2D) {
+        if (collider2D.TryGetComponent(out Interactable interactable)) {
+            interactablesInRange.Remove(interactable);
+        }
+        
         triggers.TryGetValue(collider2D.tag, out var triggerList);
         triggerList?.Remove(collider2D);
     }
