@@ -1,17 +1,20 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerAction : MonoBehaviour
 {
-    Dictionary<string, List<Collider2D>> triggers;
-    
     public Event OnInteractEvent;
     public Event OnInvestigateEvent;
     public Event OnAmazeEvent;
+    
+    Dictionary<string, List<Collider2D>> triggers;
+    List<Interactable> interactablesInRange;
 
     // Start is called before the first frame update
     void Start()
     {
+        interactablesInRange = new List<Interactable>();
         triggers = new Dictionary<string, List<Collider2D>>
         {
             ["npc"] = new(),
@@ -22,9 +25,13 @@ public class PlayerAction : MonoBehaviour
 
     // Action Methods
     public void Interact() {
-        if (triggers["npc"].Count == 0) return;
+        if (interactablesInRange.Count == 0) return;
+
+        var closestInteractable = interactablesInRange
+            .OrderBy(interactable => Vector2.Distance(transform.position, interactable.transform.position))
+            .First();
         
-        triggers["npc"][0].GetComponent<DialogueTrigger>().TriggerDialogue();
+        closestInteractable.Interact();
         
         OnInteractEvent.Raise();
     }
@@ -41,7 +48,12 @@ public class PlayerAction : MonoBehaviour
 
     // Collider Overrides
 
-    void OnTriggerEnter2D(Collider2D collider2D) {
+    void OnTriggerEnter2D(Collider2D collider2D)
+    {
+        if (collider2D.TryGetComponent(out Interactable interactable)) {
+            interactablesInRange.Add(interactable);
+        }
+        
         switch (collider2D.tag)
         {
             case "npc":
