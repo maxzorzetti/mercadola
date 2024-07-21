@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: DialogueEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 79b53eade7f864746871a2ccd301ec8e, type: 2}
+    - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
       propertyPath: dialogue.name
       value: Jota
       objectReference: {fileID: 0}
@@ -58,8 +62,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
       propertyPath: dialogue.speeches.Array.data[0].sentence
-      value: "Ah ent\xE3o quer dizer que voc\xEA conhece o movimento punk \xE9? Voc\xEA
-        j\xE1 sentiu a energia de um bom show de punk rock?"
+      value: "Ah, ent\xE3o quer dizer que voc\xEA conhece o movimento punk, \xE9?
+        Voc\xEA j\xE1 sentiu a energia de um bom show de punk rock?"
       objectReference: {fileID: 0}
     - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
       propertyPath: dialogue.speeches.Array.data[1].sentence
@@ -87,7 +91,7 @@ PrefabInstance:
       propertyPath: dialogue.speeches.Array.data[5].sentence
       value: "Ah, e teve aquela vez que uma banda de punk conseguiu domar um le\xE3o
         feroz s\xF3 com a m\xFAsica. O le\xE3o virou f\xE3 n\xFAmero um e at\xE9
-        come\xE7ou a balan\xE7ar a cabe\xE7a no ritmo! \xC9 o poder do punk, C'MON,
+        come\xE7ou a balan\xE7ar a cabe\xE7a no ritmo! \xC9 o poder do punk! C'MON,
         KIDS!"
       objectReference: {fileID: 0}
     - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
@@ -144,7 +148,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: e43daeb491bae2344be63cc26987a75d, type: 2}
     - target: {fileID: 8470116972755365890, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
       propertyPath: m_Name
-      value: Jota Variant
+      value: Jota
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

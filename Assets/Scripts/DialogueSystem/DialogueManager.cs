@@ -7,6 +7,8 @@ using TMPro;
 public class DialogueManager : MonoBehaviour {
 
 	public int maxSentenceLength = 400;
+	public Event OnDialogueStartEvent;
+	public Event OnDialogueEndEvent;
 
 	public TextMeshProUGUI nameText;
 	public TextMeshProUGUI dialogueText;
@@ -15,6 +17,7 @@ public class DialogueManager : MonoBehaviour {
 
 	Queue<(string sentence, Dialogue.Speech speech)> sentences;
 
+	[HideInInspector]
 	public bool IsDialogueOngoing;
 	bool isTyping => typingTask != null && !typingTask.IsCompleted; 
 	string currentSentence;
@@ -32,6 +35,7 @@ public class DialogueManager : MonoBehaviour {
 	{
 		if (IsDialogueOngoing) return false;
 		IsDialogueOngoing = true;
+		OnDialogueStartEvent.Raise();
 		
 		dialogueBoxAnimator.SetBool("IsOpen", true);
 
@@ -116,6 +120,15 @@ public class DialogueManager : MonoBehaviour {
 	void EndDialogue()
 	{
 		dialogueBoxAnimator.SetBool("IsOpen", false);
-		Task.Delay(300).ContinueWith(_ => IsDialogueOngoing = false);
+		// When the animation finishes, it triggers the OnDialogueBoxClosed method below
+	}
+	
+	void OnDialogueBoxClosed(int i)
+	{
+		// Adding this gambiarra check because this animation is triggered as soon as the scene loads 
+		if (!IsDialogueOngoing) return;
+		
+		IsDialogueOngoing = false;
+		OnDialogueEndEvent.Raise();
 	}
 }
