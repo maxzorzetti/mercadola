@@ -11,6 +11,8 @@ public class PlayerAction : MonoBehaviour
     Dictionary<string, List<Collider2D>> triggers;
     List<Interactable> interactablesInRange;
 
+    public bool isInvestigating;
+
     // Start is called before the first frame update
     void Start()
     {

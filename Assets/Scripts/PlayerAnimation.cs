@@ -4,7 +4,6 @@ public class PlayerAnimation : MonoBehaviour
 {
     Animator animator;
     SpriteRenderer sprite;
-
     PlayerWalk playerWalk;
     PlayerAction action;
 
@@ -21,29 +20,23 @@ public class PlayerAnimation : MonoBehaviour
     }
 
     public void OnInvestigate() {
-        animator.SetBool("isMoving", false);
-        animator.SetBool("isInvestigating", true);
-        animator.SetBool("isAmazed", false);
-        animator.SetBool("isFacingBack", false);
+        UpdateInvestigateAnimation();
     }
     
     public void OnAmaze() {
-        animator.SetBool("isMoving", false);
-        animator.SetBool("isInvestigating", false);
-        animator.SetBool("isAmazed", true);
-        animator.SetBool("isFacingBack", false);
+        UpdateAmazeAnimation();
     }
     
     void Update()
     {
+        UpdateInvestigateAnimation();
+        UpdateAmazeAnimation();
         UpdateMovementAnimation();
     }
     
     void UpdateMovementAnimation()
     {
         animator.SetBool("isMoving", playerWalk.isMoving);
-        animator.SetBool("isInvestigating", false);
-        animator.SetBool("isAmazed", false);
 
         // Only bother to flip the sprite horizontally if the player is moving horizontally
         if (playerWalk.isMoving && playerWalk.movement.x != 0)
@@ -54,5 +47,19 @@ public class PlayerAnimation : MonoBehaviour
         {
             animator.SetBool("isFacingBack", playerWalk.movement.y > 0);
         }
+    }
+
+    void UpdateInvestigateAnimation() {
+        animator.SetBool("isInvestigating", action.isInvestigating);
+
+        if(action.isInvestigating) {
+            animator.SetBool("isMoving", false);
+            animator.SetBool("isAmazed", false);
+            animator.SetBool("isFacingBack", false);
+        }
+    }
+
+    void UpdateAmazeAnimation() {
+
     }
 }
