@@ -28,7 +28,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: NPCmini-Sheet
+  m_Name: TeteuMini-Sheet
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Run
@@ -69,7 +69,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: NPCIdle
+  m_Name: TeteuIdle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []

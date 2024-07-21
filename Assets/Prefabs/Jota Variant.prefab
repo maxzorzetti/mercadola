@@ -1,0 +1,153 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8305468321023643169
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: dialogue.name
+      value: Jota
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: dialogue.speeches.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: dialogue.speeches.Array.data[0].speed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: dialogue.speeches.Array.data[1].speed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: dialogue.speeches.Array.data[3].speed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: dialogue.speeches.Array.data[4].speed
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: dialogue.speeches.Array.data[5].speed
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: dialogue.speeches.Array.data[6].speed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: dialogue.speeches.Array.data[1].emotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: dialogue.speeches.Array.data[4].emotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: dialogue.speeches.Array.data[5].emotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: dialogue.speeches.Array.data[6].emotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: dialogue.speeches.Array.data[0].sentence
+      value: "Ah ent\xE3o quer dizer que voc\xEA conhece o movimento punk \xE9? Voc\xEA
+        j\xE1 sentiu a energia de um bom show de punk rock?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: dialogue.speeches.Array.data[1].sentence
+      value: "Aquela adrenalina que corre nas veias quando o primeiro acorde de uma
+        m\xFAsica punk explode nos seus ouvidos?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: dialogue.speeches.Array.data[2].sentence
+      value: "Hmm, n\xE3o sei, n\xE3o parece que voc\xEA sabe o que \xE9 m\xFAsica
+        boa de verdade. Aposto que voc\xEA s\xF3 escuta as mesmas m\xFAsicas sertanejas
+        em loop ou deixa o r\xE1dio tocar qualquer coisa. Precisa expandir seus horizontes,
+        meu amigo!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: dialogue.speeches.Array.data[3].sentence
+      value: "Voc\xEA sabia que o punk \xE9 t\xE3o poderoso que j\xE1 salvou um avi\xE3o
+        de cair? Sim, acredite se quiser! "
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: dialogue.speeches.Array.data[4].sentence
+      value: "O piloto estava em p\xE2nico, mas a\xED algu\xE9m ligou um som punk
+        no \xFAltimo volume e, de repente, o avi\xE3o come\xE7ou a subir de novo!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: dialogue.speeches.Array.data[5].sentence
+      value: "Ah, e teve aquela vez que uma banda de punk conseguiu domar um le\xE3o
+        feroz s\xF3 com a m\xFAsica. O le\xE3o virou f\xE3 n\xFAmero um e at\xE9
+        come\xE7ou a balan\xE7ar a cabe\xE7a no ritmo! \xC9 o poder do punk, C'MON,
+        KIDS!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: dialogue.speeches.Array.data[6].sentence
+      value: O que seria do mundo sem um bom solo de guitarra, hein?
+      objectReference: {fileID: 0}
+    - target: {fileID: 5877137506356213731, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 5877137506356213731, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 5877137506356213731, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5877137506356213731, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5877137506356213731, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5877137506356213731, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5877137506356213731, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5877137506356213731, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5877137506356213731, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5877137506356213731, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6455785435243501191, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -938500845, guid: d8bd36fecf1721541b402fa93a7561cc, type: 3}
+    - target: {fileID: 7844131376972801025, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e43daeb491bae2344be63cc26987a75d, type: 2}
+    - target: {fileID: 8470116972755365890, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: m_Name
+      value: Jota Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}

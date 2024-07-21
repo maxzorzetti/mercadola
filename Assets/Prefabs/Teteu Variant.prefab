@@ -13,6 +13,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 79b53eade7f864746871a2ccd301ec8e, type: 2}
     - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: dialogue.speeches.Array.data[0].speed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: dialogue.speeches.Array.data[1].speed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
       propertyPath: dialogue.speeches.Array.data[2].speed
       value: 200
       objectReference: {fileID: 0}
@@ -25,16 +33,20 @@ PrefabInstance:
       value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: dialogue.speeches.Array.data[5].speed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
       propertyPath: dialogue.speeches.Array.data[2].autoSkip
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
       propertyPath: dialogue.speeches.Array.data[3].autoSkip
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
       propertyPath: dialogue.speeches.Array.data[4].autoSkip
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
       propertyPath: dialogue.speeches.Array.data[5].autoSkip
