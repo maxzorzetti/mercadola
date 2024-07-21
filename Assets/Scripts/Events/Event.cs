@@ -8,7 +8,7 @@ public class Event : ScriptableObject
 
     public void Raise()
     {
-        for (int i = listeners.Count - 1; i >= 0; i--)
+        for (var i = listeners.Count - 1; i >= 0; i--)
         {
             listeners[i].OnEventRaised(this);
         }

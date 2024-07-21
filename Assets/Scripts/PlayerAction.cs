@@ -5,9 +5,9 @@ public class PlayerAction : MonoBehaviour
 {
     Dictionary<string, List<Collider2D>> triggers;
     
-    public event System.Action OnInteract;
-    public event System.Action OnInvestigate;
-    public event System.Action OnAmaze;
+    public Event OnInteractEvent;
+    public Event OnInvestigateEvent;
+    public Event OnAmazeEvent;
 
     // Start is called before the first frame update
     void Start()
@@ -22,21 +22,21 @@ public class PlayerAction : MonoBehaviour
 
     // Action Methods
     public void Interact() {
-        OnInteract?.Invoke();
-
         if (triggers["npc"].Count == 0) return;
         
         triggers["npc"][0].GetComponent<DialogueTrigger>().TriggerDialogue();
+        
+        OnInteractEvent.Raise();
     }
     
     public void Investigate()
     {
-        OnInvestigate?.Invoke();
+        OnInvestigateEvent.Raise();
     }
     
     public void Amaze()
     {
-        OnAmaze?.Invoke();
+        OnAmazeEvent.Raise();
     }
 
     // Collider Overrides

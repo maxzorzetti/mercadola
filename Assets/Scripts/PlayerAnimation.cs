@@ -14,10 +14,6 @@ public class PlayerAnimation : MonoBehaviour
         sprite = GetComponentInChildren<SpriteRenderer>();
         playerWalk = GetComponent<PlayerWalk>();
         action = GetComponent<PlayerAction>();
-
-        action.OnInteract += OnInteract;
-        action.OnInvestigate += OnInvestigate;
-        action.OnAmaze += OnAmaze;
     }
     
     public void OnInteract() {
