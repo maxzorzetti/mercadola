@@ -28,6 +28,11 @@ public class DialogueManager : MonoBehaviour {
 	void Start () {
 		sentences = new Queue<(string sentence, Dialogue.Speech speech)>();
 		CurrentDialogue = null;
+		
+		if (OnDialogueEvent == null)
+		{
+			Debug.LogWarning($"DialogueManager '{name}' is missing an OnDialogueEvent event");
+		}
 	}
 
 	public void StartDialogue(Dialogue dialogue)

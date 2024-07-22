@@ -1162,7 +1162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSentenceLength: 400
-  OnDialogueEvent: {fileID: 0}
+  OnDialogueEvent: {fileID: 11400000, guid: d8a92973881d642458882158dac3d624, type: 2}
   nameText: {fileID: 7565170039912724737}
   dialogueText: {fileID: 857450251393303418}
   dialogueBoxAnimator: {fileID: 307016915933816431}

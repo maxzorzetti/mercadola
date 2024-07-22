@@ -15,7 +15,7 @@ public class Scorer : MonoBehaviour
         score = 0;
         if (OnScoreIncreaseEvent == null)
         {
-            Debug.LogWarning($"Scorer '{name}' is missing an event");
+            Debug.LogWarning($"Scorer '{name}' is missing an OnScoreIncreaseEvent event");
         }
     }
     

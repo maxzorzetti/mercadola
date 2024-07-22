@@ -118,7 +118,6 @@ GameObject:
   - component: {fileID: 6287800735003610680}
   - component: {fileID: 5699317615122709514}
   - component: {fileID: 7565108287379159974}
-  - component: {fileID: 6835919128426992212}
   - component: {fileID: 4341614761477146599}
   - component: {fileID: 376835233934275067}
   - component: {fileID: 5096513894457204005}
@@ -126,6 +125,7 @@ GameObject:
   - component: {fileID: 1976142869652071405}
   - component: {fileID: 3938638258332654860}
   - component: {fileID: 5635342751556399208}
+  - component: {fileID: 1853624290024662579}
   m_Layer: 0
   m_Name: Dola
   m_TagString: Untagged
@@ -223,83 +223,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7971f59865c4236bd76692630f45ff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6835919128426992212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8470116972755365890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a1e334671a174a31ac743fea30fe410, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Events:
-  - Event: {fileID: 11400000, guid: e212cb745ec1b450d956d5dec865f841, type: 2}
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 376835233934275067}
-          m_TargetAssemblyTypeName: Spinner, Assembly-CSharp
-          m_MethodName: Spin
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - Event: {fileID: 11400000, guid: a592dfa4dfbec4bc1bda8774ce7abc6b, type: 2}
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3938638258332654860}
-          m_TargetAssemblyTypeName: PlayerAnimation, Assembly-CSharp
-          m_MethodName: OnInteract
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - Event: {fileID: 11400000, guid: 400d2d67b01db4b799df1fe4b09cb70f, type: 2}
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3938638258332654860}
-          m_TargetAssemblyTypeName: PlayerAnimation, Assembly-CSharp
-          m_MethodName: OnAmaze
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - Event: {fileID: 11400000, guid: 50d5aeb19324c47eabb0468278f35504, type: 2}
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3938638258332654860}
-          m_TargetAssemblyTypeName: PlayerAnimation, Assembly-CSharp
-          m_MethodName: OnInvestigate
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &4341614761477146599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,6 +304,7 @@ MonoBehaviour:
   OnInteractEvent: {fileID: 11400000, guid: a592dfa4dfbec4bc1bda8774ce7abc6b, type: 2}
   OnInvestigateEvent: {fileID: 11400000, guid: 50d5aeb19324c47eabb0468278f35504, type: 2}
   OnAmazeEvent: {fileID: 11400000, guid: 400d2d67b01db4b799df1fe4b09cb70f, type: 2}
+  isInvestigating: 0
 --- !u!114 &1976142869652071405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -499,3 +423,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23d19cf5afb1b48518c57873018bf1f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1853624290024662579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8470116972755365890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d63d508ec6f840959a5a7462d15170d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Events:
+  - Event: {fileID: 11400000, guid: a592dfa4dfbec4bc1bda8774ce7abc6b, type: 2}
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 376835233934275067}
+          m_TargetAssemblyTypeName: Spinner, Assembly-CSharp
+          m_MethodName: Spin
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
