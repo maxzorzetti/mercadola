@@ -7017,14 +7017,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4099692778605332384, guid: 20951526e575f4635b6ff5584d6243d2, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -1347312562, guid: ec5c2e172e94f6a408a12e251dc6567c, type: 3}
-    - target: {fileID: 4099692778605332384, guid: 20951526e575f4635b6ff5584d6243d2, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 2100000, guid: 6fc5796f064d56649bbecd7b58572772, type: 2}
     - target: {fileID: 4377995550554105951, guid: 20951526e575f4635b6ff5584d6243d2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -7048,22 +7040,6 @@ PrefabInstance:
     - target: {fileID: 4377995550554105951, guid: 20951526e575f4635b6ff5584d6243d2, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4684765656408406454, guid: 20951526e575f4635b6ff5584d6243d2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4684765656408406454, guid: 20951526e575f4635b6ff5584d6243d2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7010966641656108808, guid: 20951526e575f4635b6ff5584d6243d2, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7010966641656108808, guid: 20951526e575f4635b6ff5584d6243d2, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 210
       objectReference: {fileID: 0}
     - target: {fileID: 7655539975371042248, guid: 20951526e575f4635b6ff5584d6243d2, type: 3}
       propertyPath: m_Pivot.x
@@ -7145,26 +7121,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8674873901533700361, guid: 20951526e575f4635b6ff5584d6243d2, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 8674873901533700361, guid: 20951526e575f4635b6ff5584d6243d2, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 8674873901533700361, guid: 20951526e575f4635b6ff5584d6243d2, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 107
-      objectReference: {fileID: 0}
-    - target: {fileID: 8674873901533700361, guid: 20951526e575f4635b6ff5584d6243d2, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 8802444763219624649, guid: 20951526e575f4635b6ff5584d6243d2, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 3c34f070e49b3cb4a9315042544982a9, type: 2}
     - target: {fileID: 9038954917744519726, guid: 20951526e575f4635b6ff5584d6243d2, type: 3}
       propertyPath: m_Name
       value: DialogueBox

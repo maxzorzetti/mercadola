@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEditor.Animations;
 using UnityEngine;
 
 [Serializable]
@@ -6,6 +7,8 @@ using UnityEngine;
 public class Dialogue : ScriptableObject 
 {
 	public string speaker;
+	
+	public AnimatorController portrait;
 
 	public Speech[] speeches;
 

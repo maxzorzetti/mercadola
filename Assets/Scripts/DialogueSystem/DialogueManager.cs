@@ -40,9 +40,10 @@ public class DialogueManager : MonoBehaviour {
 		if (IsDialogueOngoing) return;
 		CurrentDialogue = dialogue;
 		
+		leftPortraitAnimator.runtimeAnimatorController = dialogue.portrait;
 		dialogueBoxAnimator.SetBool("IsOpen", true);
 
-		nameText.text = dialogue.name;
+		nameText.text = dialogue.speaker;
 
 		sentences.Clear();
 

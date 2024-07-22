@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: dialogue
+      value: 
+      objectReference: {fileID: 11400000, guid: 421c847530d034631a18347c5b3817aa, type: 2}
+    - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
       propertyPath: DialogueEvent
       value: 
       objectReference: {fileID: 11400000, guid: 79b53eade7f864746871a2ccd301ec8e, type: 2}
@@ -243,7 +247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8470116972755365890, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
       propertyPath: m_Name
-      value: Teteu Variant
+      value: Teteu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
