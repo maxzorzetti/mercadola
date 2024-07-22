@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d8bd36fecf1721541b402fa93a7561cc
+guid: ffc01d93a1123124c96da41f55b8de6d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -45,7 +45,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MiniJota-Sheet_0
+      name: MiniFlin-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 222f0f458cfcb3d4d814b7cd80774570
-      internalID: -938500845
+      spriteID: dfc4a650a96228e438ccb4f875194a93
+      internalID: -319339325
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniJota-Sheet_1
+      name: MiniFlin-Sheet_1
       rect:
         serializedVersion: 2
         x: 40
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2eee7ab632126154aaf374e9c10c8afa
-      internalID: 578347903
+      spriteID: d95903ed964d8dc428843993d379a693
+      internalID: 1519536151
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniJota-Sheet_2
+      name: MiniFlin-Sheet_2
       rect:
         serializedVersion: 2
         x: 80
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97b0dd8f1f33d44418c9b4429bd76df3
-      internalID: -953365192
+      spriteID: 2ab47bf9b90fae74a9a998e24d6726bb
+      internalID: -514169697
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniJota-Sheet_3
+      name: MiniFlin-Sheet_3
       rect:
         serializedVersion: 2
         x: 120
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f4533d4aa7155d40869e8b2a4efb46a
-      internalID: -1017705853
+      spriteID: caadf39b6a269914eaeeb674c9a06e09
+      internalID: 516516944
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniJota-Sheet_4
+      name: MiniFlin-Sheet_4
       rect:
         serializedVersion: 2
         x: 160
@@ -195,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5175ffd324f540142b4de0368ed94fa9
-      internalID: -759448407
+      spriteID: 026f6a6517e16a7448865516784c5284
+      internalID: -491141438
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniJota-Sheet_5
+      name: MiniFlin-Sheet_5
       rect:
         serializedVersion: 2
         x: 200
@@ -216,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6b7f88e3208b814aaa5cfe2f8eb2d0f
-      internalID: -357359052
+      spriteID: ed963251c27deb242b62fa76f67ea3a9
+      internalID: -1420159489
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniJota-Sheet_6
+      name: MiniFlin-Sheet_6
       rect:
         serializedVersion: 2
         x: 240
@@ -237,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 340ebbf21505a71429b1637ca7fc7df3
-      internalID: 410787782
+      spriteID: 8e6f5e8b0d75fc745aee5cc3806e7a5e
+      internalID: 1002350193
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniJota-Sheet_7
+      name: MiniFlin-Sheet_7
       rect:
         serializedVersion: 2
         x: 280
@@ -258,8 +258,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c69d0954bd424d944bd79d751c4695ba
-      internalID: -834256574
+      spriteID: 8fc960e153e8fda409e51f094e1ec78b
+      internalID: 648587617
       vertices: []
       indices: 
       edges: []
@@ -275,14 +275,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      MiniJota-Sheet_0: -938500845
-      MiniJota-Sheet_1: 578347903
-      MiniJota-Sheet_2: -953365192
-      MiniJota-Sheet_3: -1017705853
-      MiniJota-Sheet_4: -759448407
-      MiniJota-Sheet_5: -357359052
-      MiniJota-Sheet_6: 410787782
-      MiniJota-Sheet_7: -834256574
+      MiniFlin-Sheet_0: -319339325
+      MiniFlin-Sheet_1: 1519536151
+      MiniFlin-Sheet_2: -514169697
+      MiniFlin-Sheet_3: 516516944
+      MiniFlin-Sheet_4: -491141438
+      MiniFlin-Sheet_5: -1420159489
+      MiniFlin-Sheet_6: 1002350193
+      MiniFlin-Sheet_7: 648587617
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

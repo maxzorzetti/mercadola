@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TeteuPortraitIdle
+  m_Name: JotaPortraitTalking
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,13 +21,19 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -132807548, guid: ce24d2d8d03f7244a9fe2f3aa442f859, type: 3}
+      value: {fileID: -1347312562, guid: ec5c2e172e94f6a408a12e251dc6567c, type: 3}
+    - time: 0.083333336
+      value: {fileID: -1285965054, guid: ec5c2e172e94f6a408a12e251dc6567c, type: 3}
+    - time: 0.16666667
+      value: {fileID: 1734508369, guid: ec5c2e172e94f6a408a12e251dc6567c, type: 3}
+    - time: 0.25
+      value: {fileID: -994154240, guid: ec5c2e172e94f6a408a12e251dc6567c, type: 3}
     attribute: m_Sprite
     path: 
     classID: 114
     script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
     flags: 2
-  m_SampleRate: 60
+  m_SampleRate: 12
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -44,13 +50,16 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -132807548, guid: ce24d2d8d03f7244a9fe2f3aa442f859, type: 3}
+    - {fileID: -1347312562, guid: ec5c2e172e94f6a408a12e251dc6567c, type: 3}
+    - {fileID: -1285965054, guid: ec5c2e172e94f6a408a12e251dc6567c, type: 3}
+    - {fileID: 1734508369, guid: ec5c2e172e94f6a408a12e251dc6567c, type: 3}
+    - {fileID: -994154240, guid: ec5c2e172e94f6a408a12e251dc6567c, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.016666668
+    m_StopTime: 0.33333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

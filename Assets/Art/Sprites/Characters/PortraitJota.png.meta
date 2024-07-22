@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ce24d2d8d03f7244a9fe2f3aa442f859
+guid: ec5c2e172e94f6a408a12e251dc6567c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TeteuPortrait-Sheet_0
+      name: PortraitJota_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8025d50b6ade8f246a6486c941e7da93
-      internalID: -132807548
+      spriteID: 7a489a909536d96428be33da61cbc907
+      internalID: -1347312562
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TeteuPortrait-Sheet_1
+      name: PortraitJota_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 80
         y: 0
-        width: 64
-        height: 64
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4710139641c617448b10b345976b9415
-      internalID: -384108143
+      spriteID: 725e01bd1d6ab054d8dc55841ec6fbe3
+      internalID: -1285965054
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TeteuPortrait-Sheet_2
+      name: PortraitJota_2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 160
         y: 0
-        width: 64
-        height: 64
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1696c8a8210f6f64ebd1dcdb92f8b48c
-      internalID: 42209856
+      spriteID: b5c5bb1bbd7063c4096df1f054dbb564
+      internalID: 1734508369
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TeteuPortrait-Sheet_3
+      name: PortraitJota_3
       rect:
         serializedVersion: 2
-        x: 192
+        x: 240
         y: 0
-        width: 64
-        height: 64
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,8 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c88e2dce5751cf44b040a83dc8b5357
-      internalID: 821440338
+      spriteID: 4ffca15753b867d49b585f404d4f36db
+      internalID: -994154240
       vertices: []
       indices: 
       edges: []
@@ -191,10 +191,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TeteuPortrait-Sheet_0: -132807548
-      TeteuPortrait-Sheet_1: -384108143
-      TeteuPortrait-Sheet_2: 42209856
-      TeteuPortrait-Sheet_3: 821440338
+      PortraitJota_0: -1347312562
+      PortraitJota_1: -1285965054
+      PortraitJota_2: 1734508369
+      PortraitJota_3: -994154240
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

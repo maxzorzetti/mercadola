@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d8bd36fecf1721541b402fa93a7561cc
+guid: 24ffa8881d49d8b42b069fd5b032826b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -45,7 +45,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MiniJota-Sheet_0
+      name: TeteuPortrait_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 40
-        height: 40
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,41 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 222f0f458cfcb3d4d814b7cd80774570
-      internalID: -938500845
+      spriteID: f0f52ef2def929c4db3a06db6cc51c57
+      internalID: 1450345001
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniJota-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 0
-        width: 40
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2eee7ab632126154aaf374e9c10c8afa
-      internalID: 578347903
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MiniJota-Sheet_2
+      name: TeteuPortrait_1
       rect:
         serializedVersion: 2
         x: 80
         y: 0
-        width: 40
-        height: 40
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,41 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97b0dd8f1f33d44418c9b4429bd76df3
-      internalID: -953365192
+      spriteID: 17a6a4135f7b0d94696a14597fe38730
+      internalID: -564625839
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniJota-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 0
-        width: 40
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7f4533d4aa7155d40869e8b2a4efb46a
-      internalID: -1017705853
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MiniJota-Sheet_4
+      name: TeteuPortrait_2
       rect:
         serializedVersion: 2
         x: 160
         y: 0
-        width: 40
-        height: 40
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,41 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5175ffd324f540142b4de0368ed94fa9
-      internalID: -759448407
+      spriteID: 3950caf1903484845bec6b1c65330e48
+      internalID: 815870433
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MiniJota-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 200
-        y: 0
-        width: 40
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a6b7f88e3208b814aaa5cfe2f8eb2d0f
-      internalID: -357359052
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MiniJota-Sheet_6
+      name: TeteuPortrait_3
       rect:
         serializedVersion: 2
         x: 240
         y: 0
-        width: 40
-        height: 40
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,29 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 340ebbf21505a71429b1637ca7fc7df3
-      internalID: 410787782
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MiniJota-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 280
-        y: 0
-        width: 40
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c69d0954bd424d944bd79d751c4695ba
-      internalID: -834256574
+      spriteID: 4e1aa23f8481a804f8a4cdd7a6424b2c
+      internalID: -1904786003
       vertices: []
       indices: 
       edges: []
@@ -275,14 +191,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      MiniJota-Sheet_0: -938500845
-      MiniJota-Sheet_1: 578347903
-      MiniJota-Sheet_2: -953365192
-      MiniJota-Sheet_3: -1017705853
-      MiniJota-Sheet_4: -759448407
-      MiniJota-Sheet_5: -357359052
-      MiniJota-Sheet_6: 410787782
-      MiniJota-Sheet_7: -834256574
+      TeteuPortrait_0: 1450345001
+      TeteuPortrait_1: -564625839
+      TeteuPortrait_2: 815870433
+      TeteuPortrait_3: -1904786003
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
