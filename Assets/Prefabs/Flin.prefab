@@ -9,16 +9,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: dialogue
+      value: 
+      objectReference: {fileID: 11400000, guid: 4927ed791db134f79b7b710bd1813990, type: 2}
+    - target: {fileID: 3980373008485266153, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
       propertyPath: dialogue.name
       value: Flinho
       objectReference: {fileID: 0}
+    - target: {fileID: 5007131058585548457, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: Greetings
+      value: "Eai, parceir\xE3o?"
+      objectReference: {fileID: 0}
     - target: {fileID: 5877137506356213731, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5877137506356213731, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 5877137506356213731, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
       propertyPath: m_LocalPosition.z
@@ -30,15 +38,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5877137506356213731, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5877137506356213731, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5877137506356213731, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5877137506356213731, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

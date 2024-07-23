@@ -5,17 +5,22 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewVoice", menuName = "Mercadola/Dialogue/New Voice")]
 public class DialogueVoice : ScriptableObject
 {
-    [SerializeField] AudioClip[] typingSoundClips;
+    [SerializeField] public AudioClip[] normalSoundClips;
+    [SerializeField] public AudioClip[] hypedSoundClips;
     [Range(0, 1)]
-    [SerializeField] float volume = 1.0f;
-    [SerializeField] bool truncateSoundClip;
+    [SerializeField]
+    public float volume = 1.0f;
+    [SerializeField] public bool truncateSoundClip;
     
     [Header("Voice Modifiers")]
     
     [Range(1, 7)]
-    [SerializeField] int frequency = 3;
+    [SerializeField]
+    public int frequency = 3;
     [Range(-3, 3)]
-    [SerializeField] float minPitch = 0.5f;
+    [SerializeField]
+    public float minPitch = 0.5f;
     [Range(-3, 3)]
-    [SerializeField] float maxPitch = 3f;
+    [SerializeField]
+    public float maxPitch = 3f;
 }

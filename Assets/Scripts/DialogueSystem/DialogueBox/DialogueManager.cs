@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -7,20 +8,24 @@ using TMPro;
 public class DialogueManager : MonoBehaviour {
 
 	public int maxSentenceLength = 400;
+	public int baseVoiceHash = 1000;
 	public DialogueEvent OnDialogueEvent;
 
+	// Visuals
 	public TextMeshProUGUI nameText;
 	public TextMeshProUGUI dialogueText;
 	public Animator dialogueBoxAnimator;
 	public Animator leftPortraitAnimator;
-
-	Queue<(string sentence, Dialogue.Speech speech)> sentences;
 	
+	// Sound
+	DialogueSpeaker speaker;
+
+	// Dialogue logic
 	[HideInInspector] public Dialogue CurrentDialogue;
 	public bool IsDialogueOngoing => CurrentDialogue != null;
+	Queue<(string sentence, Dialogue.Speech speech)> sentences;
 	bool isTyping => typingTask != null && !typingTask.IsCompleted; 
 	string currentSentence;
-	
 	Task typingTask;
 	CancellationTokenSource typingCTS;
 	
@@ -29,6 +34,10 @@ public class DialogueManager : MonoBehaviour {
 		sentences = new Queue<(string sentence, Dialogue.Speech speech)>();
 		CurrentDialogue = null;
 		
+		speaker = TryGetComponent<AudioSource>(out var component) 
+			? new DialogueSpeaker(component, baseVoiceHash) 
+			: new DialogueSpeaker(gameObject.AddComponent<AudioSource>(), baseVoiceHash);
+
 		if (OnDialogueEvent == null)
 		{
 			Debug.LogWarning($"DialogueManager '{name}' is missing an OnDialogueEvent event");
@@ -71,7 +80,8 @@ public class DialogueManager : MonoBehaviour {
 
 		var (sentence, speech) = sentences.Dequeue();
 		typingCTS = new CancellationTokenSource();
-		typingTask = TypeSentence(sentence, speech.speed, speech.emotion, speech.autoSkip, typingCTS);
+		
+		typingTask = TypeSpeech(sentence, speech, CurrentDialogue.voice, typingCTS);
 	}
 
 	void EnqueueDialogue(Dialogue dialogue)
@@ -100,23 +110,36 @@ public class DialogueManager : MonoBehaviour {
 		}
 	}
 
-	async Task TypeSentence(string sentence, float speed, Dialogue.Emotion emotion, bool shouldAutoSkip, CancellationTokenSource cts)
+	async Task TypeSpeech(string sentence, Dialogue.Speech speech, DialogueVoice voice, CancellationTokenSource cts)
 	{
 		currentSentence = sentence;
 		dialogueText.text = "";
 		leftPortraitAnimator.SetBool("IsTalking", true);
-		foreach (var letter in sentence.ToCharArray())
+
+		if (speech.emotion == Dialogue.Emotion.Hyped)
+			GetComponent<Spinner>().Spin();
+		else 
+			GetComponent<Spinner>().StopSpin();
+		
+		// Loop through sentence chars
+		foreach (var (letter, i) in sentence.Select((value, i) => (value, i)))
 		{
-			var waitTime = 1000 / speed;
+			if (voice != null && !char.IsWhiteSpace(letter) && i % voice.frequency == 0)
+			{
+				speaker.PlayLetter(letter, speech.emotion, voice);
+			}
+			
+			var waitTime = 1000 / speech.speed;
 			await Task.Delay((int)waitTime);
 			if (cts.Token.IsCancellationRequested) break;
 
-			dialogueText.text += letter;
+			dialogueText.text += letter;		
 		}
+
 		leftPortraitAnimator.SetBool("IsTalking", false);
 		cts.Token.ThrowIfCancellationRequested();
 		
-		if (shouldAutoSkip)
+		if (speech.autoSkip)
 		{
 			typingTask = null;
 			DisplayNextSentence();

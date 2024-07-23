@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speaker: Teteu
   portrait: {fileID: 9100000, guid: c21b803bd33a0d7439c1450b91b0eec9, type: 2}
+  voice: {fileID: 0}
   speeches:
   - speed: 30
     emotion: 0
@@ -23,6 +24,13 @@ MonoBehaviour:
     emotion: 0
     autoSkip: 0
     sentence: "Voc\xEA disse burrito?!\n"
+  - speed: 200
+    emotion: 0
+    autoSkip: 0
+    sentence: "Ah, amigo, se tem uma coisa que eu amo de verdade \xE9 um burrito
+      perfeito, daqueles que enchem os olhos e a barriga! Imagina s\xF3: uma tortilla
+      de trigo bem macia e levemente tostadinha, toda recheada com carne de frango
+      grelhada e cheia de temperinhos mexicanos que d\xE3o aquele sabor \xFAnico.\n"
   - speed: 200
     emotion: 1
     autoSkip: 0

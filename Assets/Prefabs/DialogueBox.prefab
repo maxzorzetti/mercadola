@@ -698,7 +698,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 16
   m_fontSizeMax: 26
-  m_fontStyle: 0
+  m_fontStyle: 32
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -1075,6 +1075,7 @@ GameObject:
   - component: {fileID: 4672001222682015325}
   - component: {fileID: 4974210624117314276}
   - component: {fileID: 4186833764882383392}
+  - component: {fileID: 4832594987355695979}
   m_Layer: 5
   m_Name: DialogueBox
   m_TagString: Untagged
@@ -1150,6 +1151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSentenceLength: 400
+  baseVoiceHash: 1000
   OnDialogueEvent: {fileID: 11400000, guid: d8a92973881d642458882158dac3d624, type: 2}
   nameText: {fileID: 7565170039912724737}
   dialogueText: {fileID: 857450251393303418}
@@ -1238,6 +1240,46 @@ MonoBehaviour:
   m_DefaultActionMap: UI
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &4832594987355695979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9038954917744519726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c8bcbe98d264919bc7c1b9cf41b84de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpinTime: 100
+  SpinOnStart: 0
+  AutoSpin: 0
+  SpinEasing:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  transformTarget: {fileID: 7655539975371042248}
 --- !u!1 &9043776430067831283
 GameObject:
   m_ObjectHideFlags: 0

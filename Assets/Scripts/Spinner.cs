@@ -14,13 +14,18 @@ public class Spinner : MonoBehaviour
 
     readonly AnimationCurve linearCurve = AnimationCurve.Linear(0, 0, 1, 1);
 
-    Transform spriteTransform;
-    
+    [SerializeField] public Transform transformTarget;
+
     void Start()
     {
         isSpinning = SpinOnStart;
         spinProgression = new Progression();
-        spriteTransform = GetComponentInChildren<SpriteRenderer>().transform;
+
+        if (transformTarget == null)
+        {
+            var spriteTransform = GetComponentInChildren<SpriteRenderer>().transform;
+            transformTarget = spriteTransform != null ? spriteTransform : transform; 
+        }
     }
 
     public void Spin() => isSpinning = true;
@@ -51,7 +56,7 @@ public class Spinner : MonoBehaviour
             : SpinEasing.Evaluate(spinProgression.ProgressRate) * 360;
         
         // Apply rotation
-        spriteTransform.rotation = Quaternion.Euler(0, 0, -spin);
+        transformTarget.rotation = Quaternion.Euler(0, 0, -spin);
             
         // Continue the spin and check if it's done
         spinProgression.Advance(Time.deltaTime * spinSpeed);
@@ -69,6 +74,6 @@ public class Spinner : MonoBehaviour
     public void ResetSpin()
     {
         spinProgression.Reset();
-        spriteTransform.rotation = Quaternion.Euler( 0, 0, 0);
+        transformTarget.rotation = Quaternion.Euler( 0, 0, 0);
     }
 }

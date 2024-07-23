@@ -3212,10 +3212,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2032960107}
     m_Modifications:
-    - target: {fileID: 403924999183751439, guid: 6dee0b506eebfc241a94c595dde65023, type: 3}
-      propertyPath: Greetings
-      value: "Eai Parceir\xE3o"
-      objectReference: {fileID: 0}
     - target: {fileID: 1254298550159988805, guid: 6dee0b506eebfc241a94c595dde65023, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.5

@@ -12,14 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe1c40523735a4db48f6355adbc91e79, type: 3}
   m_Name: ViviVoice
   m_EditorClassIdentifier: 
-  typingSoundClips:
+  normalSoundClips:
   - {fileID: 8300000, guid: 6cc8fd88d1197924b96046dbb9abb7a1, type: 3}
   - {fileID: 8300000, guid: 697795fd95a89074b93a316a4e6afce4, type: 3}
   - {fileID: 8300000, guid: 8ca272c91b57e764ab56a0772e14f6a9, type: 3}
   - {fileID: 8300000, guid: 30f7cfc12ecdd9b4ab6faaf7374d5255, type: 3}
   - {fileID: 8300000, guid: f687f72e2e015b242a7224bed900980a, type: 3}
+  hypedSoundClips:
+  - {fileID: 8300000, guid: 5f1bf33eb1e6441a3aeebec09c630061, type: 3}
+  - {fileID: 8300000, guid: 86919cb12b8fa854bba20b14c42fea7d, type: 3}
+  - {fileID: 8300000, guid: bed9d4d4e750d4d48b300304628da84d, type: 3}
+  - {fileID: 8300000, guid: 3349f0f9bad6b114c89c45b577710a5d, type: 3}
+  - {fileID: 8300000, guid: 1193704ee5bb96044b393eafb2976a18, type: 3}
   volume: 1
   truncateSoundClip: 0
-  frequency: 3
-  minPitch: 0.5
+  frequency: 5
+  minPitch: 1.23
   maxPitch: 3
