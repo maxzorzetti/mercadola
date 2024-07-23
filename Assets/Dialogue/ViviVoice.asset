@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1c40523735a4db48f6355adbc91e79, type: 3}
+  m_Name: ViviVoice
+  m_EditorClassIdentifier: 
+  typingSoundClips:
+  - {fileID: 8300000, guid: 6cc8fd88d1197924b96046dbb9abb7a1, type: 3}
+  - {fileID: 8300000, guid: 697795fd95a89074b93a316a4e6afce4, type: 3}
+  - {fileID: 8300000, guid: 8ca272c91b57e764ab56a0772e14f6a9, type: 3}
+  - {fileID: 8300000, guid: 30f7cfc12ecdd9b4ab6faaf7374d5255, type: 3}
+  - {fileID: 8300000, guid: f687f72e2e015b242a7224bed900980a, type: 3}
+  volume: 1
+  truncateSoundClip: 0
+  frequency: 3
+  minPitch: 0.5
+  maxPitch: 3

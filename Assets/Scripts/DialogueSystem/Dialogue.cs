@@ -3,7 +3,7 @@ using UnityEditor.Animations;
 using UnityEngine;
 
 [Serializable]
-[CreateAssetMenu(fileName = "NewDialogue", menuName = "Mercadola/New Dialogue")]
+[CreateAssetMenu(fileName = "NewDialogue", menuName = "Mercadola/Dialogue/New Dialogue")]
 public class Dialogue : ScriptableObject 
 {
 	public string speaker;
