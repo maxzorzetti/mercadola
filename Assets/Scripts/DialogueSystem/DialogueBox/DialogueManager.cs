@@ -121,7 +121,13 @@ public class DialogueManager : MonoBehaviour {
 		leftPortraitAnimator.SetBool("IsTalking", true);
 
 		if (speech.emotion == Dialogue.Emotion.Hyped)
-			GetComponent<Spinner>().Spin();
+		{
+			var spinner = GetComponent<Spinner>();
+			var baseSpinTime = 400f;
+			var speedMod = speech.speed / 70;
+			spinner.SpinTime = baseSpinTime / speedMod;
+			spinner.Spin();
+		}
 		else 
 			GetComponent<Spinner>().StopSpin();
 		

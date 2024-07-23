@@ -64,7 +64,7 @@ MonoBehaviour:
       VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR
       UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!!
       VAMOS JOGAR UM TFT!!! '
-  - speed: 100
+  - speed: 150
     emotion: 1
     autoSkip: 1
     unskippable: 1
@@ -74,7 +74,7 @@ MonoBehaviour:
       VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR
       UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!!
       VAMOS JOGAR UM TFT!!! '
-  - speed: 200
+  - speed: 241
     emotion: 1
     autoSkip: 1
     unskippable: 1
