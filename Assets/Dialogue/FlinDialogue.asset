@@ -57,7 +57,7 @@ MonoBehaviour:
   - speed: 100
     emotion: 0
     autoSkip: 1
-    unskippable: 1
+    unskippable: 0
     sentence: 'VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!!
       VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR
       UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!!
