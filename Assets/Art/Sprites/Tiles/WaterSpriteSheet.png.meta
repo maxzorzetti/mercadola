@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 55957d0bffd90d147b60480cd0d2222f
+guid: 7d9dea01402d6ce4d87bc66154bbbf86
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,11 +97,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BGSpriteSheet-Floors_0
+      name: WaterSpriteSheet_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
+        y: 0
         width: 32
         height: 32
       alignment: 0
@@ -111,18 +111,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf7a32a0fe645d44b8619313e648fe05
-      internalID: 993219378
+      spriteID: 70db6ae8cb28bdb4ab6ed2a43574d3c6
+      internalID: -336075554
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BGSpriteSheet-Floors_1
+      name: WaterSpriteSheet_1
       rect:
         serializedVersion: 2
         x: 32
-        y: 32
+        y: 0
         width: 32
         height: 32
       alignment: 0
@@ -132,18 +132,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f4214a5231cb304d9e92ce304be6f81
-      internalID: 84469543
+      spriteID: af486585fd6ffeb4c8a63f546fda5acf
+      internalID: -2063984713
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BGSpriteSheet-Floors_2
+      name: WaterSpriteSheet_2
       rect:
         serializedVersion: 2
         x: 64
-        y: 32
+        y: 0
         width: 32
         height: 32
       alignment: 0
@@ -153,18 +153,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f06081bf1f776964db3f635f71bce65d
-      internalID: -1979936804
+      spriteID: a3dc27cd98d7efe4caaad05025c3c36b
+      internalID: 786464805
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BGSpriteSheet-Floors_3
+      name: WaterSpriteSheet_3
       rect:
         serializedVersion: 2
         x: 96
-        y: 32
+        y: 0
         width: 32
         height: 32
       alignment: 0
@@ -174,18 +174,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0dbb61428704b74d9d2a08624c2db03
-      internalID: 1454991517
+      spriteID: 358f5c8fd61293144b323a1153f84c46
+      internalID: -10417573
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BGSpriteSheet-Floors_4
+      name: WaterSpriteSheet_4
       rect:
         serializedVersion: 2
         x: 128
-        y: 32
+        y: 0
         width: 32
         height: 32
       alignment: 0
@@ -195,18 +195,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aba5fc2ee68a25f4e801213d5b4620a7
-      internalID: 881001423
+      spriteID: 132bfcd3b05a74f4fa92b0f7be56d8d1
+      internalID: 1586404854
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BGSpriteSheet-Floors_5
+      name: WaterSpriteSheet_5
       rect:
         serializedVersion: 2
         x: 160
-        y: 32
+        y: 0
         width: 32
         height: 32
       alignment: 0
@@ -216,59 +216,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b60e9d19cb05804db818a308a445b1d
-      internalID: 311155273
+      spriteID: a5fa7a4a9a5676344b98f943d40ccf66
+      internalID: 930152834
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BGSpriteSheet-Floors_6
+      name: WaterSpriteSheet_6
       rect:
         serializedVersion: 2
         x: 192
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2fc2ec456511b4f4d8601db1c3a965d8
-      internalID: 1260026321
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BGSpriteSheet-Floors_7
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 448c6e0989a31334d83d88383e62df6d
-      internalID: -548465442
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BGSpriteSheet-Floors_8
-      rect:
-        serializedVersion: 2
-        x: 0
         y: 0
         width: 32
         height: 32
@@ -279,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a203801df1bc2434f8dbf03f5c232dac
-      internalID: 1970133467
+      spriteID: 7914103bc5acbbd4cb90eecfc3a82eb6
+      internalID: 643008375
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BGSpriteSheet-Floors_9
+      name: WaterSpriteSheet_7
       rect:
         serializedVersion: 2
         x: 224
@@ -300,8 +258,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab0256336805319408e5c09902f529ee
-      internalID: -500122956
+      spriteID: e98dfa37ba3c0e245844813369e86717
+      internalID: -1427594038
       vertices: []
       indices: 
       edges: []
@@ -317,16 +275,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BGSpriteSheet-Floors_0: 993219378
-      BGSpriteSheet-Floors_1: 84469543
-      BGSpriteSheet-Floors_2: -1979936804
-      BGSpriteSheet-Floors_3: 1454991517
-      BGSpriteSheet-Floors_4: 881001423
-      BGSpriteSheet-Floors_5: 311155273
-      BGSpriteSheet-Floors_6: 1260026321
-      BGSpriteSheet-Floors_7: -548465442
-      BGSpriteSheet-Floors_8: 1970133467
-      BGSpriteSheet-Floors_9: -500122956
+      WaterSpriteSheet_0: -336075554
+      WaterSpriteSheet_1: -2063984713
+      WaterSpriteSheet_2: 786464805
+      WaterSpriteSheet_3: -10417573
+      WaterSpriteSheet_4: 1586404854
+      WaterSpriteSheet_5: 930152834
+      WaterSpriteSheet_6: 643008375
+      WaterSpriteSheet_7: -1427594038
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

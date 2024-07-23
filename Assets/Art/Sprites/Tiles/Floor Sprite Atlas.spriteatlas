@@ -82,6 +82,7 @@ SpriteAtlas:
     - d5a89e265d6fcce4da11675c71239448: -167173959
     - d5a89e265d6fcce4da11675c71239448: -84712957
     - d5a89e265d6fcce4da11675c71239448: 270042291
+    - 55957d0bffd90d147b60480cd0d2222f: -500122956
     - 55957d0bffd90d147b60480cd0d2222f: 1970133467
     - 55957d0bffd90d147b60480cd0d2222f: -548465442
     - 55957d0bffd90d147b60480cd0d2222f: 1260026321
@@ -172,6 +173,7 @@ SpriteAtlas:
   - {fileID: -167173959, guid: d5a89e265d6fcce4da11675c71239448, type: 3}
   - {fileID: -84712957, guid: d5a89e265d6fcce4da11675c71239448, type: 3}
   - {fileID: 270042291, guid: d5a89e265d6fcce4da11675c71239448, type: 3}
+  - {fileID: -500122956, guid: 55957d0bffd90d147b60480cd0d2222f, type: 3}
   - {fileID: 1970133467, guid: 55957d0bffd90d147b60480cd0d2222f, type: 3}
   - {fileID: -548465442, guid: 55957d0bffd90d147b60480cd0d2222f, type: 3}
   - {fileID: 1260026321, guid: 55957d0bffd90d147b60480cd0d2222f, type: 3}
@@ -261,6 +263,7 @@ SpriteAtlas:
   - BGSpriteSheet-Details Floors_11
   - BGSpriteSheet-Details Floors_12
   - BGSpriteSheet-Details Floors_13
+  - BGSpriteSheet-Floors_9
   - BGSpriteSheet-Floors_8
   - BGSpriteSheet-Floors_7
   - BGSpriteSheet-Floors_6
