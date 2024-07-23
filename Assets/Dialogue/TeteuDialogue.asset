@@ -32,21 +32,21 @@ MonoBehaviour:
       de trigo bem macia e levemente tostadinha, toda recheada com carne de frango
       grelhada e cheia de temperinhos mexicanos que d\xE3o aquele sabor \xFAnico.\n"
   - speed: 200
-    emotion: 1
+    emotion: 0
     autoSkip: 0
     sentence: "Ah, amigo, se tem uma coisa que eu amo de verdade \xE9 um burrito
       perfeito, daqueles que enchem os olhos e a barriga! Imagina s\xF3: uma tortilla
       de trigo bem macia e levemente tostadinha, toda recheada com carne de frango
       grelhada e cheia de temperinhos mexicanos que d\xE3o aquele sabor \xFAnico.\n"
   - speed: 200
-    emotion: 1
+    emotion: 0
     autoSkip: 0
     sentence: "Claro, n\xE3o pode faltar o queijo cheddar derretido, aquele guacamole
       cremoso que \xE9 uma explos\xE3o de sabor, e o sour cream que \xE9 o toque
       refrescante que completa tudo. E a salsa de tomate fresquinha e picante, nem
       me fale!\n"
   - speed: 200
-    emotion: 1
+    emotion: 0
     autoSkip: 0
     sentence: "Finalizo com um pouco de alface crocante e coentro fresco picadinho
       para dar aquele toque final, sabe? \xC9 o burrito dos sonhos, meu amigo! Com
