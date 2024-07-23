@@ -86,7 +86,7 @@ MonoBehaviour:
   - speed: 1
     emotion: 0
     autoSkip: 0
-    sentence: ...
+    sentence: . . .
   - speed: 30
     emotion: 0
     autoSkip: 0

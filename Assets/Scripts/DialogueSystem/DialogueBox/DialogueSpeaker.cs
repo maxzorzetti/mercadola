@@ -1,4 +1,5 @@
 using System;
+using UnityEditor;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -6,6 +7,8 @@ public class DialogueSpeaker
 {
     AudioSource audioSource;
     int baseHash;
+    
+    const string hypeChars = "!#@";
     
     public DialogueSpeaker(AudioSource audioSource, int baseHash)
     {
@@ -30,10 +33,13 @@ public class DialogueSpeaker
 
     AudioClip DetermineLetterSound(char letter, DialogueVoice voice, Dialogue.Emotion emotion)
     {
-        var sounds = emotion switch
+        var sounds = (IsHypeChar(letter), emotion) switch
         {
-            Dialogue.Emotion.Normal => voice.normalSoundClips,
-            Dialogue.Emotion.Hyped => voice.hypedSoundClips.Length > 0 ? voice.hypedSoundClips : voice.normalSoundClips,
+            (true, _) => voice.hypedSoundClips.Length > 0 ? voice.hypedSoundClips // has hype clips 
+                : voice.normalSoundClips,
+            (false, Dialogue.Emotion.Hyped) => voice.hypedSoundClips.Length > 0 ? voice.hypedSoundClips // has hype clips
+                : voice.normalSoundClips,
+            (false, Dialogue.Emotion.Normal) => voice.normalSoundClips,
             _ => voice.normalSoundClips
         };
 
@@ -46,7 +52,7 @@ public class DialogueSpeaker
         
         // Play with pitch
         var basePitch = Random.Range(voice.minPitch, voice.maxPitch);
-        var hypeCharMod = char.IsUpper(letter) || letter == '!' ? 0.15f : 0f;
+        var hypeCharMod = IsHypeChar(letter) ? 0.15f : 0f;
         var hypeEmotionMod = emotion == Dialogue.Emotion.Hyped ? 0.15f : 0f;
         var pitchMod = 1 + hypeCharMod + hypeEmotionMod;
         
@@ -60,4 +66,6 @@ public class DialogueSpeaker
     {
         return (baseHash << 5) + baseHash + letter;
     }
+
+    static bool IsHypeChar(char letter) => char.IsUpper(letter) || hypeChars.Contains(letter);
 }

@@ -27,5 +27,5 @@ MonoBehaviour:
   volume: 1
   truncateSoundClip: 0
   frequency: 5
-  minPitch: 1.23
+  minPitch: 1.2
   maxPitch: 3
