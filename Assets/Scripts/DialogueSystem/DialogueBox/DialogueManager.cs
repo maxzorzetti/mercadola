@@ -24,8 +24,9 @@ public class DialogueManager : MonoBehaviour {
 	[HideInInspector] public Dialogue CurrentDialogue;
 	public bool IsDialogueOngoing => CurrentDialogue != null;
 	Queue<(string sentence, Dialogue.Speech speech)> sentences;
-	bool isTyping => typingTask != null && !typingTask.IsCompleted; 
+	bool isTyping => typingTask != null && !typingTask.IsCompleted;
 	string currentSentence;
+	Dialogue.Speech currentSpeech;
 	Task typingTask;
 	CancellationTokenSource typingCTS;
 	
@@ -71,8 +72,10 @@ public class DialogueManager : MonoBehaviour {
 			return;
 		}
 		
-		if (isTyping) 
+		if (isTyping)
 		{
+			if (currentSpeech.unskippable) return;
+			
 			typingCTS.Cancel();
 			dialogueText.text = currentSentence;
 			return;
@@ -113,6 +116,7 @@ public class DialogueManager : MonoBehaviour {
 	async Task TypeSpeech(string sentence, Dialogue.Speech speech, DialogueVoice voice, CancellationTokenSource cts)
 	{
 		currentSentence = sentence;
+		currentSpeech = speech;
 		dialogueText.text = "";
 		leftPortraitAnimator.SetBool("IsTalking", true);
 

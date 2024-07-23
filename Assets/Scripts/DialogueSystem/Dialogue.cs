@@ -21,6 +21,7 @@ public class Dialogue : ScriptableObject
 		public float speed = 30f;
 		public Emotion emotion = Emotion.Normal;
 		public bool autoSkip; 
+		public bool unskippable;
 			
 		[TextArea(5, 10)]
 		public string sentence;
