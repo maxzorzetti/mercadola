@@ -245,6 +245,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6455785435243501191, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2081745102, guid: 82a378e11f268804985129f8423a9637, type: 3}
+    - target: {fileID: 7844131376972801025, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f1eb0464f85a48043bcadb5702874b6d, type: 2}
     - target: {fileID: 8470116972755365890, guid: 17b3a1abd1681cc4e883b2a59ea4a1ce, type: 3}
       propertyPath: m_Name
       value: Teteu

@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2081745102, guid: 82a378e11f268804985129f8423a9637, type: 3}
+  m_Sprite: {fileID: 1562105794, guid: bf0fc17b5a1253b4ba4058dc43a6012f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,7 +95,7 @@ Animator:
   m_GameObject: {fileID: 6370887962536729847}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f1eb0464f85a48043bcadb5702874b6d, type: 2}
+  m_Controller: {fileID: 9100000, guid: aa5e7633dd03d4d4aadbf9c0cf0cb3e7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -309,6 +309,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  transformTarget: {fileID: 0}
 --- !u!114 &3980373008485266153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,7 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00ddd33eae28b5148a72170d47ccd942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 11400000, guid: 421c847530d034631a18347c5b3817aa, type: 2}
+  dialogue: {fileID: 11400000, guid: c1a033e2c9af0cd42abf26171a64bd8f, type: 2}
 --- !u!114 &6984574313365215725
 MonoBehaviour:
   m_ObjectHideFlags: 0
