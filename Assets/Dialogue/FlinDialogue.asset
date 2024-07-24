@@ -19,55 +19,65 @@ MonoBehaviour:
   - speed: 30
     emotion: 0
     autoSkip: 0
+    unskippable: 0
     sentence: "Bom dia, parceir\xE3o! Tudo bem com voc\xEA?"
   - speed: 30
     emotion: 0
     autoSkip: 0
+    unskippable: 0
     sentence: Vamos jogar um TFT?
   - speed: 30
     emotion: 0
     autoSkip: 0
+    unskippable: 0
     sentence: Vamos jogar um TFT?
   - speed: 30
     emotion: 0
     autoSkip: 0
+    unskippable: 0
     sentence: Vamos jogar um TFT?
   - speed: 30
     emotion: 0
     autoSkip: 0
+    unskippable: 0
     sentence: Vamos jogar um TFT! Vamos jogar um TFT!
   - speed: 30
     emotion: 0
     autoSkip: 0
+    unskippable: 0
     sentence: Vamos jogar um TFT! Vamos jogar um TFT! Vamos jogar um TFT! VAMOS JOGAR
       UM TFT! VAMOS JOGAR UM TFT! VAMOS JOGAR UM TFT!
   - speed: 100
     emotion: 0
     autoSkip: 0
+    unskippable: 0
     sentence: VAMOS JOGAR UM TFT! VAMOS JOGAR UM TFT! VAMOS JOGAR UM TFT! VAMOS JOGAR
       UM TFT! VAMOS JOGAR UM TFT! VAMOS JOGAR UM TFT! VAMOS JOGAR UM TFT! VAMOS JOGAR
       UM TFT!
   - speed: 100
     emotion: 0
     autoSkip: 1
+    unskippable: 0
     sentence: 'VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!!
       VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR
       UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!!
       VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR
       UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!!
       VAMOS JOGAR UM TFT!!! '
-  - speed: 100
+  - speed: 150
     emotion: 1
     autoSkip: 1
+    unskippable: 1
     sentence: 'VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!!
       VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR
       UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!!
       VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR
       UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!!
       VAMOS JOGAR UM TFT!!! '
-  - speed: 200
+  - speed: 241
     emotion: 1
     autoSkip: 1
+    unskippable: 1
     sentence: 'VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!!
       VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR
       UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!!
@@ -77,6 +87,7 @@ MonoBehaviour:
   - speed: 300
     emotion: 1
     autoSkip: 1
+    unskippable: 1
     sentence: 'VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!!
       VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR
       UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!! VAMOS JOGAR UM TFT!!!
@@ -86,8 +97,10 @@ MonoBehaviour:
   - speed: 1
     emotion: 0
     autoSkip: 0
+    unskippable: 1
     sentence: . . .
   - speed: 30
     emotion: 0
     autoSkip: 0
+    unskippable: 0
     sentence: Bora um aramzinho?

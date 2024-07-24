@@ -19,31 +19,37 @@ MonoBehaviour:
   - speed: 30
     emotion: 0
     autoSkip: 0
+    unskippable: 0
     sentence: "Ah, ent\xE3o quer dizer que voc\xEA conhece o movimento punk, \xE9?
       Voc\xEA j\xE1 sentiu a energia de um bom show de punk rock?\n"
   - speed: 30
     emotion: 0
     autoSkip: 0
+    unskippable: 0
     sentence: "Aquela adrenalina que corre nas veias quando o primeiro acorde de
       uma m\xFAsica punk explode nos seus ouvidos?"
-  - speed: 200
+  - speed: 100
     emotion: 0
     autoSkip: 0
+    unskippable: 0
     sentence: "Hmm, n\xE3o sei, n\xE3o parece que voc\xEA sabe o que \xE9 m\xFAsica
       boa de verdade. Aposto que voc\xEA s\xF3 escuta as mesmas m\xFAsicas sertanejas
       em loop ou deixa o r\xE1dio tocar qualquer coisa. Precisa expandir seus horizontes,
       meu amigo!"
-  - speed: 200
+  - speed: 100
     emotion: 0
     autoSkip: 0
+    unskippable: 0
     sentence: "Ah, e teve aquela vez que uma banda de punk conseguiu domar um le\xE3o
       feroz s\xF3 com a m\xFAsica. O le\xE3o virou f\xE3 n\xFAmero um e at\xE9 come\xE7ou
       a balan\xE7ar a cabe\xE7a no ritmo!\n"
-  - speed: 200
+  - speed: 150
     emotion: 0
     autoSkip: 0
+    unskippable: 0
     sentence: "\xC9 o poder do punk! C'MON, KIDS!!"
   - speed: 30
     emotion: 0
     autoSkip: 0
+    unskippable: 0
     sentence: O que seria do mundo sem um bom solo de guitarra, hein?
