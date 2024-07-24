@@ -16,6 +16,7 @@ public class DialogueManager : MonoBehaviour {
 	public TextMeshProUGUI dialogueText;
 	public Animator dialogueBoxAnimator;
 	public Animator leftPortraitAnimator;
+	public Animator CameraAnimator;
 	
 	// Sound
 	DialogueSpeaker speaker;
@@ -51,6 +52,7 @@ public class DialogueManager : MonoBehaviour {
 		
 		leftPortraitAnimator.runtimeAnimatorController = dialogue.portrait;
 		dialogueBoxAnimator.SetBool("IsOpen", true);
+		CameraAnimator.SetBool("Dialog", true);
 
 		nameText.text = dialogue.speaker;
 
@@ -149,6 +151,7 @@ public class DialogueManager : MonoBehaviour {
 	void EndDialogue()
 	{
 		dialogueBoxAnimator.SetBool("IsOpen", false);
+		CameraAnimator.SetBool("Dialog", false);
 		// When the animation finishes, it triggers the OnDialogueBoxClosed method below
 	}
 	

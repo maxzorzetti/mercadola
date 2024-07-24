@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speaker: Jota
   portrait: {fileID: 9100000, guid: 3c34f070e49b3cb4a9315042544982a9, type: 2}
-  voice: {fileID: 0}
+  voice: {fileID: 11400000, guid: 49779d3c9d5c9499bb2d4e883cb05f26, type: 2}
   speeches:
   - speed: 30
     emotion: 0

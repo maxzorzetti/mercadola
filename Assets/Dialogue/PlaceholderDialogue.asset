@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speaker: WIP Chan
   portrait: {fileID: 9100000, guid: e6dd5aa326330ae40bc48f44ecdba09a, type: 2}
-  voice: {fileID: 0}
+  voice: {fileID: 11400000, guid: 49779d3c9d5c9499bb2d4e883cb05f26, type: 2}
   speeches:
   - speed: 30
     emotion: 0

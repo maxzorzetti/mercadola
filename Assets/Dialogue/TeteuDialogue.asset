@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speaker: Teteu
   portrait: {fileID: 9100000, guid: c21b803bd33a0d7439c1450b91b0eec9, type: 2}
-  voice: {fileID: 0}
+  voice: {fileID: 11400000, guid: 49779d3c9d5c9499bb2d4e883cb05f26, type: 2}
   speeches:
   - speed: 30
     emotion: 0
