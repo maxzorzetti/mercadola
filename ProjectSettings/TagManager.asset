@@ -14,11 +14,11 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Character
+  - Items
+  - AnimatedTiles
+  - Map
+  - Minimap
   - 
   - 
   - 
@@ -41,6 +41,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Minimap
+    uniqueID: 1167478633
+    locked: 0
   - name: Background
     uniqueID: 2068362701
     locked: 0

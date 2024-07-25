@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6689471028754740994}
   - component: {fileID: 5200383302992848646}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,7 +66,7 @@ GameObject:
   - component: {fileID: 1625039904630809936}
   - component: {fileID: 4046517682654944156}
   - component: {fileID: 1137456731314936359}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BreadSpriteBorder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 7463104927121793367}
   - component: {fileID: 9218551482322147423}
   - component: {fileID: 2859609815473830613}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BreadSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 5910723403879278319}
   - component: {fileID: 6767371902147886822}
   - component: {fileID: 3695152554029827998}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bread
   m_TagString: item
   m_Icon: {fileID: 0}
