@@ -7,12 +7,12 @@ public class Scorer : MonoBehaviour
     [Range(1, 1000)]
     public int ScorePerBread = 100;
 
-    int score;
+    public int Score;
     
     // Start is called before the first frame update
     void Start()
     {
-        score = 0;
+        Score = 0;
         if (OnScoreIncreaseEvent == null)
         {
             Debug.LogWarning($"Scorer '{name}' is missing an OnScoreIncreaseEvent event");
@@ -21,8 +21,8 @@ public class Scorer : MonoBehaviour
     
     public void IncreaseScore(int amount)
     {
-        score += amount;
-        Debug.Log($"Score is now {score}!");
+        Score += amount;
+        Debug.Log($"Score is now {Score}!");
         OnScoreIncreaseEvent.Raise(amount);
     }
     
