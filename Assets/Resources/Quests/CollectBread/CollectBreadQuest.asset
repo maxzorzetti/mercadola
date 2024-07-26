@@ -15,6 +15,7 @@ MonoBehaviour:
   <id>k__BackingField: CollectBreadQuest
   displayName: Breadmania
   prerequisites: {fileID: 0}
-  steps: []
+  steps:
+  - {fileID: 8207436091585992794, guid: 000d97e086da1fc47b30fde2d1652ac0, type: 3}
   moneyReward: 100
   experienceReward: 1000
