@@ -19,7 +19,7 @@ TagManager:
   - AnimatedTiles
   - Map
   - Minimap
-  - 
+  - VFXs
   - 
   - 
   - 
@@ -55,4 +55,7 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 805292479
+    locked: 0
+  - name: VFXs
+    uniqueID: 737545431
     locked: 0
