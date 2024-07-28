@@ -2,41 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuestEvents
+public class QuestEvents: MonoBehaviour
 {
-    public StringEvent OnStartQuest;
+    public StringEvent OnQuestStart;
+    public StringEvent OnQuestAdvance;
+    public StringEvent OnQuestFinish;
+    public QuestEvent OnQuestStateChange;
+
     public void StartQuest(string id) 
     {
-        if(OnStartQuest != null)
-        {
-            OnStartQuest.Raise(id);
-        }
+        Debug.Log("StartQuest Raise with id: " + id);
+        OnQuestStart.Raise(id);
     }
-
-    public StringEvent OnAdvanceQuest;
+    
     public void AdvanceQuest(string id) 
     {
-        if(OnAdvanceQuest != null)
-        {
-            OnAdvanceQuest.Raise(id);
-        }
+        OnQuestAdvance.Raise(id);
     }
-
-    public StringEvent OnFinishQuest;
+    
     public void FinishQuest(string id) 
     {
-        if(OnFinishQuest != null)
-        {
-            OnFinishQuest.Raise(id);
-        }
+        OnQuestFinish.Raise(id);
     }
-
-    public QuestEvent OnQuestStateChange;
+    
     public void QuestStateChange(Quest quest) 
     {
-        if(OnQuestStateChange != null)
-        {
-            OnQuestStateChange.Raise(quest);
-        }
+        OnQuestStateChange.Raise(quest);
     }
 }

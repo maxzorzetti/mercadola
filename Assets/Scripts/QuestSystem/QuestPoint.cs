@@ -16,8 +16,7 @@ public class QuestPoint : MonoBehaviour
     private string questId;
     private QuestState currentQuestState;
 
-    public QuestManager Manager;
-    public Event OnInvestigateEvent;
+    public QuestEvents QuestEvents;
 
     private void Awake()
     {
@@ -26,7 +25,6 @@ public class QuestPoint : MonoBehaviour
 
     public void OnInvestigate()
     {
-        Debug.Log("OnInvestigate");
         if(!playerIsNear) 
         {
             return;
@@ -35,21 +33,20 @@ public class QuestPoint : MonoBehaviour
         {
             if(currentQuestState.Equals(QuestState.CAN_START) && startPoint)
             {
-                Manager.QuestEvents.StartQuest(questId);
+                QuestEvents.StartQuest(questId);
             }
             else if (currentQuestState.Equals(QuestState.CAN_FINISH) && finishPoint)
             {
-                Manager.QuestEvents.FinishQuest(questId);
+                QuestEvents.FinishQuest(questId);
             }
         }
     }
 
-    private void QuestStateChange(Quest quest)
+    public void QuestStateChange(Quest quest)
     {
         if(quest.Info.id.Equals(questId))
         {
             currentQuestState = quest.State;
-            Debug.Log("Quest with id: " + questId + "updated to state: " + currentQuestState);
         }
     }
 

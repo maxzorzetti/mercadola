@@ -13,7 +13,6 @@ public class QuestManager : MonoBehaviour
     private void Awake()
     {
         questMap = CreateQuestMap();
-        QuestEvents = new();
     }
     
     private void Start()
@@ -25,9 +24,37 @@ public class QuestManager : MonoBehaviour
         }
     }
 
-    private void StartQuest(string id)
+    private void Update()
     {
-        Debug.Log("StartQuest: " + id);
+        foreach (Quest quest in questMap.Values)
+        {
+            if(quest.State == QuestState.REQUIEREMENTS_NOT_MET && CheckRequirementsMet(quest))
+            {
+                ChangeQuestState(quest.Info.id, QuestState.CAN_START);
+            }
+        }
+    }
+
+    private void ChangeQuestState(string id, QuestState state)
+    {
+        Quest quest = GetQuestById(id);
+        quest.State = state;
+        QuestEvents.QuestStateChange(quest);
+    }
+
+    private bool CheckRequirementsMet(Quest quest)
+    {
+        // TODO: create logic for requirements
+        return true;
+    }
+
+    public void StartQuest(string id)
+    {
+        Debug.Log("Start Quest with id: " + id);
+        Quest quest = GetQuestById(id);
+        quest.InstantiateCurrentQuestStep(transform);
+        ChangeQuestState(quest.Info.id, QuestState.IN_PROGRESS);
+        Debug.Log("Start Quest: " + quest.Info.displayName);
     }
 
     private void AdvanceQuest(string id)
@@ -42,7 +69,7 @@ public class QuestManager : MonoBehaviour
 
     private Dictionary<string, Quest> CreateQuestMap()
     {
-        QuestInfo[] allQuests = Resources.LoadAll<QuestInfo>("Quests");
+        QuestInfo[] allQuests = Resources.LoadAll<QuestInfo>("Quests/CollectBread");
 
         Dictionary<string, Quest> idToQuestMap = new Dictionary<string, Quest>();
         foreach (QuestInfo info in allQuests)
