@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5064699148006894881}
   - component: {fileID: 5015652974209310491}
   - component: {fileID: 4980722546710469548}
+  - component: {fileID: 9177649167886111089}
   m_Layer: 0
   m_Name: QuestManager
   m_TagString: Untagged
@@ -62,3 +63,32 @@ MonoBehaviour:
   OnQuestAdvance: {fileID: 11400000, guid: 38646a54273682a4fab31490135a829c, type: 2}
   OnQuestFinish: {fileID: 11400000, guid: 5db4239469c0e234ca272f47f2fad46d, type: 2}
   OnQuestStateChange: {fileID: 11400000, guid: 0513e1513361a6048912cb38c645236c, type: 2}
+--- !u!114 &9177649167886111089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4413097600936308902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca65db8fd5794772bd367cf62ca35981, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Events:
+  - Event: {fileID: 11400000, guid: 548b04d0fb4d8c346b1770422697fa4d, type: 2}
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5015652974209310491}
+          m_TargetAssemblyTypeName: QuestManager, Assembly-CSharp
+          m_MethodName: StartQuest
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

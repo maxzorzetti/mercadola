@@ -7,6 +7,7 @@ public class Quest
     public QuestInfo Info;
     public QuestState State;
     private int currentQuestStepIndex;
+    private Transform parentTransform;
 
     public Quest(QuestInfo info) 
     {
@@ -15,9 +16,31 @@ public class Quest
         currentQuestStepIndex = 0;
     }
 
-    public void MoveToNextStep() 
+    public void StartQuest(Transform parentTransform)
+    {
+        Debug.Log("StartQuest: " + Info.id);
+        this.parentTransform = parentTransform;
+        InstantiateCurrentQuestStep();
+    }
+
+    public void FinishQuest()
+    {
+        Debug.Log("FinishQuest: " + Info.id);
+    }
+
+    public void UpdateProgression() 
     {
         currentQuestStepIndex++;
+
+        // Either move to next step or change state
+        if (GetCurrentQuestStep() != null) 
+        {
+            InstantiateCurrentQuestStep();
+        } 
+        else
+        {
+            GameObject.FindObjectOfType<QuestManager>().ChangeQuestState(this, QuestState.CAN_FINISH);
+        }
     }
 
     public bool CurrentQuestStepExists() 
@@ -25,13 +48,14 @@ public class Quest
         return currentQuestStepIndex < Info.steps.Length;
     }
 
-    public void InstantiateCurrentQuestStep(Transform parentTransform)
+    public void InstantiateCurrentQuestStep()
     {
         GameObject questStep = GetCurrentQuestStep();
         
         if (questStep != null)
         {
-            Object.Instantiate<GameObject>(questStep, parentTransform);
+            var questStepObject = Object.Instantiate(questStep, parentTransform);
+            questStepObject.GetComponent<QuestStep>().OnStepFinish += UpdateProgression;
         }
     }
 
@@ -42,11 +66,6 @@ public class Quest
         if(CurrentQuestStepExists()) 
         {
             stepPrefab =  Info.steps[currentQuestStepIndex];
-        }
-        else
-        {
-            Debug.LogWarning("Error: Quest (id = " + Info.id + ") step " + currentQuestStepIndex + 
-            " out of range [last step is " + Info.steps.Length + "]!");
         }
 
         return stepPrefab;

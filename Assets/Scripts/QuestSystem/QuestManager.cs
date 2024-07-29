@@ -9,6 +9,7 @@ public class QuestManager : MonoBehaviour
 {
     private Dictionary<string, Quest> questMap;
     public QuestEvents QuestEvents;
+    public Scorer Scorer;
 
     private void Awake()
     {
@@ -30,16 +31,9 @@ public class QuestManager : MonoBehaviour
         {
             if(quest.State == QuestState.REQUIEREMENTS_NOT_MET && CheckRequirementsMet(quest))
             {
-                ChangeQuestState(quest.Info.id, QuestState.CAN_START);
+                ChangeQuestState(quest, QuestState.CAN_START);
             }
         }
-    }
-
-    private void ChangeQuestState(string id, QuestState state)
-    {
-        Quest quest = GetQuestById(id);
-        quest.State = state;
-        QuestEvents.QuestStateChange(quest);
     }
 
     private bool CheckRequirementsMet(Quest quest)
@@ -48,23 +42,29 @@ public class QuestManager : MonoBehaviour
         return true;
     }
 
-    public void StartQuest(string id)
+      public void ChangeQuestState(Quest quest, QuestState newState)
     {
-        Debug.Log("Start Quest with id: " + id);
-        Quest quest = GetQuestById(id);
-        quest.InstantiateCurrentQuestStep(transform);
-        ChangeQuestState(quest.Info.id, QuestState.IN_PROGRESS);
-        Debug.Log("Start Quest: " + quest.Info.displayName);
+        quest.State = newState;
+        QuestEvents.QuestStateChange(quest);
     }
 
-    private void AdvanceQuest(string id)
+    public void StartQuest(string id)
+    {
+        Quest quest = GetQuestById(id);
+        quest.StartQuest(transform);
+        ChangeQuestState(quest, QuestState.IN_PROGRESS);
+    }
+
+    public void AdvanceQuest(string id)
     {
         Debug.Log("AdvanceQuest: " + id);
     }
 
-    private void FinishQuest(string id)
+    public void FinishQuest(string id)
     {
-        Debug.Log("FinishQuest: " + id);
+        Quest quest = GetQuestById(id);
+        quest.FinishQuest();
+        ChangeQuestState(quest, QuestState.FINISHED);
     }
 
     private Dictionary<string, Quest> CreateQuestMap()

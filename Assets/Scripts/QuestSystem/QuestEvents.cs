@@ -11,7 +11,6 @@ public class QuestEvents: MonoBehaviour
 
     public void StartQuest(string id) 
     {
-        Debug.Log("StartQuest Raise with id: " + id);
         OnQuestStart.Raise(id);
     }
     

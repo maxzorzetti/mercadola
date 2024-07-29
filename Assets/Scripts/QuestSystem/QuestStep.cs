@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,22 +7,17 @@ public abstract class QuestStep : MonoBehaviour
 {
     public string Title;
     public QuestType Type;
-    public bool QuestDidEnd = false;
-    public Event OnQuestBeginEvent;
-    Event OnQuestEndEvent;
+    public event Action OnStepStart;
+    public event Action OnStepFinish;
 
     protected void StartQuestStep()
     {
-        Debug.Log("You started the Quest!");
-        OnQuestBeginEvent.Raise();   
+        OnStepStart?.Invoke();
     }
 
     protected void FinishQuestStep()
     {
-        if (QuestDidEnd) { 
-            // TODO: advance to next step
-            OnQuestEndEvent.Raise(); 
-            Debug.Log("You finished the Quest!");
-        }
+        OnStepFinish?.Invoke();
+        Destroy(this);
     }
 }

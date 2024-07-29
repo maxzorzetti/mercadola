@@ -9,6 +9,7 @@ public class CollectBreadQuestStep : QuestStep
     void Start()
     {
         StartQuestStep();
+        Scorer = FindObjectOfType<Scorer>();
     }
 
     void Update()

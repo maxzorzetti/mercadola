@@ -6,21 +6,19 @@ using UnityEngine;
 public class QuestPoint : MonoBehaviour
 {
     [Header("Quest")]
-    [SerializeField] private QuestInfo infoForPoint;
+    [SerializeField] private QuestInfo questInfo;
 
     [Header("Config")]
     [SerializeField] private bool startPoint = true;
     [SerializeField] private bool finishPoint = true;
 
     private bool playerIsNear = false;
-    private string questId;
+    private QuestManager questManager;
     private QuestState currentQuestState;
 
-    public QuestEvents QuestEvents;
-
-    private void Awake()
+    private void Start()
     {
-        questId = infoForPoint.id;
+        questManager = FindObjectOfType<QuestManager>();
     }
 
     public void OnInvestigate()
@@ -33,18 +31,19 @@ public class QuestPoint : MonoBehaviour
         {
             if(currentQuestState.Equals(QuestState.CAN_START) && startPoint)
             {
-                QuestEvents.StartQuest(questId);
+                questManager.StartQuest(questInfo.id);
             }
             else if (currentQuestState.Equals(QuestState.CAN_FINISH) && finishPoint)
             {
-                QuestEvents.FinishQuest(questId);
+                questManager.FinishQuest(questInfo.id);
+                Destroy(this);
             }
         }
     }
 
     public void QuestStateChange(Quest quest)
     {
-        if(quest.Info.id.Equals(questId))
+        if(quest.Info.id.Equals(questInfo.id))
         {
             currentQuestState = quest.State;
         }
