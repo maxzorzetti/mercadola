@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f9ce7a4f4ad383f40852758a3bb2f6fd
+guid: b43a185653594294ebd7e38545249640
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Basket-Sheet_0
+      name: RainDropHit-sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17ba44f85eca4f149ab18a75d614e451
-      internalID: 1048995312
+      spriteID: 164cec0591b431342828549cd490ac00
+      internalID: -246927005
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basket-Sheet_1
+      name: RainDropHit-sheet_1
       rect:
         serializedVersion: 2
         x: 16
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5fb901760a5ea142bee0b0d3a22e87f
-      internalID: 195265572
+      spriteID: 2bdc4f34db891334ca363f810bc6d11b
+      internalID: 654843403
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basket-Sheet_2
+      name: RainDropHit-sheet_2
       rect:
         serializedVersion: 2
         x: 32
@@ -153,29 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5216b880225f18a4bb86ff4eb24362bc
-      internalID: -1627408249
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Basket-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 46a938cab6ddd124e872845bd0d5bcbe
-      internalID: 1692919252
+      spriteID: e60dcabcf08a25245bee0d24ddac6bd5
+      internalID: -1084582931
       vertices: []
       indices: 
       edges: []
@@ -191,10 +170,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Basket-Sheet_0: 1048995312
-      Basket-Sheet_1: 195265572
-      Basket-Sheet_2: -1627408249
-      Basket-Sheet_3: 1692919252
+      RainDropHit-sheet_0: -246927005
+      RainDropHit-sheet_1: 654843403
+      RainDropHit-sheet_2: -1084582931
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

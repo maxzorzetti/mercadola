@@ -19,7 +19,7 @@ TagManager:
   - AnimatedTiles
   - Map
   - Minimap
-  - 
+  - VFXs
   - 
   - 
   - 
@@ -47,6 +47,9 @@ TagManager:
   - name: Background
     uniqueID: 2068362701
     locked: 0
+  - name: BGObjects
+    uniqueID: 2502311239
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
@@ -55,4 +58,7 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 805292479
+    locked: 0
+  - name: VFXs
+    uniqueID: 737545431
     locked: 0
