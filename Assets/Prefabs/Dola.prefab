@@ -396,10 +396,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 0ce50801-211c-428f-bc2a-e29f9406e3ea
     m_ActionName: Player/Amaze[/Keyboard/e]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 3ed984df-e8ff-4a0b-bdc4-4f2eab3e3dc3
-    m_ActionName: Player/Dancing[/Keyboard/z]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -450,22 +446,6 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: Spinner, Assembly-CSharp
           m_MethodName: Spin
           m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - Event: {fileID: 11400000, guid: 6c58773be7c27a9459d7e22db89f2221, type: 2}
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3938638258332654860}
-          m_TargetAssemblyTypeName: PlayerAnimation, Assembly-CSharp
-          m_MethodName: OnDance
-          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
