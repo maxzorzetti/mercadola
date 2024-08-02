@@ -9,7 +9,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: RadioOn
+    m_ConditionEvent: Radio
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2078865412206752353}
@@ -34,8 +34,8 @@ AnimatorController:
   m_Name: RadioAnimatorController
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: RadioOn
-    m_Type: 9
+  - m_Name: Radio
+    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -113,8 +113,8 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: RadioOn
+  - m_ConditionMode: 2
+    m_ConditionEvent: Radio
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8853093704389044570}

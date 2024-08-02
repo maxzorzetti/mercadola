@@ -13,7 +13,6 @@ public class WeatherController : MonoBehaviour
     public GameObject rainOverlay;
 
     public float speed;
-    float startTime = 3f;
     Color starColor, endColor;
 
 

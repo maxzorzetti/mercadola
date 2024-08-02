@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
+    AudioSource SFXPlayer;
+    public AudioClip[] SFXs;
+
+    void Awake()
+    {
+        SFXPlayer  = GetComponent<AudioSource>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +28,8 @@ public class DoorController : MonoBehaviour
         Debug.Log("open");
         if ( other.tag == "Player" )
         {
+            SFXPlayer.clip = SFXs[0];
+            SFXPlayer.Play();
             gameObject.GetComponent<Animator>().SetBool("OpenDoor", true);
         }
     }
@@ -30,6 +39,8 @@ public class DoorController : MonoBehaviour
         Debug.Log("close");
         if ( other.tag == "Player" )
         {
+            SFXPlayer.clip = SFXs[1];
+            SFXPlayer.Play();
             gameObject.GetComponent<Animator>().SetBool("OpenDoor", false);
         }
     }
