@@ -9,6 +9,8 @@ public class JukeboxController : MonoBehaviour
     AudioSource musicPlayer;
     public AudioClip[] music;
     int selectedMusic = 0;
+    static readonly int Radio = Animator.StringToHash("Radio");
+
     void Awake()
     {
          teteuzinho = GetComponentInChildren<ParticleSystem>();
@@ -18,7 +20,7 @@ public class JukeboxController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        musicPlayer.clip = music[selectedMusic];
     }
 
     // Update is called once per frame
@@ -29,24 +31,19 @@ public class JukeboxController : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Radio Music On");
-        if ( other.tag == "Player" )
-        {
-            teteuzinho.Play();
-            musicPlayer.clip = music[selectedMusic];
-            musicPlayer.Play();
-            radioAnimation.SetBool("Radio", true);
-        }
+        if (!other.CompareTag("Player")) return;
+        
+        teteuzinho.Play();
+        musicPlayer.Play();
+        radioAnimation.SetBool(Radio, true);
     }
 
         void OnTriggerExit2D(Collider2D other)
-    {
-        Debug.Log("Radio Music Off");
-        if ( other.tag == "Player" )
         {
+            if (!other.CompareTag("Player")) return;
+            
             teteuzinho.Stop();
             musicPlayer.Pause();
-            radioAnimation.SetBool("Radio", false);
+            radioAnimation.SetBool(Radio, false);
         }
-    }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6465814366971185299}
   - component: {fileID: 6455785435243501191}
   - component: {fileID: 7844131376972801025}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,10 +126,9 @@ GameObject:
   - component: {fileID: 3938638258332654860}
   - component: {fileID: 5635342751556399208}
   - component: {fileID: 1853624290024662579}
-  - component: {fileID: 8789691178836839173}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Dola
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -455,11 +454,3 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!81 &8789691178836839173
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8470116972755365890}
-  m_Enabled: 1

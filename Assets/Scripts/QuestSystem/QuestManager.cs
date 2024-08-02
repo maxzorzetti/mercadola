@@ -7,7 +7,7 @@ using UnityEngine.WSA;
 
 public class QuestManager : MonoBehaviour
 {
-    private Dictionary<string, Quest> questMap;
+    private Dictionary<string, Quest> questMap = new Dictionary<string, Quest>();
     public QuestEvents QuestEvents;
     public Scorer Scorer;
 

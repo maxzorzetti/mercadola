@@ -8,7 +8,7 @@ public class Spinner : MonoBehaviour
     public bool AutoSpin;
     public AnimationCurve SpinEasing = AnimationCurve.EaseInOut(0, 0, 1, 1);
     
-    Progression spinProgression;
+    Progression spinProgression = new Progression();
     bool isSpinning;
     float spinSpeed => 1 / SpinTime;
 
@@ -19,7 +19,6 @@ public class Spinner : MonoBehaviour
     void Start()
     {
         isSpinning = SpinOnStart;
-        spinProgression = new Progression();
 
         if (transformTarget == null)
         {

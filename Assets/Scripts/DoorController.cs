@@ -1,11 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
     AudioSource SFXPlayer;
     public AudioClip[] SFXs;
+    
+    static readonly int OpenDoor = Animator.StringToHash("OpenDoor");
 
     void Awake()
     {
@@ -25,23 +25,19 @@ public class DoorController : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("open");
-        if ( other.tag == "Player" )
-        {
-            SFXPlayer.clip = SFXs[0];
-            SFXPlayer.Play();
-            gameObject.GetComponent<Animator>().SetBool("OpenDoor", true);
-        }
+        if (!other.CompareTag("Player")) return;
+        
+        SFXPlayer.clip = SFXs[0];
+        SFXPlayer.Play();
+        gameObject.GetComponent<Animator>().SetBool(OpenDoor, true);
     }
-
-        void OnTriggerExit2D(Collider2D other)
+    
+    void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("close");
-        if ( other.tag == "Player" )
-        {
-            SFXPlayer.clip = SFXs[1];
-            SFXPlayer.Play();
-            gameObject.GetComponent<Animator>().SetBool("OpenDoor", false);
-        }
+        if (!other.CompareTag("Player")) return;
+        
+        SFXPlayer.clip = SFXs[1];
+        SFXPlayer.Play();
+        gameObject.GetComponent<Animator>().SetBool(OpenDoor, false);
     }
 }
