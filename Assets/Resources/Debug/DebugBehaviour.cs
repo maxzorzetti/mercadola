@@ -7,7 +7,7 @@ public class DebugBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (FlipCoin() && FlipCoin())
+        if (FlipCoin() && FlipCoin() && FlipCoin() && FlipCoin())
         {
             SpawnDebugObject();
         }

@@ -9,7 +9,6 @@ public abstract class BaseEvent<T> : ScriptableObject
     {
         for (var i = listeners.Count - 1; i >= 0; i--)
         {
-            Debug.Log(value);
             listeners[i].OnEventRaised(this, value);
         }
     }

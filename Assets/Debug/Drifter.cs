@@ -8,6 +8,7 @@ public class Drifter : MonoBehaviour
         
     public float acceleration = 1;
     public float maxSpeed = 0.25f;
+    public float relentlessness = 0.05f;
     public float killRange = 0.45f;
 
     public float idleAnimationDistance = 13f;
@@ -43,6 +44,10 @@ public class Drifter : MonoBehaviour
     {
         Move();
         var distance = DistanceToPlayer();
+
+        maxSpeed += relentlessness * Time.deltaTime;
+        acceleration += relentlessness * Time.deltaTime;
+        
         Visual(distance);
         Communicate(distance);
         Kill(distance);

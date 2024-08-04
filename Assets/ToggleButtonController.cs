@@ -31,7 +31,6 @@ public class ToggleButtonController : MonoBehaviour
 
     public void DidTriggerParrentCollider(bool playerIsNear)
     {
-        Debug.Log(playerIsNear);
         var tempColor = GetComponent<SpriteRenderer>().color;
         tempColor.a = playerIsNear ? 1f : 0f;
         GetComponent<SpriteRenderer>().color = tempColor;   
