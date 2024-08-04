@@ -13,5 +13,14 @@ namespace Extensions
                 Mathf.Round(vector.y * pixelsPerUnit) / pixelsPerUnit
             );
         }
+        
+        public static Vector3 Pixelized(this Vector3 vector, int pixelsPerUnit = DefaultPixelsPerUnit)
+        {
+            return new Vector3(
+                Mathf.Round(vector.x * pixelsPerUnit) / pixelsPerUnit,
+                Mathf.Round(vector.y * pixelsPerUnit) / pixelsPerUnit,
+                vector.z
+            );
+        }
     }
 }
