@@ -7,9 +7,13 @@ public class JukeboxController : MonoBehaviour
     ParticleSystem musicNotes;
     Animator radioAnimation;
     AudioSource musicPlayer;
+
+    public AudioClip staticAudio;
     public AudioClip[] music;
     public BoolEvent OnPlayerIsNear;
     int selectedMusic = 0;
+
+    float musicTimeTemp;
 
     static readonly int Radio = Animator.StringToHash("Radio");
 
@@ -24,7 +28,7 @@ public class JukeboxController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        musicPlayer.clip = music[selectedMusic];
+
     }
 
     // Update is called once per frame
@@ -37,18 +41,44 @@ public class JukeboxController : MonoBehaviour
     {
         if(!isPlaying)
         {
-            musicNotes.Play();
-            musicPlayer.Play();
-            radioAnimation.SetBool(Radio, true);
+            StartCoroutine(PlayMusic(true));
         }
         else
         {
-            musicNotes.Stop();
-            musicPlayer.Pause();
-            radioAnimation.SetBool(Radio, false);
+            StartCoroutine(PlayMusic(false));
         }
         isPlaying = !isPlaying;
     }
+
+    
+    IEnumerator PlayMusic(bool isOn)
+    {
+        if (isOn)
+        {
+            musicPlayer.clip = staticAudio;
+            //wait0.5s,then play static
+            radioAnimation.SetBool(Radio, true);
+            musicPlayer.Play();
+            yield return new WaitForSeconds(1f);
+            //wait 1s, then play music
+
+            // Play Particles
+            musicNotes.Play();
+
+            // Play Music
+            musicPlayer.Stop();
+            musicPlayer.clip = music[selectedMusic];
+            musicPlayer.time = musicTimeTemp;
+            musicPlayer.Play();
+        } else
+        {
+            musicTimeTemp = musicPlayer.time;
+            musicPlayer.Stop();
+            musicNotes.Stop();
+            radioAnimation.SetBool(Radio, false);
+        }
+    }
+    
      void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;

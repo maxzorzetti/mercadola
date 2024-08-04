@@ -7,6 +7,9 @@ public class Collectible : MonoBehaviour
     [Range(0f, 2f)]
     public float CollectionTime = 0.25f;
 
+    public AudioClip CollectSFX;
+    AudioSource SFXPlayer;
+
     public Transform ShrinkTarget;
     
     float collectionSpeed => 1 / CollectionTime;
@@ -23,7 +26,8 @@ public class Collectible : MonoBehaviour
         // Get a sprite to shrink if none was set
         ShrinkTarget ??= GetComponentInChildren<SpriteRenderer>().transform; 
         collectProgression = new Progression();
-        
+        SFXPlayer = GetComponent<AudioSource>();
+        SFXPlayer.clip = CollectSFX;
         if (CollectEvent == null)
         {
             Debug.LogWarning($"Object {name} is missing an OnCollectEvent!");
@@ -34,6 +38,8 @@ public class Collectible : MonoBehaviour
     {
         if (isCollected) return;
         isCollected = true;
+        SFXPlayer.pitch = Random.Range(1.4f , 1.8f);
+        SFXPlayer.Play();
         CollectEvent.Raise(new CollectEventData(this));
     }
 
@@ -46,7 +52,7 @@ public class Collectible : MonoBehaviour
     {
         CollectionCurve.Evaluate(collectProgression.ProgressRate);
         ShrinkTarget.localScale = Vector3.Lerp(Vector3.one, Vector3.zero, collectProgression.ProgressRate);
-        
+
         collectProgression.Advance(Time.deltaTime * collectionSpeed);
         if (collectProgression.Consume())
         {

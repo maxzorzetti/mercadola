@@ -8,13 +8,18 @@ public class ToggleButtonController : MonoBehaviour
 {
     Animator ToggleAnimator;
     bool ToggleAnimation = false;
+    AudioSource SFXPlayer;
+    public AudioClip[] SFXs;
 
     static readonly int isOn = Animator.StringToHash("isOn");
 
     void Awake()
     {
-        //GetComponent<SpriteRenderer>().enabled = false;
+        SFXPlayer  = GetComponent<AudioSource>();
         ToggleAnimator = GetComponent<Animator>();
+        var tempstartColor = GetComponent<SpriteRenderer>().color;
+        tempstartColor.a = 0f;
+        GetComponent<SpriteRenderer>().color = tempstartColor;   
     }
     
     // Start is called before the first frame update
@@ -33,12 +38,18 @@ public class ToggleButtonController : MonoBehaviour
     {
         var tempColor = GetComponent<SpriteRenderer>().color;
         tempColor.a = playerIsNear ? 1f : 0f;
-        GetComponent<SpriteRenderer>().color = tempColor;   
+        GetComponent<SpriteRenderer>().color = tempColor;
     }
 
     public void ToggleAnnimation()
     {  
         ToggleAnimator.SetBool(isOn, !ToggleAnimation);
+        SFXPlayer.clip = ToggleAnimation ? SFXs[0] : SFXs[1];
         ToggleAnimation = !ToggleAnimation;
+    }
+
+        void PlayButtonSound()
+    {
+        SFXPlayer.Play();
     }
 }
