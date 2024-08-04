@@ -4,16 +4,20 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class JukeboxController : MonoBehaviour
 {
-    ParticleSystem teteuzinho;
+    ParticleSystem musicNotes;
     Animator radioAnimation;
     AudioSource musicPlayer;
     public AudioClip[] music;
+    public BoolEvent OnPlayerIsNear;
     int selectedMusic = 0;
+
     static readonly int Radio = Animator.StringToHash("Radio");
+
+    bool isPlaying = false;
 
     void Awake()
     {
-         teteuzinho = GetComponentInChildren<ParticleSystem>();
+         musicNotes = GetComponentInChildren<ParticleSystem>();
          radioAnimation = GetComponent<Animator>();
          musicPlayer = GetComponentInChildren<AudioSource>();
     }
@@ -29,21 +33,37 @@ public class JukeboxController : MonoBehaviour
         
     }
     
-    void OnTriggerEnter2D(Collider2D other)
+    public void ToggleRadio()
     {
-        if (!other.CompareTag("Player")) return;
-        
-        teteuzinho.Play();
-        musicPlayer.Play();
-        radioAnimation.SetBool(Radio, true);
-    }
-
-        void OnTriggerExit2D(Collider2D other)
+        if(!isPlaying)
         {
-            if (!other.CompareTag("Player")) return;
-            
-            teteuzinho.Stop();
+            musicNotes.Play();
+            musicPlayer.Play();
+            radioAnimation.SetBool(Radio, true);
+        }
+        else
+        {
+            musicNotes.Stop();
             musicPlayer.Pause();
             radioAnimation.SetBool(Radio, false);
         }
+        isPlaying = !isPlaying;
+    }
+     void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!other.CompareTag("Player")) return;
+        {
+            OnPlayerIsNear.Raise(true);
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (!other.CompareTag("Player")) return;
+        {
+            OnPlayerIsNear.Raise(false);
+        }
+    }
 }
+
+

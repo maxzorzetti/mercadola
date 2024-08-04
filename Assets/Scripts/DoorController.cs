@@ -28,7 +28,6 @@ public class DoorController : MonoBehaviour
         if (!other.CompareTag("Player")) return;
         
         SFXPlayer.clip = SFXs[0];
-        SFXPlayer.Play();
         gameObject.GetComponent<Animator>().SetBool(OpenDoor, true);
     }
     
@@ -37,7 +36,11 @@ public class DoorController : MonoBehaviour
         if (!other.CompareTag("Player")) return;
         
         SFXPlayer.clip = SFXs[1];
-        SFXPlayer.Play();
         gameObject.GetComponent<Animator>().SetBool(OpenDoor, false);
+    }
+
+    void PlayDoorSound()
+    {
+        SFXPlayer.Play();
     }
 }

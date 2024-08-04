@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DoorOpen
+  m_Name: ToggleOff
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,17 +21,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 756997780, guid: 3a9342e97f4543148b7ab0cc1e13b480, type: 3}
+      value: {fileID: 2017717891, guid: d73e99b0fe6f02a4ab099d8843210d1a, type: 3}
     - time: 0.083333336
-      value: {fileID: -339623548, guid: 3a9342e97f4543148b7ab0cc1e13b480, type: 3}
+      value: {fileID: -192893341, guid: d73e99b0fe6f02a4ab099d8843210d1a, type: 3}
     - time: 0.16666667
-      value: {fileID: 590766176, guid: 3a9342e97f4543148b7ab0cc1e13b480, type: 3}
+      value: {fileID: 1465432639, guid: d73e99b0fe6f02a4ab099d8843210d1a, type: 3}
     - time: 0.25
-      value: {fileID: 1759963906, guid: 3a9342e97f4543148b7ab0cc1e13b480, type: 3}
-    - time: 0.33333334
-      value: {fileID: -32356444, guid: 3a9342e97f4543148b7ab0cc1e13b480, type: 3}
-    - time: 0.41666666
-      value: {fileID: 1086241289, guid: 3a9342e97f4543148b7ab0cc1e13b480, type: 3}
+      value: {fileID: 1386070969, guid: d73e99b0fe6f02a4ab099d8843210d1a, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -54,18 +50,16 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 756997780, guid: 3a9342e97f4543148b7ab0cc1e13b480, type: 3}
-    - {fileID: -339623548, guid: 3a9342e97f4543148b7ab0cc1e13b480, type: 3}
-    - {fileID: 590766176, guid: 3a9342e97f4543148b7ab0cc1e13b480, type: 3}
-    - {fileID: 1759963906, guid: 3a9342e97f4543148b7ab0cc1e13b480, type: 3}
-    - {fileID: -32356444, guid: 3a9342e97f4543148b7ab0cc1e13b480, type: 3}
-    - {fileID: 1086241289, guid: 3a9342e97f4543148b7ab0cc1e13b480, type: 3}
+    - {fileID: 2017717891, guid: d73e99b0fe6f02a4ab099d8843210d1a, type: 3}
+    - {fileID: -192893341, guid: d73e99b0fe6f02a4ab099d8843210d1a, type: 3}
+    - {fileID: 1465432639, guid: d73e99b0fe6f02a4ab099d8843210d1a, type: 3}
+    - {fileID: 1386070969, guid: d73e99b0fe6f02a4ab099d8843210d1a, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5
+    m_StopTime: 0.33333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -84,11 +78,4 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events:
-  - time: 0.083333336
-    functionName: PlayDoorSound
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
+  m_Events: []
