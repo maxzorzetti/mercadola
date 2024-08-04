@@ -29,7 +29,7 @@ public class Follower : MonoBehaviour
         
         if (distanceToTarget < stoppingDistance)
         {
-            transform.position = position.Pixelized();
+            // transform.position = position.Pixelized();
 
             if (canTriggerStopEvent)
             {
