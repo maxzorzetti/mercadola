@@ -6,16 +6,19 @@ using UnityEngine;
 
 public class ToggleButtonController : MonoBehaviour
 {
+    public Animator ShowButtonAnimator;
     Animator ToggleAnimator;
     bool ToggleAnimation = false;
     AudioSource SFXPlayer;
     public AudioClip[] SFXs;
 
     static readonly int isOn = Animator.StringToHash("isOn");
+    static readonly int showMenu = Animator.StringToHash("isOn");
 
     void Awake()
     {
         SFXPlayer  = GetComponent<AudioSource>();
+        //ShowButtonAnimator = GetComponentInParent<Animator>();
         ToggleAnimator = GetComponent<Animator>();
         var tempstartColor = GetComponent<SpriteRenderer>().color;
         tempstartColor.a = 0f;
@@ -36,9 +39,11 @@ public class ToggleButtonController : MonoBehaviour
 
     public void DidTriggerParrentCollider(bool playerIsNear)
     {
-        var tempColor = GetComponent<SpriteRenderer>().color;
-        tempColor.a = playerIsNear ? 1f : 0f;
-        GetComponent<SpriteRenderer>().color = tempColor;
+        Debug.Log(playerIsNear);
+        ShowButtonAnimator.SetBool(showMenu, playerIsNear);
+        // var tempColor = GetComponent<SpriteRenderer>().color;
+        // tempColor.a = playerIsNear ? 1f : 0f;
+        // GetComponent<SpriteRenderer>().color = tempColor;
     }
 
     public void ToggleAnnimation()

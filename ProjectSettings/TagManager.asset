@@ -62,3 +62,6 @@ TagManager:
   - name: VFXs
     uniqueID: 737545431
     locked: 0
+  - name: UI In Game
+    uniqueID: 1191578313
+    locked: 0
