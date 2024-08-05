@@ -1,28 +1,18 @@
-using System;
 using UnityEngine;
 
-public class Dog : MonoBehaviour
+[RequireComponent(typeof(Animator))]
+public class DogAnimator : MonoBehaviour
 {
-    Animator animator;
-    SpriteRenderer renderer;
-    Follower follower;
-    
     static readonly int IsBarking = Animator.StringToHash("isBarking");
     static readonly int IsWalking = Animator.StringToHash("isWalking");
+    
+    Animator animator;
 
     void Awake()
     {
-        animator = GetComponentInChildren<Animator>();
-        follower = GetComponent<Follower>();
-        renderer = GetComponentInChildren<SpriteRenderer>();
-        Stop();
+        animator = GetComponent<Animator>();
     }
-
-    void Update()
-    {
-        renderer.flipX = follower.target.position.x > transform.position.x;
-    }
-
+    
     public void Stop()
     {
         animator.SetBool(IsBarking, false);
@@ -31,14 +21,19 @@ public class Dog : MonoBehaviour
 
     public void Bark()
     {
-        Debug.Log($"{name}: Woof!");
+        
         animator.SetBool(IsBarking, true);
         animator.SetBool(IsWalking, false);
     }
-    
+
     public void Move()
     {
         animator.SetBool(IsBarking, false);
         animator.SetBool(IsWalking, true);
+    }
+
+    public void SetBarkSprite(int barkSpriteIndex)
+    {
+        // Do something
     }
 }

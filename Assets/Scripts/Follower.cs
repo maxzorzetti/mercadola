@@ -1,3 +1,4 @@
+using System;
 using Extensions;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,10 +10,14 @@ public class Follower : MonoBehaviour
     public float stoppingDistance = 1.5f;
     public float maxSpeed = 2f;
     public float acceleration = 10f;
+    
+    public bool faceTarget = false;
 
-    public UnityEvent OnStartedMoving;
+    public UnityEvent OnStartedFollowing;
     public UnityEvent OnReachedStoppingDistance;
 
+    [NonSerialized] public bool isMoving;
+    
     Vector3 velocity;
     bool canTriggerStopEvent = true;
     bool canTriggerMoveEvent = true;
@@ -24,30 +29,34 @@ public class Follower : MonoBehaviour
 
     void Update()
     {
+        Follow();
+        FaceTarget();
+    }
+
+    void FaceTarget()
+    {
+        if (!faceTarget) return;
+
+        var sprite = GetComponentInChildren<SpriteRenderer>();
+        sprite.flipX = !(target.position.x < transform.position.x);
+    }
+
+    void Follow()
+    {
         var position = transform.position;
         var distanceToTarget = Vector2.Distance(position, target.position);
-        
-        if (distanceToTarget < stoppingDistance)
-        {
-            // transform.position = position.Pixelized();
 
-            if (canTriggerStopEvent)
-            {
-                canTriggerStopEvent = false;
-                canTriggerMoveEvent = true;
-                OnReachedStoppingDistance.Invoke();
-            }
-        }
-        else
+        isMoving = distanceToTarget > stoppingDistance;
+        
+        if (isMoving)
         {
             MoveTowardsTarget();
 
-            if (canTriggerMoveEvent)
-            {
-                canTriggerMoveEvent = false;
-                canTriggerStopEvent = true;
-                OnStartedMoving.Invoke();
-            }
+            InvokeOnStartedMoving();
+        }
+        else
+        {
+            InvokeOnReachedStoppingDistance();
         }
     }
     
@@ -61,5 +70,23 @@ public class Follower : MonoBehaviour
         
         position += velocity * Time.deltaTime;
         transform.position = position;
+    }
+
+    void InvokeOnStartedMoving()
+    {
+        if (!canTriggerMoveEvent) return;
+        
+        canTriggerMoveEvent = false;
+        canTriggerStopEvent = true;
+        OnStartedFollowing.Invoke();
+    }
+    
+    void InvokeOnReachedStoppingDistance()
+    {
+        if (!canTriggerStopEvent) return;
+        
+        canTriggerStopEvent = false;
+        canTriggerMoveEvent = true;
+        OnReachedStoppingDistance.Invoke();
     }
 }

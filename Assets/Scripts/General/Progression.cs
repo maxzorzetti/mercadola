@@ -33,6 +33,25 @@ public class Progression
         }
         return false;
     }
+
+    public bool AdvanceAndConsume(float progress)
+    {
+        Advance(progress);
+        return Consume();
+    }
+    
+    public bool AdvanceAndConsume(float progress, out bool didConsume)
+    {
+        Advance(progress);
+        didConsume = Consume();
+        
+        return didConsume;
+    }
+
+    public void Retract(float hindrance)
+    {
+        CurrentProgress = Math.Max(0, CurrentProgress - hindrance);
+    }
     
     public void Reset() => CurrentProgress = 0;
     
