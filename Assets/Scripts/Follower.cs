@@ -29,6 +29,8 @@ public class Follower : MonoBehaviour
 
     void Update()
     {
+        if (target == null) return;
+
         Follow();
         FaceTarget();
     }

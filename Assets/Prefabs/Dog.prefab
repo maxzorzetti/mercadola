@@ -46,6 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed18219f9b2f45f9af783d064bcc5289, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Patience: 5
+  Cooling: 2
+  AngerTime: 5
 --- !u!114 &1435258328205853711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,12 +65,13 @@ MonoBehaviour:
   stoppingDistance: 1
   maxSpeed: 2
   acceleration: 10
-  OnStartedMoving:
+  faceTarget: 1
+  OnStartedFollowing:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4396979160280140770}
         m_TargetAssemblyTypeName: Dog, Assembly-CSharp
-        m_MethodName: Move
+        m_MethodName: HandleOnStartedFollowing
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -82,7 +86,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4396979160280140770}
         m_TargetAssemblyTypeName: Dog, Assembly-CSharp
-        m_MethodName: Bark
+        m_MethodName: HandleOnReachedStoppingDistance
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -103,6 +107,7 @@ GameObject:
   - component: {fileID: 6885242457342950795}
   - component: {fileID: 1688970716813690658}
   - component: {fileID: 3338107263666980858}
+  - component: {fileID: 4087676093235420776}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -198,3 +203,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4087676093235420776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5303575488186483460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28f76ac68c9e4c83938a881268e14457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
