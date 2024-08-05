@@ -55,7 +55,7 @@ public class Spinner : MonoBehaviour
             : SpinEasing.Evaluate(spinProgression.ProgressRate) * 360;
         
         // Apply rotation
-        transformTarget.rotation = Quaternion.Euler(0, 0, -spin);
+        transformTarget.rotation = Quaternion.Euler(0, -spin, 0);
             
         // Continue the spin and check if it's done
         spinProgression.Advance(Time.deltaTime * spinSpeed);

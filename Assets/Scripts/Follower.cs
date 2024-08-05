@@ -40,7 +40,7 @@ public class Follower : MonoBehaviour
         if (!faceTarget) return;
 
         var sprite = GetComponentInChildren<SpriteRenderer>();
-        sprite.flipX = !(target.position.x < transform.position.x);
+        sprite.flipX = (target.position.x < transform.position.x);
     }
 
     void Follow()
