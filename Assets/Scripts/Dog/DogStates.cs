@@ -1,3 +1,4 @@
+using Extensions;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -24,15 +25,15 @@ public class DogIdleState : DogState
     {
         dog.dogAnimator.Idle();
         dog.follower.faceTarget = false;
-        dog.follower.followTarget = canLeaveIdle;
-        dog.follower.followRange = dog.AggroRange;
+        dog.follower.followTarget = false;
+        dog.follower.followRange = dog.aggroRange;
         
         randomMovementTimer = NewRandomMovementTimer();
         
         if (previousState is not DogRandomMoveState)
         {
             canLeaveIdle = false;
-            idleLockTimer = new Progression(previousState is DogAnnoyedState ? dog.idleLockTime : 0.5f);
+            idleLockTimer = new Progression(previousState is DogAnnoyedState ? dog.idleAfterAnnoyanceLockDuration : 0.5f);
         }
     }
     
@@ -45,7 +46,7 @@ public class DogIdleState : DogState
         
         if (!canLeaveIdle) return;
 
-        if ( dog.follower.isWithinFollowRange)
+        if (dog.follower.isWithinFollowRange)
         {
             stateMachine.ChangeState(dog.chaseState);
             return;
@@ -74,7 +75,7 @@ public class DogRandomMoveState : DogState
     {
         dog.dogAnimator.Move();
         dog.follower.faceTarget = false;
-        randomMovementTarget = dog.transform.position + GetRandomDistance();
+        randomMovementTarget = (dog.transform.position + GetRandomDistance()).Pixelized();
     }
 
     public override void Update()
@@ -103,16 +104,17 @@ public class DogRandomMoveState : DogState
         }
     }
     
-    static Vector3 GetRandomDistance()
+    Vector3 GetRandomDistance()
     {
-        // TODO: re-do this to be more efficient
-        Vector2 randomDistance;
-        do
-        {
-            randomDistance = Random.insideUnitCircle * 2;
-        } while (randomDistance.magnitude < 0.5f);
+        var direction = Random.insideUnitCircle;
 
-        return randomDistance;
+        var maxDist = Vector2.one * dog.maxMovement;
+        var minDist = Vector2.one * dog.minMovement;
+        
+        return new Vector3(
+            Mathf.Lerp(minDist.x, maxDist.x, direction.x),
+            Mathf.Lerp(minDist.y, maxDist.y, direction.y)
+        );
     }
 }
 
@@ -126,7 +128,8 @@ public class DogChaseState : DogState
         dog.dogAnimator.Move();
         dog.follower.followTarget = true;
         dog.follower.faceTarget = true;
-        dog.follower.followRange = dog.ChaseRange;
+        dog.follower.maxSpeed = dog.chaseSpeed;
+        dog.follower.followRange = dog.chaseRange;
     }
 
     public override void ExitState(StateMachine.State nextState)
@@ -160,8 +163,8 @@ public class DogAffectionState : DogState
     
     public override void EnterState(StateMachine.State previousState)
     {
-        annoyanceProgression = new Progression(dog.Patience);
-        chillProgression = new Progression(dog.Cooling);
+        annoyanceProgression = new Progression(dog.patience);
+        chillProgression = new Progression(dog.cooling);
         dog.dogAnimator.Idle();
         dog.follower.followTarget = true;
         dog.follower.faceTarget = true;
@@ -195,7 +198,7 @@ public class DogAffectionState : DogState
         if (dog.sprite.AreFacingEachOther(dog.follower.target.GetComponentInChildren<SpriteRenderer>()))
         {
             dog.dogAnimator.Idle();
-            if (chillProgression.AdvanceAndConsume(dog.Cooling * Time.deltaTime))
+            if (chillProgression.AdvanceAndConsume(dog.cooling * Time.deltaTime))
             {
                 SetAnnoyanceLevel(annoyanceLevel - 1);
             }
@@ -226,13 +229,14 @@ public class DogAnnoyedState : DogState
     
     public override void EnterState(StateMachine.State previousState)
     {
-        angerProgression = new Progression(dog.AngerTime);
+        angerProgression = new Progression(dog.annoyanceDuration);
         dog.dogAnimator.Bark();
         dog.sprite.color = Color.red;
         
         previousStoppingDistance = dog.follower.stoppingDistance;
         dog.follower.followTarget = true;
         dog.follower.faceTarget = true;
+        dog.follower.maxSpeed = dog.annoyedSpeed;
         dog.follower.stoppingDistance = 0;
     }
 

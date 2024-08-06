@@ -11,6 +11,7 @@ public class Follower : MonoBehaviour
     public float stoppingDistance = 1.5f;
     public float maxSpeed = 2f;
     public float acceleration = 10f;
+    public float deacceleration = 30;
 
     public bool followTarget = true;
     public bool faceTarget = false;
@@ -22,10 +23,9 @@ public class Follower : MonoBehaviour
     public UnityEvent OnStartedFollowing;
     public UnityEvent OnReachedStoppingDistance;
     
-    Vector3 velocity;
+    Vector2 velocity;
     bool canTriggerStopEvent = true;
     bool canTriggerMoveEvent = true;
-    
 
     void Start()
     {
@@ -41,7 +41,7 @@ public class Follower : MonoBehaviour
 
     void FaceTarget()
     {
-        if (!faceTarget && target != null) return;
+        if (!faceTarget || target == null) return;
 
         var sprite = GetComponentInChildren<SpriteRenderer>();
         sprite.flipX = (target.position.x < transform.position.x);
@@ -49,7 +49,7 @@ public class Follower : MonoBehaviour
 
     void Follow()
     {
-        if (!followTarget && target != null) return;
+        if (target == null) return;
         
         var position = transform.position;
         var distanceToTarget = Vector2.Distance(position, target.position);
@@ -57,10 +57,15 @@ public class Follower : MonoBehaviour
         isWithinFollowRange = distanceToTarget < followRange;
         isWithinStoppingDistance = distanceToTarget < stoppingDistance;
 
-        if (!isWithinFollowRange) return;
+        if (!followTarget || !isWithinFollowRange)
+        {
+            Decelerate();
+            return;
+        }
 
         if (isWithinStoppingDistance)
         {
+            Decelerate();
             InvokeOnReachedStoppingDistance();
             return;
         }
@@ -71,14 +76,21 @@ public class Follower : MonoBehaviour
     
     void MoveTowardsTarget()
     {
-        var position = transform.position;
-        var direction = (target.position - position).normalized;
+        var position = (Vector2)transform.position;
+        var direction = ((Vector2)target.position - position).normalized;
 
         velocity += (acceleration * direction) * Time.deltaTime;
-        velocity = Vector3.ClampMagnitude(velocity, maxSpeed);
+        velocity = Vector2.ClampMagnitude(velocity, maxSpeed);
         
         position += velocity * Time.deltaTime;
         transform.position = position;
+    }
+
+    void Decelerate()
+    {
+        var oppositeDirection = velocity.normalized * -1;
+        var velocityReduction = deacceleration * oppositeDirection * Time.deltaTime;
+        velocity += Vector2.ClampMagnitude(velocityReduction, velocity.magnitude);
     }
 
     void InvokeOnStartedMoving()

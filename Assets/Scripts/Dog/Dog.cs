@@ -2,13 +2,20 @@ using UnityEngine;
 
 public class Dog : MonoBehaviour
 {
-    public float AggroRange = 3;
-    public float speed = 3;
-    public float ChaseRange = 5;
-    public float Patience = 5;
-    public float Cooling = 2;
-    public float AngerTime = 5;
-    public float idleLockTime = 2;
+    public float speed = 1;
+    public float chaseSpeed = 2;
+    public float annoyedSpeed = 3;
+    public float aggroRange = 3;
+    public float chaseRange = 5;
+    public float patience = 3;
+    public float cooling = 2;
+    public float annoyanceDuration = 5;
+    public float idleAfterAnnoyanceLockDuration = 2;
+    
+    [Range(0f, 5f)]
+    public float maxMovement = 2;
+    [Range(0f, 5f)]
+    public float minMovement = 0.5f;
 
     internal DogAnimator dogAnimator;
     internal SpriteRenderer sprite;
@@ -33,12 +40,11 @@ public class Dog : MonoBehaviour
         affectionState = new DogAffectionState(this, stateMachine);
         chaseState = new DogChaseState(this, stateMachine);
         annoyedState = new DogAnnoyedState(this, stateMachine);
-        stateMachine.Initialize(idleState);
+        stateMachine.Initialize(idleState, true);
     }
 
     void Update()
     {
         stateMachine.Update();
     }
-    
 }
