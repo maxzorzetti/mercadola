@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Dog : MonoBehaviour
 {
+    public const float MaxMovementFrequency = 5;
+    
     public float speed = 1;
     public float chaseSpeed = 2;
     public float annoyedSpeed = 3;
@@ -16,6 +18,9 @@ public class Dog : MonoBehaviour
     public float maxMovement = 2;
     [Range(0f, 5f)]
     public float minMovement = 0.5f;
+    
+    [Range(1f, MaxMovementFrequency)]
+    public float movementFrequency = 1;
 
     internal DogAnimator dogAnimator;
     internal SpriteRenderer sprite;

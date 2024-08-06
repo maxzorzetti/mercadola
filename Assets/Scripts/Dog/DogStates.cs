@@ -61,7 +61,9 @@ public class DogIdleState : DogState
     
     Progression NewRandomMovementTimer()
     {
-        return new Progression(Random.Range(0.5f, 1.5f));
+        var period = Dog.MaxMovementFrequency - (dog.movementFrequency);
+        
+        return new Progression(Random.Range(period * 0.5f, period * 1.5f));
     }
 }
 
@@ -75,7 +77,7 @@ public class DogRandomMoveState : DogState
     {
         dog.dogAnimator.Move();
         dog.follower.faceTarget = false;
-        randomMovementTarget = (dog.transform.position + GetRandomDistance()).Pixelized();
+        randomMovementTarget = ((Vector2)dog.transform.position + GetRandomDistance()).Pixelized();
     }
 
     public override void Update()
@@ -104,17 +106,11 @@ public class DogRandomMoveState : DogState
         }
     }
     
-    Vector3 GetRandomDistance()
+    Vector2 GetRandomDistance()
     {
-        var direction = Random.insideUnitCircle;
+        var direction = Random.insideUnitCircle.normalized;
 
-        var maxDist = Vector2.one * dog.maxMovement;
-        var minDist = Vector2.one * dog.minMovement;
-        
-        return new Vector3(
-            Mathf.Lerp(minDist.x, maxDist.x, direction.x),
-            Mathf.Lerp(minDist.y, maxDist.y, direction.y)
-        );
+        return direction * Random.Range(dog.minMovement, dog.maxMovement);
     }
 }
 
