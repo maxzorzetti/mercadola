@@ -46,9 +46,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed18219f9b2f45f9af783d064bcc5289, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AggroRange: 3
+  speed: 1
+  ChaseRange: 4
   Patience: 5
   Cooling: 2
   AngerTime: 5
+  idleLockTime: 2
 --- !u!114 &1435258328205853711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,9 +66,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  followRange: 5
   stoppingDistance: 1
   maxSpeed: 2
   acceleration: 10
+  followTarget: 1
   faceTarget: 1
   OnStartedFollowing:
     m_PersistentCalls:
@@ -109,7 +115,7 @@ GameObject:
   - component: {fileID: 3338107263666980858}
   - component: {fileID: 4087676093235420776}
   m_Layer: 0
-  m_Name: Sprite
+  m_Name: Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

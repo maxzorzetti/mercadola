@@ -2,144 +2,43 @@ using UnityEngine;
 
 public class Dog : MonoBehaviour
 {
+    public float AggroRange = 3;
+    public float speed = 3;
+    public float ChaseRange = 5;
     public float Patience = 5;
     public float Cooling = 2;
     public float AngerTime = 5;
-    
-    DogAnimator dogAnimator;
-    SpriteRenderer sprite;
-    Follower follower;
-    
-    DogState state = DogState.Idle;
+    public float idleLockTime = 2;
 
-    int annoyanceLevel;
-    Progression annoyanceProgression = new Progression();
-    Progression chillProgression = new Progression();
-    Progression angerProgression;
+    internal DogAnimator dogAnimator;
+    internal SpriteRenderer sprite;
+    internal Follower follower;
+    
+    StateMachine stateMachine; // = new StateMachine();
+    internal DogIdleState idleState;
+    internal DogRandomMoveState randomMoveState;
+    internal DogAffectionState affectionState;
+    internal DogChaseState chaseState;
+    internal DogAnnoyedState annoyedState;
 
-    void Awake()
+    void Start()
     {
         dogAnimator = GetComponentInChildren<DogAnimator>();
         follower = GetComponent<Follower>();
         sprite = GetComponentInChildren<SpriteRenderer>();
-    }
-    
-    void Start()
-    {
-        angerProgression = new Progression(AngerTime);
-    }
-    
-    public void HandleOnStartedFollowing()
-    {
-        SwitchState(DogState.Follow);
-    }
-    
-    public void HandleOnReachedStoppingDistance()
-    {
-        SwitchState(DogState.Idle);
-    }
-
-    void Idle()
-    {
-        DoAnnoyance();
-    }
-
-    void DoAnnoyance()
-    {
-        if (sprite.AreFacingEachOther(follower.target.GetComponentInChildren<SpriteRenderer>()))
-        {
-            dogAnimator.Stop();
-            if (chillProgression.AdvanceAndConsume(Cooling * Time.deltaTime))
-            {
-                IncrementAnnoyanceLevel(-1);
-            }
-        }
-        else
-        {
-            if (annoyanceProgression.AdvanceAndConsume(Time.deltaTime / Patience))
-            {
-                IncrementAnnoyanceLevel(1);
-            }
-            
-            switch (annoyanceLevel)
-            {
-                default:
-                    dogAnimator.Bark();
-                    break;
-            }
-        }
-    }
-    
-    void IncrementAnnoyanceLevel(int amount)
-    {
-        annoyanceLevel = Mathf.Clamp(annoyanceLevel + amount, 0, 2);
-        dogAnimator.SetBarkSprite(annoyanceLevel);
         
-        if (annoyanceLevel == 2)
-        {
-            SwitchState(DogState.Angry);
-        }
-    }
-    
-    void Follow()
-    {
-        dogAnimator.Move();
-    }
-    
-    void Angry()
-    {
-        sprite.color = Color.red;
-        
-        if (angerProgression.AdvanceAndConsume(Time.deltaTime))
-        {
-            angerProgression.Reset();
-            
-            LeaveAngryState();
-        }
+        stateMachine = new StateMachine();
+        idleState = new DogIdleState(this, stateMachine);
+        randomMoveState = new DogRandomMoveState(this, stateMachine);
+        affectionState = new DogAffectionState(this, stateMachine);
+        chaseState = new DogChaseState(this, stateMachine);
+        annoyedState = new DogAnnoyedState(this, stateMachine);
+        stateMachine.Initialize(idleState);
     }
 
-    void LeaveAngryState()
-    {
-        sprite.color = Color.white;
-        state = follower.isMoving ? DogState.Follow : DogState.Idle;
-    }
-    
     void Update()
     {
-        switch (state)
-        {
-            case DogState.Idle: 
-                Idle(); 
-                break;
-            case DogState.Follow:
-                Follow();
-                break;
-            case DogState.Angry:
-                Angry();
-                break;
-        }
+        stateMachine.Update();
     }
-
-    void SwitchState(DogState newState)
-    {
-        switch (state, newState)
-        {
-            case (DogState.Idle, _):
-                state = newState;
-                break;
-            case (DogState.Follow, _):
-                state = newState;
-                break;
-            case (DogState.Angry, _):
-                // Do not change
-                break;
-        }
-    }
-
-    enum DogState
-    {
-        Idle,
-        Follow,
-        Angry
-    }
+    
 }
