@@ -208,7 +208,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.24}
+  m_Offset: {x: 0, y: 0.18}
   serializedVersion: 2
   m_Radius: 0.2
 --- !u!114 &7565108287379159974
@@ -288,7 +288,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  pixelsPerUnit: 32
   collisionOffset: 0.05
   contactFilter:
     useTriggers: 0
