@@ -29,6 +29,7 @@ public class Drifter : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sortingLayerName = "Foreground";
         spriteRenderer.sortingOrder = 1000;
+        //sprites = Resources.LoadAll<Sprite>("Art/Sprites/TentacleMonster-0001-Sheet");
         sprites = Resources.LoadAll<Sprite>("Debug/Debug-sheet");
         audioSource = GetComponent<AudioSource>();
     }
