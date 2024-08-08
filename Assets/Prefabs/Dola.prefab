@@ -126,6 +126,8 @@ GameObject:
   - component: {fileID: 3938638258332654860}
   - component: {fileID: 5635342751556399208}
   - component: {fileID: 1853624290024662579}
+  - component: {fileID: 8870904162021834127}
+  - component: {fileID: 3317775819221080225}
   m_Layer: 6
   m_Name: Dola
   m_TagString: Player
@@ -173,7 +175,7 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!58 &9045924291824331695
@@ -208,9 +210,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.18}
+  m_Offset: {x: 0, y: 0.4}
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.3
 --- !u!114 &7565108287379159974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -453,6 +455,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Events:
   - Event: {fileID: 11400000, guid: a592dfa4dfbec4bc1bda8774ce7abc6b, type: 2}
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 376835233934275067}
+          m_TargetAssemblyTypeName: Spinner, Assembly-CSharp
+          m_MethodName: Spin
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &8870904162021834127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8470116972755365890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e9a6c03b93f4497b6edc32ed7acea16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  factions: 00000000
+  hurtEvent: {fileID: 11400000, guid: ad4391555b1f14fdea7a7d911bd27958, type: 2}
+--- !u!114 &3317775819221080225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8470116972755365890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e01a32b1be0493183dae0696575303c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Events:
+  - Event: {fileID: 11400000, guid: ad4391555b1f14fdea7a7d911bd27958, type: 2}
     Response:
       m_PersistentCalls:
         m_Calls:

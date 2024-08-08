@@ -45,7 +45,7 @@ public class Dog : MonoBehaviour
         affectionState = new DogAffectionState(this, stateMachine);
         chaseState = new DogChaseState(this, stateMachine);
         annoyedState = new DogAnnoyedState(this, stateMachine);
-        stateMachine.Initialize(idleState, true);
+        stateMachine.Initialize(idleState, false);
     }
 
     void Update()

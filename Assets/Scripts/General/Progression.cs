@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 public class Progression
 {
@@ -12,6 +13,11 @@ public class Progression
     public Progression(float maxProgress = 1)
     {
         MaxProgress = maxProgress;
+    }
+    
+    public void Advance()
+    {
+        Advance(Time.deltaTime);
     }
 
     public void Advance(float progress)
@@ -33,6 +39,11 @@ public class Progression
         }
         return false;
     }
+    
+    public bool AdvanceAndConsume()
+    {
+        return AdvanceAndConsume(Time.deltaTime);
+    }
 
     public bool AdvanceAndConsume(float progress)
     {
@@ -40,6 +51,14 @@ public class Progression
         return Consume();
     }
     
+    public bool AdvanceAndConsume(out bool didConsume)
+    {
+        Advance();
+        didConsume = Consume();
+        
+        return didConsume;
+    }
+
     public bool AdvanceAndConsume(float progress, out bool didConsume)
     {
         Advance(progress);
