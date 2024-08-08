@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa5d12ecda08285429646312defb7637, type: 3}
+  m_Name: CauduroDialogue
+  m_EditorClassIdentifier: 
+  speaker: Cauduro
+  portrait: {fileID: 9100000, guid: 0586b59bec6fe5e46b5aeabf3316fbfd, type: 2}
+  voice: {fileID: 11400000, guid: 49779d3c9d5c9499bb2d4e883cb05f26, type: 2}
+  speeches:
+  - speed: 30
+    emotion: 0
+    autoSkip: 0
+    unskippable: 0
+    sentence: 'Fala tu
+
+'
