@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Follower))]
@@ -12,20 +13,18 @@ public class EyeMaw : MonoBehaviour
     HitBox hitBox;
     Animator animator;
     Follower follower;
-    RotateToTarget rotateToTarget;
     Tentacle mainTentacle;
 
     bool isAttackLockedOut;
     Progression attackLockoutTimer;
     float originalWiggleSpeed;
 
-    // Start is called before the first frame update
     void Start()
     {
         hitBox = GetComponent<HitBox>();
         animator = GetComponent<Animator>();
         follower = GetComponent<Follower>();
-        rotateToTarget = GetComponent<RotateToTarget>();
+        
         mainTentacle = transform.Find("Tentacles/TentacleMain").GetComponent<Tentacle>();
         originalWiggleSpeed = mainTentacle.wiggleSpeed;
         
@@ -55,13 +54,13 @@ public class EyeMaw : MonoBehaviour
         if (isLockedOut)
         {
             animator.speed = 0.1f;
-            rotateToTarget.enabled = false;
+            follower.faceTarget = false;
             mainTentacle.wiggleSpeed = 5;
         }
         else
         {
             animator.speed = 1;
-            rotateToTarget.enabled = true;
+            follower.faceTarget = true;
             mainTentacle.wiggleSpeed = originalWiggleSpeed;
         }
     }
@@ -73,6 +72,8 @@ public class EyeMaw : MonoBehaviour
 
     public void HandleOnEyeMawHit(Hit hit)
     {
+        if (!enabled) return;
+        
         if (hit.hitBox.gameObject != gameObject)
         {
             return;
