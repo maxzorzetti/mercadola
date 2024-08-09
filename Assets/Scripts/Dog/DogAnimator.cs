@@ -2,13 +2,12 @@ using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
-public class DogAnimations : MonoBehaviour
+public class DogAnimator : MonoBehaviour
 {
     static readonly int IsBarking = Animator.StringToHash("isBarking");
     static readonly int IsWalking = Animator.StringToHash("isWalking");
     
     Animator animator;
-    // Animation animation;
     
     int barkAnimationIndex = 1;
 
@@ -35,11 +34,6 @@ public class DogAnimations : MonoBehaviour
         animator.SetBool(IsWalking, true);
     }
 
-    public void SetBarkAnimation(int barkAnimationIndex)
-    {
-        this.barkAnimationIndex = Math.Clamp(barkAnimationIndex, 1, 3);
-    }
-    
     public void HandleStateChange(StateMachine.State state)
     {
         switch (state)

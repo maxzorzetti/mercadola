@@ -23,11 +23,10 @@ public class DogIdleState : DogState
 
     public override void EnterState(StateMachine.State previousState)
     {
-        dog.dogAnimator.Idle();
         dog.follower.faceTarget = false;
         dog.follower.followTarget = false;
         dog.follower.followRange = dog.aggroRange;
-        
+
         randomMovementTimer = NewRandomMovementTimer();
         
         if (previousState is not DogRandomMoveState)
@@ -75,7 +74,6 @@ public class DogRandomMoveState : DogState
 
     public override void EnterState(StateMachine.State previousState)
     {
-        dog.dogAnimator.Move();
         dog.follower.faceTarget = false;
         randomMovementTarget = ((Vector2)dog.transform.position + GetRandomDistance()).Pixelized();
     }
@@ -121,7 +119,6 @@ public class DogChaseState : DogState
     
     public override void EnterState(StateMachine.State previousState)
     {
-        dog.dogAnimator.Move();
         dog.follower.followTarget = true;
         dog.follower.faceTarget = true;
         dog.follower.maxSpeed = dog.chaseSpeed;
@@ -153,65 +150,66 @@ public class DogAffectionState : DogState
 {
     public DogAffectionState(Dog dog, StateMachine stateMachine) : base(dog, stateMachine) { }
 
-    int annoyanceLevel;
-    Progression annoyanceProgression = new Progression();
     Progression chillProgression = new Progression();
     
     public override void EnterState(StateMachine.State previousState)
     {
-        annoyanceProgression = new Progression(dog.patience);
-        chillProgression = new Progression(dog.cooling);
-        dog.dogAnimator.Idle();
+        chillProgression = new Progression(dog.chill);
         dog.follower.followTarget = true;
         dog.follower.faceTarget = true;
-        SetAnnoyanceLevel(0);
-    }
-    
-    public void SetAnnoyanceLevel(int level)
-    {
-        annoyanceLevel = Mathf.Clamp(level, 0, 2);
-        dog.dogAnimator.SetBarkAnimation(annoyanceLevel + 1);
-        dog.transform.localScale = Vector3.one * (1 + annoyanceLevel * 0.15f);
-        
-        if (annoyanceLevel == 2)
-        {
-            stateMachine.ChangeState(dog.annoyedState);
-        }
+        dog.SetAnnoyanceLevel(0);
     }
 
     public override void Update()
     {
-        UpdateAnnoyance();
-        
-        if (dog.follower.state == Follower.State.MovingTowardsTarget)
+        if (chillProgression.AdvanceAndConsume())
+        {
+            dog.SetAnnoyanceLevel(dog.annoyanceLevel - 1);
+            chillProgression.Reset();
+        }
+
+        if (!dog.sprite.AreFacingEachOther(dog.follower.target.GetComponentInChildren<SpriteRenderer>()))
+        {
+            stateMachine.ChangeState(dog.irritateState);
+        }
+        else if (dog.follower.state == Follower.State.MovingTowardsTarget)
         {
             stateMachine.ChangeState(dog.chaseState);
         }
     }
+}
 
-    void UpdateAnnoyance()
+public class DogIrritateState : DogState
+{
+    public DogIrritateState(Dog dog, StateMachine stateMachine) : base(dog, stateMachine) { }
+
+    Progression irritationProgression = new Progression();
+    
+    public override void EnterState(StateMachine.State previousState)
     {
+        irritationProgression = new Progression(dog.patience);
+        dog.follower.followTarget = true;
+        dog.follower.faceTarget = true;
+    }
+
+    public override void Update()
+    {
+        if (irritationProgression.AdvanceAndConsume())
+        {
+            dog.SetAnnoyanceLevel(dog.annoyanceLevel + 1);
+        }
+        
         if (dog.sprite.AreFacingEachOther(dog.follower.target.GetComponentInChildren<SpriteRenderer>()))
         {
-            dog.dogAnimator.Idle();
-            if (chillProgression.AdvanceAndConsume(dog.cooling * Time.deltaTime))
-            {
-                SetAnnoyanceLevel(annoyanceLevel - 1);
-            }
-        }
-        else
+            stateMachine.ChangeState(dog.affectionState);
+        } 
+        else if (dog.follower.state == Follower.State.MovingTowardsTarget)
         {
-            if (annoyanceProgression.AdvanceAndConsume(Time.deltaTime))
-            {
-                SetAnnoyanceLevel(annoyanceLevel + 1);
-            }
-            
-            switch (annoyanceLevel)
-            {
-                default:
-                    dog.dogAnimator.Bark();
-                    break;
-            }
+            stateMachine.ChangeState(dog.chaseState);
+        } 
+        else if (dog.annoyanceLevel == 2)
+        {
+            stateMachine.ChangeState(dog.annoyedState);
         }
     }
 }
@@ -225,9 +223,7 @@ public class DogAnnoyedState : DogState
     
     public override void EnterState(StateMachine.State previousState)
     {
-        angerProgression = new Progression(dog.annoyanceDuration);
-        dog.dogAnimator.Bark();
-        dog.sprite.color = Color.red;
+        angerProgression = new Progression(dog.angerDuration);
         
         previousStoppingDistance = dog.follower.stoppingDistance;
         dog.follower.followTarget = true;
@@ -238,14 +234,13 @@ public class DogAnnoyedState : DogState
 
     public override void ExitState(StateMachine.State nextState)
     {
-        dog.sprite.color = Color.white;
         dog.follower.stoppingDistance = previousStoppingDistance;
-        dog.affectionState.SetAnnoyanceLevel(0);
+        dog.SetAnnoyanceLevel(0);
     }
 
     public override void Update()
     {
-        if (angerProgression.AdvanceAndConsume(Time.deltaTime))
+        if (angerProgression.AdvanceAndConsume())
         {
             stateMachine.ChangeState(dog.idleState);
         }
