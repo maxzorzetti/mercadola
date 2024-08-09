@@ -1,9 +1,11 @@
-
+using System;
 using UnityEngine;
 
 public class StateMachine
 {
     public State CurrentState { get; private set; }
+    
+    public Action<State> OnStateChange;
     
     bool isDebug;
 
@@ -21,6 +23,8 @@ public class StateMachine
         CurrentState.EnterState(previousState);
         
         if (isDebug) Debug.Log($"Entered state {CurrentState.GetType()}");
+        
+        OnStateChange?.Invoke(CurrentState);
     }
     
     public void Update()
