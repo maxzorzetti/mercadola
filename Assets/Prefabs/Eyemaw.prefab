@@ -1211,12 +1211,12 @@ GameObject:
   - component: {fileID: 9089655521446002299}
   - component: {fileID: 8657905361767792257}
   - component: {fileID: 5079763222473270250}
-  - component: {fileID: 2219067562948319356}
   - component: {fileID: 5756344785932946608}
   - component: {fileID: 992236333714667742}
   - component: {fileID: 1620630585769098783}
   - component: {fileID: 5092818090941902853}
   - component: {fileID: 8734561319148182342}
+  - component: {fileID: 1516594626066288593}
   m_Layer: 0
   m_Name: Eyemaw
   m_TagString: Untagged
@@ -1355,20 +1355,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2219067562948319356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7314980940767736837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27e9b7f651db77d429a80028bda3377b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 10
-  target: {fileID: 0}
 --- !u!114 &5756344785932946608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1388,7 +1374,9 @@ MonoBehaviour:
   acceleration: 10
   deacceleration: 30
   followTarget: 1
-  faceTarget: 0
+  faceTarget: 1
+  facingType: 1
+  rotationSpeed: 10
   OnStartedFollowing:
     m_PersistentCalls:
       m_Calls: []
@@ -1474,6 +1462,30 @@ MonoBehaviour:
   initialSpeed: 2
   speedupPerSecond: 0.025
   attackLockoutDuration: 2
+--- !u!114 &1516594626066288593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7314980940767736837}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed18219f9b2f45f9af783d064bcc5289, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  chaseSpeed: 2
+  annoyedSpeed: 3
+  aggroRange: 3
+  chaseRange: 5
+  patience: 3
+  chill: 1
+  angerDuration: 5
+  idleAfterAnnoyanceLockDuration: 2
+  maxMovement: 2
+  minMovement: 0.5
+  movementFrequency: 1
 --- !u!1 &7750669590029326148
 GameObject:
   m_ObjectHideFlags: 0

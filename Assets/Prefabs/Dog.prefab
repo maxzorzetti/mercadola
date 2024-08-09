@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1144823195655316919}
   - component: {fileID: 4396979160280140770}
   - component: {fileID: 1435258328205853711}
+  - component: {fileID: 3793132798116746715}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Untagged
@@ -52,8 +53,8 @@ MonoBehaviour:
   aggroRange: 3
   chaseRange: 5
   patience: 3
-  cooling: 2
-  annoyanceDuration: 5
+  chill: 1
+  angerDuration: 5
   idleAfterAnnoyanceLockDuration: 2
   maxMovement: 2
   minMovement: 0.5
@@ -78,12 +79,49 @@ MonoBehaviour:
   deacceleration: 100
   followTarget: 1
   faceTarget: 1
+  facingType: 0
+  rotationSpeed: 10
   OnStartedFollowing:
     m_PersistentCalls:
       m_Calls: []
   OnReachedStoppingDistance:
     m_PersistentCalls:
       m_Calls: []
+--- !u!58 &3793132798116746715
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722425941594748893}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &5303575488186483460
 GameObject:
   m_ObjectHideFlags: 0

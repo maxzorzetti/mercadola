@@ -7,12 +7,18 @@ public class StateMachine
     
     public Action<State> OnStateChange;
     
+    string name;
     bool isDebug;
+    
+    public StateMachine(string name = null, bool isDebug = false) 
+    {
+        this.name = name;
+        this.isDebug = isDebug;
+    }
 
-    public void Initialize(State initialState, bool isDebug = false)
+    public void Initialize(State initialState)
     {
         ChangeState(initialState);
-        this.isDebug = isDebug;
     }
 
     public void ChangeState(State nextState)
@@ -22,7 +28,7 @@ public class StateMachine
         CurrentState = nextState;
         CurrentState.EnterState(previousState);
         
-        if (isDebug) Debug.Log($"Entered state {CurrentState.GetType()}");
+        if (isDebug) Debug.Log($"{name ?? GetType().ToString()} entered state {CurrentState.GetType()}");
         
         OnStateChange?.Invoke(CurrentState);
     }

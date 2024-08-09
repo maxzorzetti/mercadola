@@ -42,7 +42,7 @@ public class Dog : MonoBehaviour
         follower = GetComponent<Follower>();
         sprite = GetComponentInChildren<SpriteRenderer>();
         
-        stateMachine = new StateMachine();
+        stateMachine = new StateMachine(gameObject.name, true);
         idleState = new DogIdleState(this, stateMachine);
         randomMoveState = new DogRandomMoveState(this, stateMachine);
         affectionState = new DogAffectionState(this, stateMachine);
@@ -50,7 +50,7 @@ public class Dog : MonoBehaviour
         chaseState = new DogChaseState(this, stateMachine);
         annoyedState = new DogAnnoyedState(this, stateMachine);
         stateMachine.OnStateChange += dogAnimator.HandleStateChange;
-        stateMachine.Initialize(idleState, false);
+        stateMachine.Initialize(idleState);
     }
 
     public void SetAnnoyanceLevel(int level)

@@ -5,6 +5,11 @@ using UnityEngine.Events;
 
 public class Follower : MonoBehaviour
 {
+    public enum TargetFacing
+    {
+        Flip, Rotate
+    }
+    
     public Transform target;
     
     public float followRange = 5f;
@@ -15,6 +20,8 @@ public class Follower : MonoBehaviour
 
     public bool followTarget = true;
     public bool faceTarget = false;
+    public TargetFacing facingType;
+    public int rotationSpeed = 10;
 
     public State state { get; private set; }
     public bool isWithinFollowRange { get; private set; }
@@ -43,8 +50,19 @@ public class Follower : MonoBehaviour
     {
         if (!faceTarget || target == null) return;
 
-        var sprite = GetComponentInChildren<SpriteRenderer>();
-        sprite.flipX = (target.position.x < transform.position.x);
+        switch (facingType)
+        {
+            case TargetFacing.Flip:
+                var sprite = GetComponentInChildren<SpriteRenderer>();
+                sprite.flipX = (target.position.x < transform.position.x);
+                break;
+            case TargetFacing.Rotate:
+                var direction = target.position - transform.position;
+                var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                var rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+                transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
+                break;
+        }
     }
 
     void Follow()

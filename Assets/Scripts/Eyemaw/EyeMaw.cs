@@ -66,6 +66,11 @@ public class EyeMaw : MonoBehaviour
         }
     }
     
+    public void HandleOnEyeMawAttackAnimationEvent()
+    {
+
+    }
+
     public void HandleOnEyeMawHit(Hit hit)
     {
         if (hit.hitBox.gameObject != gameObject)
