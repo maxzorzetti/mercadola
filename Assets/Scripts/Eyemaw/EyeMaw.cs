@@ -9,35 +9,50 @@ public class EyeMaw : MonoBehaviour
     [Range(0f, 1f)]
     public float speedupPerSecond = 0.025f;
     public float attackLockoutDuration = 2f;
+    
+    [Range(0f, 1f)]
+    public float biteRange = 1f;
 
-    HitBox hitBox;
+    public HitBox biteHitBox;
+
     Animator animator;
     Follower follower;
+    AudioSource audioSource;
+    
     Tentacle mainTentacle;
+    Transform hitBoxPoint;
 
     bool isAttackLockedOut;
     Progression attackLockoutTimer;
     float originalWiggleSpeed;
+    static readonly int Bite = Animator.StringToHash("Bite");
 
     void Start()
     {
-        hitBox = GetComponent<HitBox>();
         animator = GetComponent<Animator>();
         follower = GetComponent<Follower>();
-        
+        audioSource = GetComponent<AudioSource>();
+
         mainTentacle = transform.Find("Tentacles/TentacleMain").GetComponent<Tentacle>();
         originalWiggleSpeed = mainTentacle.wiggleSpeed;
+        hitBoxPoint = transform.Find("HitBoxPoint");
         
         follower.maxSpeed = initialSpeed;
         attackLockoutTimer = new Progression(attackLockoutDuration);
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         if (!isAttackLockedOut)
         {
             follower.maxSpeed += speedupPerSecond * Time.deltaTime;
+            
+            if (follower.isWithinStoppingDistance && !animator.GetCurrentAnimatorStateInfo(0).IsName("Bite"))
+            {
+                animator.SetTrigger(Bite);
+            }
+            
             return;
         }
 
@@ -67,14 +82,18 @@ public class EyeMaw : MonoBehaviour
     
     public void HandleOnEyeMawAttackAnimationEvent()
     {
-
+        var bite = Instantiate(biteHitBox, transform);
+        bite.transform.position = hitBoxPoint.position;
+        
+        audioSource.PlayOneShot(audioSource.clip);
     }
 
     public void HandleOnEyeMawHit(Hit hit)
     {
         if (!enabled) return;
         
-        if (hit.hitBox.gameObject != gameObject)
+        // Check if the hit event is from _this_ eyemaw
+        if (hit.hitBox.transform.parent.gameObject != gameObject)
         {
             return;
         }
