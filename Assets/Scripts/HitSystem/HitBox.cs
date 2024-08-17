@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
@@ -8,39 +7,71 @@ public class HitBox : MonoBehaviour
     public Faction[] factions;
     public HitEvent hitEvent;
     
+    List<HurtBox> affectedHurtBoxes = new();
+    
     public void Hit(HurtBox hurtBox)
     {
-        var hit = new Hit(hurtBox, this);
+        if (affectedHurtBoxes.Contains(hurtBox))
+        {
+            return;
+        }
+        affectedHurtBoxes.Add(hurtBox);
         
+        var hit = new Hit(hurtBox, this);
         hitEvent.Raise(hit);
+        
         hurtBox.GetHit(hit);
     }
+
+    void OnTriggerEnter2D(Collider2D other) => HandleCollision(other);
     
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other) => HandleCollision(other); // This happens on every frame while objects overlap, not cool I guess
+
+    void OnTriggerExit2D(Collider2D other)
     {
-        if (!other.TryGetComponent(out HurtBox hurtBox)) // *
+        if (!other.TryGetComponent(out HurtBox hurtBox))
         {
             return;
         }
         
-        if (IsIgnored(factions, hurtBox.factions))
-        {
-            return;
-        }
-        
-        Hit(hurtBox);
-        
-        // * This is a shorthand for:
+        affectedHurtBoxes.Remove(hurtBox);
+    }
+
+    void HandleCollision(Collider2D other)
+    {
+        // * Hey J, this is a shorthand for:
         //
         // var hurtBox = other.GetComponent<HurtBox>();
         // if (hurtBox == null)
         // {
         //     return;
         // }
+        if (!other.TryGetComponent(out HurtBox hurtBox))
+        {
+            return;
+        }
+        
+        if (!IsHurtBoxAvailableForHit(hurtBox))
+        {
+            return;
+        }
+        
+        if (IsFactionIgnored(factions, hurtBox.factions))
+        {
+            return;
+        }
+        
+        Hit(hurtBox);
     }
     
-    bool IsIgnored(Faction[] hitBoxFactions, Faction[] hurtBoxFactions)
+    bool IsHurtBoxAvailableForHit(HurtBox hurtBox)
     {
+        return !affectedHurtBoxes.Contains(hurtBox);
+    }
+    
+    bool IsFactionIgnored(Faction[] hitBoxFactions, Faction[] hurtBoxFactions)
+    {
+        // TODO: make this better, probably using bitmasks
         foreach (var a in hitBoxFactions)
         {
             foreach (var b in hurtBoxFactions)
