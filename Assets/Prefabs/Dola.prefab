@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: 1853624290024662579}
   - component: {fileID: 8870904162021834127}
   - component: {fileID: 3317775819221080225}
+  - component: {fileID: 1236038224452745352}
   m_Layer: 6
   m_Name: Dola
   m_TagString: Player
@@ -513,3 +514,37 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1236038224452745352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8470116972755365890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf17f29f4f5b4a41906e56dc9a60baf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
+  currentHealth: 3
+  fullHealthStart: 1
+  IsDead: 0
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5428977878461355428}
+        m_TargetAssemblyTypeName: PlayerAction, Assembly-CSharp
+        m_MethodName: Amaze
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnRevive:
+    m_PersistentCalls:
+      m_Calls: []
