@@ -58,6 +58,9 @@ public class HitBox : MonoBehaviour
     
     bool IsFactionIgnored(Faction[] hitBoxFactions, Faction[] hurtBoxFactions)
     {
+        if (hitBoxFactions.Length == 0 || hurtBoxFactions.Length == 0)
+            return false;
+        
         // TODO: make this better, probably using bitmasks
         foreach (var a in hitBoxFactions)
         {
