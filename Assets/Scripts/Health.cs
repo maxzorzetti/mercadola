@@ -14,9 +14,14 @@ public class Health : MonoBehaviour
     public bool IsDead;
     [DoNotSerialize]
     public bool IsAlive => !IsDead;
-
-    public UnityEvent<object> OnDeath;
+    
+    public UnityEvent<int> OnDamageTaken;
+    public UnityEvent<MonoBehaviour> OnDeath;
     public UnityEvent OnRevive;
+    
+    public IntegerEvent OnDamageTakenEvent;
+    public SourceEvent OnDeathEvent;
+    public Event OnReviveEvent;
 
     // Start is called before the first frame update
     void Start()
@@ -24,9 +29,11 @@ public class Health : MonoBehaviour
         currentHealth = fullHealthStart ? maxHealth : currentHealth;
     }
 
-    public void TakeDamage(int damage, object source = null)
+    public void TakeDamage(int damage, MonoBehaviour source = null)
     {
         currentHealth -= damage;
+        OnDamageTaken.Invoke(damage);
+        OnDamageTakenEvent.Raise(damage);
         
         if (currentHealth <= 0 && !IsDead)
         {
@@ -34,10 +41,11 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void Die(object source)
+    public void Die(MonoBehaviour source)
     {
         IsDead = true;
         OnDeath.Invoke(source);
+        OnDeathEvent.Raise(source);
     }
     
     public void Revive(int? health = null)
@@ -45,5 +53,6 @@ public class Health : MonoBehaviour
         IsDead = false;
         currentHealth = health ?? maxHealth;
         OnRevive.Invoke();
+        OnReviveEvent.Raise();
     }
 }

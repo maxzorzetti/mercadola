@@ -485,6 +485,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   factions: 00000000
   hurtEvent: {fileID: 11400000, guid: ad4391555b1f14fdea7a7d911bd27958, type: 2}
+  health: {fileID: 0}
 --- !u!114 &3317775819221080225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,21 +531,39 @@ MonoBehaviour:
   currentHealth: 3
   fullHealthStart: 1
   IsDead: 0
+  OnDamageTaken:
+    m_PersistentCalls:
+      m_Calls: []
   OnDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5428977878461355428}
-        m_TargetAssemblyTypeName: PlayerAction, Assembly-CSharp
-        m_MethodName: Amaze
+      - m_Target: {fileID: 7565108287379159974}
+        m_TargetAssemblyTypeName: Dola, Assembly-CSharp
+        m_MethodName: Speak
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MORRI
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7565108287379159974}
+        m_TargetAssemblyTypeName: Dola, Assembly-CSharp
+        m_MethodName: Die
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: MORRI
           m_BoolArgument: 0
         m_CallState: 2
   OnRevive:
     m_PersistentCalls:
       m_Calls: []
+  OnDamageTakenEvent: {fileID: 11400000, guid: 2760ec51e9c6c4a138b39c3b2ab7e0d1, type: 2}
+  OnDeathEvent: {fileID: 11400000, guid: 6e6e7a07d1ddc481681a680b19582ed2, type: 2}
+  OnReviveEvent: {fileID: 11400000, guid: 7132a0df6af1f471c9380a247787ad8c, type: 2}

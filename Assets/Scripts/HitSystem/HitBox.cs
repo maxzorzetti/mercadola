@@ -9,20 +9,6 @@ public class HitBox : MonoBehaviour
     
     List<HurtBox> affectedHurtBoxes = new();
     
-    public void Hit(HurtBox hurtBox)
-    {
-        if (affectedHurtBoxes.Contains(hurtBox))
-        {
-            return;
-        }
-        affectedHurtBoxes.Add(hurtBox);
-        
-        var hit = new Hit(hurtBox, this);
-        hitEvent.Raise(hit);
-        
-        hurtBox.GetHit(hit);
-    }
-
     void OnTriggerEnter2D(Collider2D other) => HandleCollision(other);
     
     void OnTriggerStay2D(Collider2D other) => HandleCollision(other); // This happens on every frame while objects overlap, not cool I guess
@@ -46,6 +32,7 @@ public class HitBox : MonoBehaviour
         // {
         //     return;
         // }
+        // Similar to a `guard let` but in C#
         if (!other.TryGetComponent(out HurtBox hurtBox))
         {
             return;
@@ -82,5 +69,19 @@ public class HitBox : MonoBehaviour
         }
 
         return true;
+    }
+    
+    public void Hit(HurtBox hurtBox)
+    {
+        if (affectedHurtBoxes.Contains(hurtBox))
+        {
+            return;
+        }
+        affectedHurtBoxes.Add(hurtBox);
+        
+        var hit = new Hit(hurtBox, this);
+        
+        hitEvent.Raise(hit);
+        hurtBox.GetHit(hit);
     }
 }
