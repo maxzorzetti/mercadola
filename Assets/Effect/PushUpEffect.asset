@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b913ff530a84b58ae5e9cffbc863c15, type: 3}
-  m_Name: SmallKnockbackEffect
+  m_Script: {fileID: 11500000, guid: 8f0d0bdc8ec24579bdbff421aa06e9ad, type: 3}
+  m_Name: PushUpEffect
   m_EditorClassIdentifier: 
-  distance: 0
+  translation: {x: 0, y: 5}

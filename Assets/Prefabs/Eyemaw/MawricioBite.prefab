@@ -95,6 +95,7 @@ MonoBehaviour:
   effects:
   - {fileID: 11400000, guid: b2be206c6bce54c538fb5ed4beb9879d, type: 2}
   - {fileID: 11400000, guid: 6ca98eccb67304852a8b11870bb4703e, type: 2}
+  - {fileID: 11400000, guid: 947c94b2184a042a0989853e97004fa6, type: 2}
   hitEvent: {fileID: 11400000, guid: ba2b0a6b7e7f3438b97ee1f2a9652c0f, type: 2}
 --- !u!114 &590581335956376508
 MonoBehaviour:

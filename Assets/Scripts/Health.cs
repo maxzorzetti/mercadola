@@ -15,10 +15,12 @@ public class Health : MonoBehaviour
     [DoNotSerialize]
     public bool IsAlive => !IsDead;
     
+    public UnityEvent<int> OnHeal;
     public UnityEvent<int> OnDamageTaken;
     public UnityEvent<MonoBehaviour> OnDeath;
     public UnityEvent OnRevive;
     
+    public IntegerEvent OnHealEvent;
     public IntegerEvent OnDamageTakenEvent;
     public SourceEvent OnDeathEvent;
     public Event OnReviveEvent;
@@ -29,8 +31,27 @@ public class Health : MonoBehaviour
         currentHealth = fullHealthStart ? maxHealth : currentHealth;
     }
 
+    public void Heal(int amount)
+    {
+        if (amount <= 0)
+        {
+            return;
+        }
+        
+        var amountToHeal = Mathf.Min(maxHealth - currentHealth);
+        
+        currentHealth += amountToHeal;
+        OnHeal.Invoke(amount);
+        OnHealEvent.Raise(amount);
+    }
+
     public void TakeDamage(int damage, MonoBehaviour source = null)
     {
+        if (damage <= 0)
+        {
+            return;
+        }
+        
         currentHealth -= damage;
         OnDamageTaken.Invoke(damage);
         OnDamageTakenEvent.Raise(damage);
