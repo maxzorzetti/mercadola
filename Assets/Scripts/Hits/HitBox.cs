@@ -5,9 +5,16 @@ using UnityEngine;
 public class HitBox : MonoBehaviour
 {
     public Faction[] factions;
+    
+    public Effect[] effects;
+    
     public HitEvent hitEvent;
     
     List<HurtBox> affectedHurtBoxes = new();
+    
+    // TODO: change structure to something as follows:
+    // capture HurtBoxes using OnTriggerEnter2D and OnTriggerStay2D
+    // consume and hit them on FixedUpdate
     
     void OnTriggerEnter2D(Collider2D other) => HandleCollision(other);
     
@@ -81,10 +88,23 @@ public class HitBox : MonoBehaviour
             return;
         }
         affectedHurtBoxes.Add(hurtBox);
+
+        AnnounceHit(new Hit(hurtBox, hitBox: this));
         
-        var hit = new Hit(hurtBox, this);
-        
+        ApplyEffects(hurtBox);
+    }
+
+    void AnnounceHit(Hit hit)
+    {
         hitEvent.Raise(hit);
-        hurtBox.GetHit(hit);
+        hit.hurtBox.GetHit(hit);
+    }
+    
+    void ApplyEffects(HurtBox hurtBox)
+    {
+        foreach (var effect in effects)
+        {
+            effect.Apply(hurtBox, source: this);
+        }
     }
 }

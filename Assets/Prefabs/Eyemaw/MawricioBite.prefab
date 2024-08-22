@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 6214306507509703003}
   - component: {fileID: 4241679345564926294}
   - component: {fileID: 590581335956376508}
-  - component: {fileID: 1370809513465368630}
   m_Layer: 0
-  m_Name: EyemawBite
+  m_Name: MawricioBite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,6 +92,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   factions: 01000000
+  effects:
+  - {fileID: 11400000, guid: b2be206c6bce54c538fb5ed4beb9879d, type: 2}
   hitEvent: {fileID: 11400000, guid: ba2b0a6b7e7f3438b97ee1f2a9652c0f, type: 2}
 --- !u!114 &590581335956376508
 MonoBehaviour:
@@ -108,16 +109,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifetime: 0.25
   beginOnStart: 1
---- !u!114 &1370809513465368630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5643114121798673568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e76cd6ad61514be18d1f5d668ab638cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
